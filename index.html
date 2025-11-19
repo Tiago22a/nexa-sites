@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Básico -->
+<title>Nexa Sites - Criação de Sites e Landing Pages Profissionais</title>
+<meta name="description" content="Desenvolvemos sites e landing pages de alta conversão com SEO otimizado e funil de vendas estratégico. Especialistas em marketing digital e programação.">
+<meta name="keywords" content="criação de sites, landing pages, SEO, funil de vendas, marketing digital, desenvolvimento web">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Nexa Sites">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-16x16-removebg-preview.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Open Graph (Facebook, WhatsApp, Messenger) -->
+<meta property="og:title" content="Nexa Sites - Criação de Sites e Landing Pages Profissionais">
+<meta property="og:description" content="Desenvolvemos sites e landing pages de alta conversão com SEO otimizado e funil de vendas estratégico. Especialistas em marketing digital e programação.">
+<meta property="og:image" content="https://nexasite.netlify.app/imagens/Entre em contato conosco link na nossa bio! @grandesite.png">
+<meta property="og:url" content="https://nexasite.netlify.app/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nexa Sites - Criação de Sites e Landing Pages Profissionais">
+<meta name="twitter:description" content="Desenvolvemos sites e landing pages de alta conversão com SEO otimizado e funil de vendas estratégico. Especialistas em marketing digital e programação.">
+<meta name="twitter:image" content="https://nexasite.netlify.app/imagens/Entre em contato conosco link na nossa bio! @grandesite.png">
+<meta name="twitter:site" content="@NexaSites">
+
+<!-- Schema.org (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nexa Sites",
+  "url": "https://nexasite.netlify.app/",
+  "logo": "https://nexasite.netlify.app/favicons/favicon-16x16-removebg-preview.png",
+  "sameAs": [
+    
+    "https://www.instagram.com/nexasites_dev",
+    "https://www.linkedin.com/in/nexa-sites-09893b384/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-83-99329-2710",
+    "contactType": "customer service",
+    "areaServed": "BR",
+    "availableLanguage": ["Portuguese"]
+  }
+}
+</script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7c3aed',
+                        secondary: '#3b82f6',
+                        dark: '#0f0f1a',
+                        card: '#1a1a2e',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f0f1a;
+            color: #f8fafc;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
+        }
+
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="https://api.whatsapp.com/send?phone=5583993292710"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300"
+        target="_blank" aria-label="Fale no WhatsApp">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M12.04 2.003a9.96 9.96 0 0 0-8.26 15.263L2 22l4.84-1.755a9.96 9.96 0 0 0 5.2 1.43c5.523 0 10-4.477 10-10s-4.477-9.672-10-9.672zm0 18.127a8.01 8.01 0 0 1-4.101-1.124l-.293-.175-2.863 1.038.978-2.976-.193-.307a8.012 8.012 0 1 1 6.472 3.544zm4.402-6.018c-.236-.118-1.394-.687-1.61-.765-.216-.079-.374-.118-.531.118-.157.236-.61.765-.748.923-.138.157-.275.177-.511.059-.236-.118-.996-.366-1.897-1.168-.7-.625-1.173-1.397-1.31-1.633-.138-.236-.015-.364.103-.482.105-.104.236-.275.354-.413.118-.138.157-.236.236-.393.079-.157.04-.295-.02-.413-.059-.118-.531-1.28-.727-1.753-.191-.457-.386-.396-.531-.404l-.452-.008c-.157 0-.413.059-.63.295-.216.236-.827.807-.827 1.97 0 1.162.846 2.283.963 2.438.118.157 1.66 2.528 4.021 3.544.562.242 1.002.386 1.345.494.565.18 1.079.155 1.484.094.453-.068 1.394-.57 1.59-1.12.196-.55.196-1.021.137-1.12-.059-.098-.216-.157-.452-.275z" />
+        </svg>
+    </a>
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex items-center gap-2">
+                    <span class="iconify w-8 h-8 text-primary" data-icon="mdi:rocket-launch"></span>
+                    <span class="text-xl md:text-2xl font-bold gradient-text">Nexa Sites</span>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-gray-300 hover:text-primary transition-colors">Serviços</a>
+                    <a href="#benefits" class="text-gray-300 hover:text-primary transition-colors">Diferenciais</a>
+                    <a href="#results" class="text-gray-300 hover:text-primary transition-colors">Resultados</a>
+                    <a href="#contact"
+                        class="gradient-bg text-white px-6 py-2 rounded-lg font-semibold glow-hover transition-all duration-300">
+                        Fale Conosco
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <a href="#contact" class="gradient-bg text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                        Contato
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center space-y-8 py-20">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-700/30 bg-purple-900/10 backdrop-blur-sm">
+                    <span class="iconify w-5 h-5 text-primary" data-icon="mdi:star-circle"></span>
+                    <span class="text-sm font-medium">Especialistas em Desenvolvimento Web</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                    Transforme Sua Presença Digital com
+                    <span class="gradient-text">Sites de Alta Performance</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                    Criamos sites e landing pages otimizados para conversão, com SEO avançado e funil de vendas
+                    estratégico. Autoridade em marketing digital e programação.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                    <a href="https://wa.me/5583993292710?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20os%20serviços%20da%20Nexa%20Sites."
+                        target="_blank"
+                        class="gradient-bg text-white px-8 py-4 rounded-lg text-base md:text-lg font-semibold flex items-center gap-2 glow-hover transition-all duration-300 w-full sm:w-auto justify-center">
+                        <span class="iconify w-6 h-6" data-icon="mdi:whatsapp"></span>
+                        Começar Meu Projeto
+                    </a>
+                    <a href="#services"
+                        class="border border-gray-700 text-white px-8 py-4 rounded-lg text-base md:text-lg font-semibold flex items-center gap-2 hover:border-primary transition-colors w-full sm:w-auto justify-center">
+                        <span class="iconify w-6 h-6" data-icon="mdi:arrow-down"></span>
+                        Ver Serviços
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-8 pt-12 text-sm md:text-base">
+                    <div class="flex items-center gap-2">
+                        <span class="iconify w-6 h-6 text-primary" data-icon="mdi:check-circle"></span>
+                        <span>SEO Otimizado</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="iconify w-6 h-6 text-primary" data-icon="mdi:check-circle"></span>
+                        <span>Design Responsivo</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="iconify w-6 h-6 text-primary" data-icon="mdi:check-circle"></span>
+                        <span>Alta Conversão</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <span class="iconify w-8 h-8 text-primary" data-icon="mdi:chevron-down"></span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-5xl font-bold">
+                    Nossos <span class="gradient-text">Serviços</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Soluções completas em desenvolvimento web e marketing digital para impulsionar seu negócio
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Service Card 1 -->
+                <div
+                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                    <div
+                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:web"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sites Institucionais</h3>
+                    <p class="text-gray-400 mb-4">Sites corporativos profissionais que transmitem credibilidade e
+                        autoridade para sua marca no mercado.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Design moderno
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            SEO otimizado
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Responsivo
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Performance
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                    <div
+                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:rocket-launch"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Landing Pages</h3>
+                    <p class="text-gray-400 mb-4">Páginas de alta conversão focadas em capturar leads e maximizar seus
+                        resultados de vendas.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Funil de vendas
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Design pensado em vender
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            CTA otimizado
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Painel de analytics integrado
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                    <div
+                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:shopping"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">E-commerce</h3>
+                    <p class="text-gray-400 mb-4">Lojas virtuais completas com checkout otimizado e integração com
+                        sistemas de pagamento.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Catálogo dinâmico
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Carrinho inteligente
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Gateway de pagamento
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Gestão de estoque
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div
+                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                    <div
+                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:chart-line"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">SEO & Marketing</h3>
+                    <p class="text-gray-400 mb-4">Estratégias completas de otimização e marketing digital para ampliar
+                        sua presença online.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                           Otimização de sites 
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Testes de desempenho e ranquemento
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Manutenção e testes de segurança
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Marketing estratégico
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div
+                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                    <div
+                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:code-braces"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Desenvolvimento Custom</h3>
+                    <p class="text-gray-400 mb-4">Soluções sob medida com tecnologias modernas para atender necessidades
+                        específicas do seu negócio.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            React/Next.js
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            APIs REST
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Integrações
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Escalabilidade
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div
+                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
+                    <div
+                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:speedometer"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Otimização de Performance</h3>
+                    <p class="text-gray-400 mb-4">Análise e melhoria de sites existentes para máxima velocidade e
+                        experiência do usuário.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Core Web Vitals
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Compressão
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            CDN
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
+                            Cache inteligente
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 md:py-32 bg-card/30">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-5xl font-bold">
+                    Por Que Escolher a <span class="gradient-text">Nexa Sites?</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Diferenciais que fazem toda a diferença nos resultados do seu negócio
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
+                    <div
+                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:shield-check"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Autoridade Comprovada</h3>
+                    <p class="text-gray-400">Experiência em desenvolvimento web, cybersecurity e marketing digital com
+                        resultados mensuráveis</p>
+                </div>
+
+                <div
+                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
+                    <div
+                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:clock-fast"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Entrega Ágil</h3>
+                    <p class="text-gray-400">Metodologias modernas que garantem prazos cumpridos sem comprometer a
+                        qualidade</p>
+                </div>
+
+                <div
+                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
+                    <div
+                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:chart-timeline-variant"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Foco em Conversão</h3>
+                    <p class="text-gray-400">Cada elemento é estrategicamente planejado para maximizar suas taxas de
+                        conversão</p>
+                </div>
+
+                <div
+                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
+                    <div
+                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:google"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">SEO Avançado</h3>
+                    <p class="text-gray-400">Técnicas atualizadas de otimização para posicionar seu site no topo do
+                        Google</p>
+                </div>
+
+                <div
+                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
+                    <div
+                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:devices"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">100% Responsivo</h3>
+                    <p class="text-gray-400">Design adaptável que funciona perfeitamente em todos os dispositivos e
+                        tamanhos de tela</p>
+                </div>
+
+                <div
+                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
+                    <div
+                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:headset"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Suporte Dedicado</h3>
+                    <p class="text-gray-400">Acompanhamento contínuo e suporte técnico para garantir o sucesso do seu
+                        projeto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 md:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-5xl font-bold">
+                    Resultados Que <span class="gradient-text">Falam Por Si</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Números e depoimentos reais de clientes que transformaram seus negócios
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div
+                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:account-multiple"></span>
+                        </div>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">20+</div>
+                    <div class="text-sm text-gray-400">Clientes Satisfeitos</div>
+                </div>
+
+                <div
+                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:web-check"></span>
+                        </div>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">30+</div>
+                    <div class="text-sm text-gray-400">Projetos Entregues</div>
+                </div>
+
+                <div
+                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:chart-line-variant"></span>
+                        </div>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">85%</div>
+                    <div class="text-sm text-gray-400">Aumento Médio em Conversão</div>
+                </div>
+
+                <div
+                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:star"></span>
+                        </div>
+                    </div>
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">4.9/5</div>
+                    <div class="text-sm text-gray-400">Avaliação Média</div>
+                </div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class=" relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 space-y-4">
+                    <h2 class="text-3xl md:text-5xl font-bold">
+                        Pronto Para <span class="gradient-text">Decolar?</span>
+                    </h2>
+                    <p class="text-lg text-gray-400">
+                        Entre em contato agora e transforme sua presença digital
+                    </p>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 md:p-12 space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
+                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
+                            </div>
+                            <span>Audit gratuito</span>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
+                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
+                            </div>
+                            <span>Proposta personalizada para seu negócio</span>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
+                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
+                            </div>
+                            <span>Orçamento sem compromisso</span>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
+                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
+                            </div>
+                            <span>Resposta em até 24 horas</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center space-y-6 pt-6">
+                        <a href="https://wa.me/5583993292710?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20os%20serviços%20da%20Nexa%20Sites."
+                            target="_blank"
+                            class="inline-flex gradient-bg text-white px-12 py-5 rounded-lg text-lg font-semibold items-center gap-2 glow-hover transition-all duration-300 hover:scale-105">
+                            <span class="iconify w-7 h-7" data-icon="mdi:whatsapp"></span>
+                            Falar com Especialista
+                        </a>
+
+                        <p class="text-sm text-gray-400">
+                            Clique no botão acima para iniciar uma conversa no WhatsApp
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-center gap-6 pt-6 border-t border-gray-800">
+                        <div class="flex items-center gap-2">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:email"></span>
+                            <span class="text-sm text-gray-400">nexasites.contato@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:clock"></span>
+                            <span class="text-sm text-gray-400">Seg-Sex</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<br><br><br>
+    <!-- Footer -->
+    <footer class="bg-card/30 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="iconify w-8 h-8 text-primary" data-icon="mdi:rocket-launch"></span>
+                        <span class="text-xl font-bold gradient-text">Nexa Sites</span>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-xs">
+                        Transformando ideias em experiências digitais de alta performance. Especialistas em
+                        desenvolvimento web e marketing digital.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services"
+                                class="text-sm text-gray-400 hover:text-primary transition-colors">Serviços</a></li>
+                        <li><a href="#benefits"
+                                class="text-sm text-gray-400 hover:text-primary transition-colors">Diferenciais</a></li>
+                        <li><a href="#results"
+                                class="text-sm text-gray-400 hover:text-primary transition-colors">Resultados</a></li>
+                        <li><a href="#contact"
+                                class="text-sm text-gray-400 hover:text-primary transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold">Conecte-se</h3>
+                    <div class="space-y-3">
+                        <a href="https://wa.me/5583993292710" target="_blank"
+                            class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors">
+                            <span class="iconify w-5 h-5" data-icon="mdi:whatsapp"></span>
+                            WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/nexasites_dev" target="_blank"
+                            class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors">
+                            <span class="iconify w-5 h-5" data-icon="mdi:instagram"></span>
+                            @nexasites_dev
+                        </a>
+                        <div class="flex items-center gap-2 text-sm text-gray-400">
+                    
+                            <span class="iconify w-5 h-5" data-icon="mdi:email"></span>
+                            nexasites.contato@gmail.com
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400 text-center md:text-left">
+                    © 2025 Nexa Sites. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/nexasites_dev" target="_blank"
+                        class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-5 h-5 text-white" data-icon="mdi:instagram"></span>
+                    </a>
+                    <a href="https://wa.me/5583993292710" target="_blank"
+                        class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <span class="iconify w-5 h-5 text-white" data-icon="mdi:whatsapp"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth scroll script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
