@@ -155,7 +155,8 @@ src="https://www.facebook.com/tr?id=748470417857858&ev=PageView&noscript=1"
 
     <a href="https://api.whatsapp.com/send?phone=5583993292710"
         class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300"
-        target="_blank" aria-label="Fale no WhatsApp">
+        target="_blank" aria-label="Fale no WhatsApp"
+        onclick="fbq('track', 'Lead'); fbq('track', 'Contact');">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path
                 d="M12.04 2.003a9.96 9.96 0 0 0-8.26 15.263L2 22l4.84-1.755a9.96 9.96 0 0 0 5.2 1.43c5.523 0 10-4.477 10-10s-4.477-9.672-10-9.672zm0 18.127a8.01 8.01 0 0 1-4.101-1.124l-.293-.175-2.863 1.038.978-2.976-.193-.307a8.012 8.012 0 1 1 6.472 3.544zm4.402-6.018c-.236-.118-1.394-.687-1.61-.765-.216-.079-.374-.118-.531.118-.157.236-.61.765-.748.923-.138.157-.275.177-.511.059-.236-.118-.996-.366-1.897-1.168-.7-.625-1.173-1.397-1.31-1.633-.138-.236-.015-.364.103-.482.105-.104.236-.275.354-.413.118-.138.157-.236.236-.393.079-.157.04-.295-.02-.413-.059-.118-.531-1.28-.727-1.753-.191-.457-.386-.396-.531-.404l-.452-.008c-.157 0-.413.059-.63.295-.216.236-.827.807-.827 1.97 0 1.162.846 2.283.963 2.438.118.157 1.66 2.528 4.021 3.544.562.242 1.002.386 1.345.494.565.18 1.079.155 1.484.094.453-.068 1.394-.57 1.59-1.12.196-.55.196-1.021.137-1.12-.059-.098-.216-.157-.452-.275z" />
@@ -811,7 +812,8 @@ src="https://www.facebook.com/tr?id=748470417857858&ev=PageView&noscript=1"
                     <div class="text-center space-y-6 pt-6">
                         <a href="https://wa.me/5583993292710?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20os%20serviços%20da%20Nexa%20Sites."
                             target="_blank"
-                            class="inline-flex gradient-bg text-white px-12 py-5 rounded-lg text-lg font-semibold items-center gap-2 glow-hover transition-all duration-300 hover:scale-105">
+                            class="inline-flex gradient-bg text-white px-12 py-5 rounded-lg text-lg font-semibold items-center gap-2 glow-hover transition-all duration-300 hover:scale-105"
+                            onclick="fbq('track', 'Lead'); fbq('track', 'Contact');">
                             <span class="iconify w-7 h-7" data-icon="mdi:whatsapp"></span>
                             Falar com Especialista
                         </a>
@@ -914,7 +916,7 @@ src="https://www.facebook.com/tr?id=748470417857858&ev=PageView&noscript=1"
     </footer>
 
     <!-- Smooth scroll script -->
-    <script>
+    <script defer>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -932,4 +934,5 @@ src="https://www.facebook.com/tr?id=748470417857858&ev=PageView&noscript=1"
 
 
 </html>
+
 
