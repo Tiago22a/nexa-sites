@@ -57,3 +57,5 @@ jobs:
           git add -A
           git commit -m "SEO: replace site with optimized structure"
           git push origin HEAD:main
+
+# all-parts-ready
