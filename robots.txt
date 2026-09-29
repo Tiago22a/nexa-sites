@@ -1,10 +1,4 @@
-# Bloqueia páginas privadas ou desnecessárias
 User-agent: *
-Disallow: /imagens/
-Disallow: /favicons/
-
-# Permite indexação do restante do site
 Allow: /
 
-# Sitemap
-Sitemap: https://nexasite.netlify.app/sitemap.xml
+Sitemap: https://nexasitesdev.com.br/sitemap.xml
