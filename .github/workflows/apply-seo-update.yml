@@ -31,15 +31,15 @@ jobs:
           cp assets/portfolio/winfascend.png /tmp/keep/assets/portfolio/
           cp favicons/2-removebg-preview.png /tmp/keep/favicons/
 
-          cat .deploy/chunk_* | base64 -d > /tmp/nexa-text.tar.gz
-          gzip -t /tmp/nexa-text.tar.gz
+          cat .deploy/pkg_* | base64 -d > /tmp/nexa-text.tar.xz
+          xz -t /tmp/nexa-text.tar.xz
 
           find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.deploy' ! -name '.github' -exec rm -rf {} +
 
           mkdir -p assets/portfolio favicons
           cp /tmp/keep/assets/portfolio/* assets/portfolio/
           cp /tmp/keep/favicons/* favicons/
-          tar -xzf /tmp/nexa-text.tar.gz -C .
+          tar -xJf /tmp/nexa-text.tar.xz -C .
 
           test -f index.html
           test -f robots.txt
@@ -57,5 +57,3 @@ jobs:
           git add -A
           git commit -m "SEO: replace site with optimized structure"
           git push origin HEAD:main
-
-# trigger
