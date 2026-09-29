@@ -59,3 +59,5 @@ jobs:
           git push origin HEAD:main
 
 # all-parts-ready
+
+# verified-package
