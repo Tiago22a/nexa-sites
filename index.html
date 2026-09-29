@@ -1,938 +1,560 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Básico -->
-    <title>Nexa Sites | Dobre Seu Faturamento com Sites de Alta Conversão</title>
-    <meta name="description"
-        content="Seu site não vende? Pare de perder dinheiro. A Nexa Sites constrói máquinas de vendas digitais que transformam visitantes em clientes pagantes. Foco total no seu lucro. É hora de parar de brincar.">
-    <meta name="keywords"
-        content="criação de sites, landing pages, SEO, funil de vendas, marketing digital, desenvolvimento web, nexa sites, sites de alta performance">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Nexa Sites">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-16x16-removebg-preview.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Open Graph (Facebook, WhatsApp, Messenger) -->
-    <meta property="og:title" content="Nexa Sites | Dobre Seu Faturamento com Sites de Alta Conversão">
-    <meta property="og:description"
-        content="Seu site não vende? Pare de perder dinheiro. A Nexa Sites constrói máquinas de vendas digitais que transformam visitantes em clientes pagantes. Foco total no seu lucro. É hora de parar de brincar.">
-    <meta property="og:image"
-        content="https://nexasite.netlify.app/imagens/Entre em contato conosco link na nossa bio! @grandesite.png">
-    <meta property="og:url" content="https://nexasite.netlify.app/">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nexa Sites | Dobre Seu Faturamento com Sites de Alta Conversão">
-    <meta name="twitter:description"
-        content="Seu site não vende? Pare de perder dinheiro. A Nexa Sites constrói máquinas de vendas digitais que transformam visitantes em clientes pagantes. Foco total no seu lucro. É hora de parar de brincar.">
-    <meta name="twitter:image"
-        content="https://nexasite.netlify.app/imagens/Entre em contato conosco link na nossa bio! @grandesite.png">
-    <meta name="twitter:site" content="@NexaSites">
-    <link rel="canonical" href="https://nexasite.netlify.app/">
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://nexasite.netlify.app/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nexasite.netlify.app/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Nexa Sites",
-  "url": "https://nexasite.netlify.app/",
-  "logo": "https://nexasite.netlify.app/favicons/favicon-16x16-removebg-preview.png",
-  "sameAs": [
-    "https://www.instagram.com/nexasites_dev",
-    "https://www.linkedin.com/in/nexa-sites-09893b384/"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+55-83-9411-9581",
-    "contactType": "customer service",
-    "areaServed": "BR",
-    "availableLanguage": ["Portuguese"]
-  }
-}
-</script>
-
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Iconify CDN -->
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#7c3aed',
-                        secondary: '#3b82f6',
-                        dark: '#0f0f1a',
-                        card: '#1a1a2e',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            background-color: #0f0f1a;
-            color: #f8fafc;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
-        }
-
-        .glow-hover:hover {
-            box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
-        }
-
-        .animate-bounce {
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
-
-    <!-- Meta Pixel Code -->
+<meta content="index,follow,max-image-preview:large" name="robots"/><link href="https://nexasitesdev.com.br/" rel="canonical"/><link href="https://nexasitesdev.com.br/" hreflang="pt-BR" rel="alternate"/><meta content="website" property="og:type"/><meta content="pt_BR" property="og:locale"/><meta content="Nexa Sites Dev" property="og:site_name"/><meta content="Criação de Sites para Negócios Locais | Nexa Sites Dev" property="og:title"/><meta content="Sites profissionais, landing pages, SEO local e presença digital para negócios locais." property="og:description"/><meta content="https://nexasitesdev.com.br/" property="og:url"/><meta content="https://nexasitesdev.com.br/assets/og-nexa.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Criação de Sites para Negócios Locais | Nexa Sites Dev" name="twitter:title"/><meta content="Sites, Google e WhatsApp trabalhando juntos para o seu negócio local." name="twitter:description"/><meta content="https://nexasitesdev.com.br/assets/og-nexa.jpg" name="twitter:image"/><link href="/assets/nexa-mark.png" rel="icon" type="image/png"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Criação de Sites para Negócios Locais | Nexa Sites Dev</title>
+<meta content="Sites profissionais, landing pages, SEO local, identidade e organização comercial para negócios locais. Veja projetos reais e fale direto no WhatsApp." name="description"/>
+<meta content="#0b7cf5" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '748470417857858');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=748470417857858&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-</head>
-
-<body>
-
-    <a href="https://api.whatsapp.com/send?phone=558394119581"
-        class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300"
-        target="_blank" aria-label="Fale no WhatsApp"
-        onclick="fbq('track', 'Lead'); fbq('track', 'Contact');">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-                d="M12.04 2.003a9.96 9.96 0 0 0-8.26 15.263L2 22l4.84-1.755a9.96 9.96 0 0 0 5.2 1.43c5.523 0 10-4.477 10-10s-4.477-9.672-10-9.672zm0 18.127a8.01 8.01 0 0 1-4.101-1.124l-.293-.175-2.863 1.038.978-2.976-.193-.307a8.012 8.012 0 1 1 6.472 3.544zm4.402-6.018c-.236-.118-1.394-.687-1.61-.765-.216-.079-.374-.118-.531.118-.157.236-.61.765-.748.923-.138.157-.275.177-.511.059-.236-.118-.996-.366-1.897-1.168-.7-.625-1.173-1.397-1.31-1.633-.138-.236-.015-.364.103-.482.105-.104.236-.275.354-.413.118-.138.157-.236.236-.393.079-.157.04-.295-.02-.413-.059-.118-.531-1.28-.727-1.753-.191-.457-.386-.396-.531-.404l-.452-.008c-.157 0-.413.059-.63.295-.216.236-.827.807-.827 1.97 0 1.162.846 2.283.963 2.438.118.157 1.66 2.528 4.021 3.544.562.242 1.002.386 1.345.494.565.18 1.079.155 1.484.094.453-.068 1.394-.57 1.59-1.12.196-.55.196-1.021.137-1.12-.059-.098-.216-.157-.452-.275z" />
-        </svg>
-    </a>
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-lg border-b border-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 md:h-20">
-                <div class="flex items-center gap-0.1">
-                    <img src="/favicons/2-removebg-preview.png" alt="" class="w-16 h-16">
-                    <span class="text-xl md:text-2xl font-bold gradient-text">Nexa Sites</span>
-
-                </div>
-
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#portfolio"
-                        class="hidden md:block text-gray-300 hover:text-primary transition-colors">Portfólio</a>
-                    <a href="#services" class="text-gray-300 hover:text-primary transition-colors">Serviços</a>
-                    <a href="#benefits" class="text-gray-300 hover:text-primary transition-colors">Diferenciais</a>
-                    <a href="#results" class="text-gray-300 hover:text-primary transition-colors">Resultados</a>
-                    <a href="#portfolio" class="text-gray-300 hover:text-primary transition-colors">Portfólio</a>
-
-                </div>
-               <div class="hidden md:block">
-    <a href="#contact"
-       class="gradient-bg text-white px-6 py-2 rounded-lg font-semibold glow-hover transition-all duration-300">
-       Fale Conosco
-    </a>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nexa: {
+              blue: '#0B7CF5',
+              deep: '#0A56C8',
+              navy: '#10233E',
+              cyan: '#48D3F5',
+              yellow: '#FFD341',
+              ink: '#152238',
+              cream: '#F7F6F2',
+              line: '#E2E7EE'
+            }
+          },
+          fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+          boxShadow: {
+            soft: '0 18px 55px rgba(16,35,62,.09)',
+            lift: '0 22px 70px rgba(11,124,245,.12)'
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    html{scroll-behavior:smooth}
+    body{font-family:Manrope,system-ui,sans-serif;color:#152238;background:#fff;-webkit-font-smoothing:antialiased}
+    *{box-sizing:border-box}
+    ::selection{background:#FFD341;color:#10233E}
+    .wrap{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .hairline{height:1px;background:#E2E7EE}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+    .nav-open{display:block!important}
+    .project-frame{background:#eef6ff;overflow:hidden}
+    .project-frame img{width:100%;height:auto;display:block}
+    .plan-list li{display:flex;gap:.65rem;align-items:flex-start}
+    .plan-list li::before{content:'✓';font-weight:800;color:#0B7CF5;line-height:1.45}
+    .faq-answer{grid-template-rows:0fr;transition:grid-template-rows .25s ease}
+    .faq-answer>div{overflow:hidden}
+    .faq-item.open .faq-answer{grid-template-rows:1fr}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-icon{transition:transform .2s ease}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nexasitesdev.com.br/#organization","name":"Nexa Sites Dev","alternateName":"Nexa Sites Blue","url":"https://nexasitesdev.com.br/","logo":"https://nexasitesdev.com.br/assets/nexa-mark.png","image":"https://nexasitesdev.com.br/assets/og-nexa.jpg","sameAs":["https://www.instagram.com/nexasites_dev/"],"contactPoint":[{"@type":"ContactPoint","telephone":"+55-83-9411-9581","contactType":"sales","areaServed":"BR","availableLanguage":["Portuguese"]}]},{"@type":"WebSite","@id":"https://nexasitesdev.com.br/#website","url":"https://nexasitesdev.com.br/","name":"Nexa Sites Dev","inLanguage":"pt-BR","publisher":{"@id":"https://nexasitesdev.com.br/#organization"}},{"@type":"WebPage","@id":"https://nexasitesdev.com.br/#webpage","url":"https://nexasitesdev.com.br/","name":"Criação de Sites para Negócios Locais | Nexa Sites Dev","description":"Sites profissionais, landing pages, SEO local, identidade e organização comercial para negócios locais.","isPartOf":{"@id":"https://nexasitesdev.com.br/#website"},"about":{"@id":"https://nexasitesdev.com.br/#organization"},"inLanguage":"pt-BR"}]}</script></head>
+<body class="bg-white">
+<header class="sticky top-0 z-50 border-b border-nexa-line/80 bg-white/95 backdrop-blur">
+<div class="wrap flex h-[72px] items-center justify-between gap-6">
+<a aria-label="Nexa — início" class="flex items-center" href="#inicio">
+<img alt="Nexa Sites Dev" class="h-9 w-auto" decoding="async" height="52" loading="lazy" src="/assets/nexa-mark.png" width="52"/>
+</a>
+<nav aria-label="Navegação principal" class="hidden items-center gap-7 lg:flex">
+<a class="text-[13px] font-semibold text-slate-600 transition hover:text-nexa-blue" href="#projetos">Projetos</a>
+<a class="text-[13px] font-semibold text-slate-600 transition hover:text-nexa-blue" href="#o-que-fazemos">O que fazemos</a>
+<a class="text-[13px] font-semibold text-slate-600 transition hover:text-nexa-blue" href="#como-funciona">Como funciona</a>
+<a class="text-[13px] font-semibold text-slate-600 transition hover:text-nexa-blue" href="#planos">Planos</a>
+<a class="text-[13px] font-semibold text-slate-600 transition hover:text-nexa-blue" href="#duvidas">Dúvidas</a>
+</nav>
+<div class="hidden lg:block">
+<a class="inline-flex h-11 items-center justify-center rounded-full bg-nexa-navy px-5 text-[13px] font-bold text-white transition hover:bg-nexa-blue" data-wa="Olá! Vim pelo site da Nexa e quero conversar sobre a presença digital do meu negócio." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Falar no WhatsApp</a>
 </div>
+<button aria-expanded="false" aria-label="Abrir menu" class="grid h-11 w-11 place-items-center rounded-xl border border-nexa-line lg:hidden" id="menuBtn" type="button">
+<svg fill="none" height="21" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="21"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+<div class="hidden border-t border-nexa-line bg-white lg:hidden" id="mobileNav">
+<div class="wrap py-3">
+<a class="block border-b border-slate-100 py-3 text-sm font-semibold" href="#projetos">Projetos</a>
+<a class="block border-b border-slate-100 py-3 text-sm font-semibold" href="#o-que-fazemos">O que fazemos</a>
+<a class="block border-b border-slate-100 py-3 text-sm font-semibold" href="#como-funciona">Como funciona</a>
+<a class="block border-b border-slate-100 py-3 text-sm font-semibold" href="#planos">Planos</a>
+<a class="block border-b border-slate-100 py-3 text-sm font-semibold" href="#duvidas">Dúvidas</a>
+<a class="mt-3 block rounded-xl bg-nexa-navy px-4 py-3 text-center text-sm font-bold text-white" data-wa="Olá! Vim pelo site da Nexa e quero conversar sobre a presença digital do meu negócio." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Falar no WhatsApp</a>
+</div>
+</div>
+</header>
+<main>
+<section class="overflow-hidden bg-white" id="inicio">
+<div class="wrap grid items-center gap-12 py-16 lg:grid-cols-[.92fr_1.08fr] lg:gap-16 lg:py-24">
+<div>
+<div class="mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[.16em] text-nexa-blue">
+<span class="h-px w-8 bg-nexa-blue"></span>
+            Feito para negócios locais
+          </div>
+<h1 class="max-w-[680px] text-[46px] font-extrabold leading-[1.02] tracking-[-.045em] text-nexa-navy sm:text-[58px] lg:text-[72px]">
+            Seu negócio já é bom. <span class="text-nexa-blue">O site precisa deixar isso óbvio.</span>
+</h1>
+<p class="mt-6 max-w-[650px] text-[17px] leading-8 text-slate-600">
+            Criamos site, presença no Google, identidade e conteúdo para ajudar quem encontra sua empresa a entender rápido o que você faz, confiar no seu trabalho e chamar no WhatsApp.
+          </p>
+<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+<a class="inline-flex min-h-[52px] items-center justify-center rounded-xl bg-nexa-yellow px-6 py-4 text-sm font-extrabold text-nexa-navy shadow-[0_12px_30px_rgba(255,211,65,.26)] transition hover:-translate-y-0.5" data-wa="Olá! Quero uma avaliação do site/Instagram do meu negócio. Posso enviar o link e explicar o que eu vendo?" href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Quero uma avaliação do meu negócio →</a>
+<a class="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-slate-300 px-6 py-4 text-sm font-bold text-nexa-navy transition hover:border-nexa-blue hover:text-nexa-blue" href="#projetos">Ver trabalhos reais</a>
+</div>
+<div class="mt-6 max-w-[650px] border-l-2 border-nexa-cyan pl-4 text-[13px] leading-6 text-slate-500">
+<strong class="text-nexa-navy">Sem compromisso:</strong> envie seu site ou Instagram e diga o que mais quer vender. A gente responde com 3 melhorias objetivas para você já sair da conversa com algo útil.
+          </div>
+<p class="mt-3 text-[11px] leading-5 text-slate-400">A data de início depende da próxima janela de produção disponível no momento da aprovação.</p>
+</div>
+<div class="relative">
+<div class="absolute -right-12 -top-12 h-52 w-52 rounded-full bg-nexa-cyan/15 blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-nexa-yellow/20 blur-3xl"></div>
+<div class="relative rounded-[28px] bg-[#edf6ff] p-4 shadow-soft sm:p-6">
+<div class="mb-4 flex items-center justify-between px-1">
+<div>
+<div class="text-xs font-extrabold uppercase tracking-[.12em] text-nexa-blue">Projeto real</div>
+<div class="mt-1 text-sm font-bold text-nexa-navy" id="heroProjectLabel">Ecoletas · Sorocaba</div>
+</div>
+<div class="text-[11px] font-semibold text-slate-400">desktop + mobile</div>
+</div>
+<div class="overflow-hidden rounded-[20px] bg-nexa-blue">
+<img alt="Projeto Ecoletas em desktop e celular" class="w-full h-auto" decoding="async" fetchpriority="high" height="1350" id="heroProjectImage" src="/assets/portfolio-2.webp" width="1080"/>
+</div>
+<div aria-label="Trocar projeto em destaque" class="mt-4 flex gap-2 overflow-x-auto pb-1">
+<button class="project-switch rounded-full bg-nexa-navy px-4 py-2 text-[11px] font-bold text-white" data-image="/assets/portfolio-2.webp" data-label="Ecoletas · Sorocaba" type="button">Ecoletas</button>
+<button class="project-switch rounded-full bg-white px-4 py-2 text-[11px] font-bold text-slate-600 ring-1 ring-nexa-line" data-image="/assets/portfolio-1.webp" data-label="Mister Wood · projetos em madeira" type="button">Mister Wood</button>
+<button class="project-switch rounded-full bg-white px-4 py-2 text-[11px] font-bold text-slate-600 ring-1 ring-nexa-line" data-image="/assets/portfolio-3.webp" data-label="WINF · películas de alta performance" type="button">WINF</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="border-y border-nexa-line bg-nexa-cream">
+<div class="wrap grid gap-0 md:grid-cols-4">
+<div class="border-b border-nexa-line py-6 md:border-b-0 md:border-r md:pr-8">
+<div class="text-sm font-extrabold text-nexa-navy">Um site que explica</div>
+<p class="mt-1 text-xs leading-5 text-slate-500">Seu cliente entende seu serviço sem precisar perguntar tudo no WhatsApp.</p>
+</div>
+<div class="border-b border-nexa-line py-6 md:border-b-0 md:border-r md:px-8">
+<div class="text-sm font-extrabold text-nexa-navy">Mais presença no Google</div>
+<p class="mt-1 text-xs leading-5 text-slate-500">Estrutura pensada para quem procura pelo seu serviço na sua cidade.</p>
+</div>
+<div class="border-b border-nexa-line py-6 md:border-b-0 md:border-r md:px-8">
+<div class="text-sm font-extrabold text-nexa-navy">Instagram com padrão</div>
+<p class="mt-1 text-xs leading-5 text-slate-500">Visual e conteúdo coerentes com a imagem que sua empresa quer passar.</p>
+</div>
+<div class="py-6 md:pl-8">
+<div class="text-sm font-extrabold text-nexa-navy">Contatos organizados</div>
+<p class="mt-1 text-xs leading-5 text-slate-500">Menos lead perdido, menos tarefa repetida e mais clareza no atendimento.</p>
+</div>
+</div>
+</section>
+<section class="py-20 lg:py-28">
+<div class="wrap grid gap-12 lg:grid-cols-[.82fr_1.18fr] lg:gap-24">
+<div class="reveal">
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-blue">O que realmente importa</div>
+<h2 class="mt-4 text-[38px] font-extrabold leading-[1.08] tracking-[-.035em] text-nexa-navy sm:text-[48px]">Seu cliente não precisa entender marketing.</h2>
+<p class="mt-5 text-[16px] leading-8 text-slate-600">Ele precisa bater o olho e sentir que encontrou uma empresa organizada, profissional e fácil de contratar.</p>
+</div>
+<div class="reveal border-t border-nexa-line">
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[150px_1fr]">
+<div class="text-sm font-extrabold text-nexa-navy">1. Encontrar</div>
+<p class="text-sm leading-7 text-slate-600">Google, indicação ou Instagram levam a pessoa até você. A primeira impressão acontece antes do primeiro contato.</p>
+</div>
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[150px_1fr]">
+<div class="text-sm font-extrabold text-nexa-navy">2. Entender</div>
+<p class="text-sm leading-7 text-slate-600">A página mostra o que você faz, onde atende, para quem é, por que vale a pena e qual é o próximo passo.</p>
+</div>
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[150px_1fr]">
+<div class="text-sm font-extrabold text-nexa-navy">3. Confiar</div>
+<p class="text-sm leading-7 text-slate-600">Visual, fotos, projetos, informações e conteúdo trabalham juntos para reduzir aquela sensação de “será que essa empresa é boa?”.</p>
+</div>
+<div class="grid gap-4 py-7 sm:grid-cols-[150px_1fr]">
+<div class="text-sm font-extrabold text-nexa-navy">4. Chamar</div>
+<p class="text-sm leading-7 text-slate-600">WhatsApp, formulário e organização interna deixam o contato mais simples para quem compra e mais fácil de acompanhar para quem vende.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-nexa-cream py-20 lg:py-28" id="projetos">
+<div class="wrap">
+<div class="reveal max-w-3xl">
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-blue">Trabalhos reais</div>
+<h2 class="mt-4 text-[38px] font-extrabold leading-[1.08] tracking-[-.035em] text-nexa-navy sm:text-[52px]">Três negócios. Três jeitos diferentes de vender.</h2>
+<p class="mt-5 text-[16px] leading-8 text-slate-600">O visual não nasce de um “modelo bonito”. Ele nasce da forma como o cliente daquele negócio decide comprar.</p>
+</div>
+<div class="mt-14 space-y-16 lg:mt-20 lg:space-y-24">
+<article class="reveal grid items-center gap-8 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
+<div class="project-frame rounded-[24px] p-3 shadow-soft sm:p-5">
+<img alt="Site Ecoletas em desktop e celular" class="rounded-[16px]" decoding="async" height="1350" loading="lazy" src="/assets/portfolio-2.webp" width="1080"/>
+</div>
+<div>
+<div class="text-xs font-extrabold uppercase tracking-[.14em] text-nexa-blue">Ecoletas · serviço local</div>
+<h3 class="mt-3 text-[31px] font-extrabold leading-tight tracking-[-.03em] text-nexa-navy">Quem procura no Google quer resposta rápida.</h3>
+<p class="mt-5 text-sm leading-7 text-slate-600">No site da Ecoletas, a pessoa vê logo de cara o serviço, a região atendida, o preço inicial e o botão para chamar. Nada fica escondido atrás de texto demais.</p>
+<div class="mt-6 border-l-2 border-nexa-cyan pl-4 text-sm leading-7 text-slate-600"><strong class="text-nexa-navy">O que o layout resolve:</strong> reduz dúvidas antes do contato e deixa o caminho até o pedido mais curto.</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-nexa-blue" href="https://ecoletassorocaba.com.br/" rel="noopener" target="_blank">Ver site publicado ↗</a>
+</div>
+</article>
+<article class="reveal grid items-center gap-8 lg:grid-cols-[.92fr_1.08fr] lg:gap-16">
+<div class="order-2 lg:order-1">
+<div class="text-xs font-extrabold uppercase tracking-[.14em] text-nexa-blue">Mister Wood · serviço de alto valor</div>
+<h3 class="mt-3 text-[31px] font-extrabold leading-tight tracking-[-.03em] text-nexa-navy">Antes de pedir orçamento, o cliente precisa perceber o nível do trabalho.</h3>
+<p class="mt-5 text-sm leading-7 text-slate-600">Aqui o projeto dá mais espaço para imagens, acabamento e portfólio. O site prepara a conversa comercial mostrando qualidade antes de falar de preço.</p>
+<div class="mt-6 border-l-2 border-nexa-yellow pl-4 text-sm leading-7 text-slate-600"><strong class="text-nexa-navy">O que o layout resolve:</strong> ajuda a sustentar percepção de valor e filtra melhor quem chega para orçamento.</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-nexa-blue" href="https://misterwood.com.br/" rel="noopener" target="_blank">Ver site publicado ↗</a>
+</div>
+<div class="project-frame order-1 rounded-[24px] p-3 shadow-soft sm:p-5 lg:order-2">
+<img alt="Site Mister Wood em desktop e celular" class="rounded-[16px]" decoding="async" height="1350" loading="lazy" src="/assets/portfolio-1.webp" width="1080"/>
+</div>
+</article>
+<article class="reveal grid items-center gap-8 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
+<div class="project-frame rounded-[24px] p-3 shadow-soft sm:p-5">
+<img alt="Site WINF em desktop e celular" class="rounded-[16px]" decoding="async" height="1350" loading="lazy" src="/assets/portfolio-3.webp" width="1080"/>
+</div>
+<div>
+<div class="text-xs font-extrabold uppercase tracking-[.14em] text-nexa-blue">WINF · marca técnica e premium</div>
+<h3 class="mt-3 text-[31px] font-extrabold leading-tight tracking-[-.03em] text-nexa-navy">Tecnologia precisa parecer simples para quem compra.</h3>
+<p class="mt-5 text-sm leading-7 text-slate-600">Na WINF, a estrutura equilibra impacto visual com informação técnica. O visitante entende primeiro o benefício e depois aprofunda em produto, aplicação e atendimento.</p>
+<div class="mt-6 border-l-2 border-nexa-blue pl-4 text-sm leading-7 text-slate-600"><strong class="text-nexa-navy">O que o layout resolve:</strong> organiza uma oferta mais complexa sem transformar a página em catálogo confuso.</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-nexa-blue" href="https://winf.com.br/" rel="noopener" target="_blank">Ver site publicado ↗</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="py-20 lg:py-28" id="o-que-fazemos">
+<div class="wrap grid gap-12 lg:grid-cols-[.82fr_1.18fr] lg:gap-24">
+<div class="reveal lg:sticky lg:top-28 lg:self-start">
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-blue">O que a Nexa faz</div>
+<h2 class="mt-4 text-[38px] font-extrabold leading-[1.08] tracking-[-.035em] text-nexa-navy sm:text-[50px]">Uma presença digital que conversa com o seu dia a dia.</h2>
+<p class="mt-5 text-[15px] leading-8 text-slate-600">Você não precisa contratar cinco fornecedores para fazer cada pedaço funcionar separado.</p>
+</div>
+<div class="reveal border-t border-nexa-line">
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[190px_1fr]">
+<div><div class="text-sm font-extrabold text-nexa-navy">Site e páginas de campanha</div><div class="mt-1 text-[11px] font-semibold text-slate-400">sites · landing pages</div></div>
+<p class="text-sm leading-7 text-slate-600">Páginas claras, rápidas e feitas para levar quem visita até WhatsApp, orçamento, agenda ou formulário.</p>
+</div>
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[190px_1fr]">
+<div><div class="text-sm font-extrabold text-nexa-navy">Aparecer melhor no Google</div><div class="mt-1 text-[11px] font-semibold text-slate-400">SEO local e páginas por região</div></div>
+<p class="text-sm leading-7 text-slate-600">Organizamos conteúdo, páginas e estrutura para aumentar suas chances de aparecer para quem já procura o que você vende.</p>
+</div>
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[190px_1fr]">
+<div><div class="text-sm font-extrabold text-nexa-navy">Identidade da empresa</div><div class="mt-1 text-[11px] font-semibold text-slate-400">logo · cores · materiais</div></div>
+<p class="text-sm leading-7 text-slate-600">Ajustamos ou criamos a identidade para que site, proposta, fachada e redes sociais pareçam parte da mesma empresa.</p>
+</div>
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[190px_1fr]">
+<div><div class="text-sm font-extrabold text-nexa-navy">Conteúdo para Instagram</div><div class="mt-1 text-[11px] font-semibold text-slate-400">social media</div></div>
+<p class="text-sm leading-7 text-slate-600">Peças e textos com padrão visual para manter presença, mostrar trabalho e criar mais motivos para o cliente lembrar de você.</p>
+</div>
+<div class="grid gap-4 border-b border-nexa-line py-7 sm:grid-cols-[190px_1fr]">
+<div><div class="text-sm font-extrabold text-nexa-navy">Organização dos contatos</div><div class="mt-1 text-[11px] font-semibold text-slate-400">CRM comercial</div></div>
+<p class="text-sm leading-7 text-slate-600">Colocamos os contatos em etapas simples para você saber quem pediu orçamento, quem precisa de retorno e quem já fechou.</p>
+</div>
+<div class="grid gap-4 py-7 sm:grid-cols-[190px_1fr]">
+<div><div class="text-sm font-extrabold text-nexa-navy">Menos tarefa repetida</div><div class="mt-1 text-[11px] font-semibold text-slate-400">automações e sistemas</div></div>
+<p class="text-sm leading-7 text-slate-600">Formulários, avisos, orçamentos, painéis e pequenas rotinas automáticas para economizar tempo da equipe.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-nexa-navy py-20 text-white lg:py-24" id="como-funciona">
+<div class="wrap">
+<div class="reveal max-w-3xl">
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-cyan">Como funciona</div>
+<h2 class="mt-4 text-[38px] font-extrabold leading-[1.08] tracking-[-.035em] sm:text-[50px]">Sem reunião para parecer ocupado. Só o que precisa para fazer andar.</h2>
+</div>
+<div class="mt-12 grid border-y border-white/15 md:grid-cols-3">
+<div class="reveal border-b border-white/15 py-8 md:border-b-0 md:border-r md:pr-8">
+<div class="text-xs font-extrabold text-nexa-cyan">01</div>
+<h3 class="mt-4 text-xl font-extrabold">A gente entende seu negócio</h3>
+<p class="mt-3 text-sm leading-7 text-white/65">O que você vende, onde atende, quem compra, o que mais perguntam e onde hoje você perde tempo ou oportunidade.</p>
+</div>
+<div class="reveal border-b border-white/15 py-8 md:border-b-0 md:border-r md:px-8">
+<div class="text-xs font-extrabold text-nexa-cyan">02</div>
+<h3 class="mt-4 text-xl font-extrabold">A gente monta e publica</h3>
+<p class="mt-3 text-sm leading-7 text-white/65">Texto, visual, site, páginas, organização dos contatos e o que estiver no escopo entram em produção com etapas claras.</p>
+</div>
+<div class="reveal py-8 md:pl-8">
+<div class="text-xs font-extrabold text-nexa-cyan">03</div>
+<h3 class="mt-4 text-xl font-extrabold">A gente melhora com o uso</h3>
+<p class="mt-3 text-sm leading-7 text-white/65">Nos planos de 6 e 12 meses, a estrutura continua evoluindo conforme surgem novas campanhas, páginas e necessidades reais.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 lg:py-28" id="planos">
+<div class="wrap">
+<div class="reveal grid gap-8 lg:grid-cols-[1fr_.7fr] lg:items-end">
+<div>
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-blue">Planos</div>
+<h2 class="mt-4 max-w-3xl text-[38px] font-extrabold leading-[1.08] tracking-[-.035em] text-nexa-navy sm:text-[52px]">Escolha pelo momento do negócio, não pelo nome do pacote.</h2>
+</div>
+<p class="text-[15px] leading-8 text-slate-600">Os valores abaixo são o investimento total do período. Nada de transformar um projeto grande em uma mensalidade pequena só para parecer barato.</p>
+</div>
+<div class="reveal mt-10 flex flex-col gap-3 rounded-2xl border border-nexa-line bg-nexa-cream px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+<div>
+<div class="text-sm font-extrabold text-nexa-navy">No anual, o segundo semestre custa bem menos</div>
+<p class="mt-1 text-xs leading-5 text-slate-500">6 meses custam <strong>R$ 6.900</strong>. Para ficar o ano inteiro, você acrescenta só <strong>R$ 4.000</strong>.</p>
+</div>
+<div class="text-left sm:text-right">
+<div class="text-[12px] font-bold uppercase tracking-[.1em] text-nexa-blue">No anual</div>
+<div class="mt-1 text-2xl font-extrabold tracking-[-.03em] text-nexa-navy">R$ 10.900</div>
+<div class="text-xs text-slate-500">R$ 2.900 a menos no ano</div>
+</div>
+</div>
+<div class="mt-7 grid gap-5 lg:grid-cols-3">
+<article class="reveal flex flex-col rounded-[22px] border border-nexa-line bg-white p-7">
+<div class="text-xs font-extrabold uppercase tracking-[.13em] text-nexa-blue">Avulso</div>
+<h3 class="mt-3 text-2xl font-extrabold text-nexa-navy">Arrumar a casa</h3>
+<p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-600">Para quem precisa colocar uma presença profissional no ar e começar com uma base bem feita.</p>
+<div class="mt-5 border-y border-nexa-line py-5">
+<div class="text-xs text-slate-400">Investimento do projeto</div>
+<div class="mt-1 text-[38px] font-extrabold tracking-[-.04em] text-nexa-navy">R$ 1.790</div>
+</div>
+<ul class="plan-list mt-6 space-y-3 text-[13px] leading-6 text-slate-600">
+<li>Site de uma página ou landing page</li>
+<li>Textos comerciais e direção visual</li>
+<li>Ajuste da identidade para o digital</li>
+<li>Configuração inicial para Google</li>
+<li>Organização simples dos contatos (CRM)</li>
+<li>6 peças para apresentar o projeto nas redes</li>
+<li>WhatsApp, formulário e medição de acessos</li>
+<li>30 dias de suporte após a publicação</li>
+</ul>
+<a class="mt-7 inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 px-5 text-sm font-extrabold text-nexa-navy transition hover:border-nexa-blue hover:text-nexa-blue" data-wa="Olá! Tenho interesse no plano Avulso da Nexa. Quero entender como ficaria para o meu negócio." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Quero começar pelo avulso</a>
+</article>
+<article class="reveal flex flex-col rounded-[22px] border border-nexa-line bg-white p-7">
+<div class="text-xs font-extrabold uppercase tracking-[.13em] text-nexa-blue">6 meses</div>
+<h3 class="mt-3 text-2xl font-extrabold text-nexa-navy">Ganhar consistência</h3>
+<p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-600">Para quem já vende e quer parar de fazer site, Instagram e atendimento como coisas separadas.</p>
+<div class="mt-5 border-y border-nexa-line py-5">
+<div class="text-xs text-slate-400">Investimento total do período</div>
+<div class="mt-1 text-[38px] font-extrabold tracking-[-.04em] text-nexa-navy">R$ 6.900</div>
+</div>
+<ul class="plan-list mt-6 space-y-3 text-[13px] leading-6 text-slate-600">
+<li>Site institucional + até 2 páginas de campanha</li>
+<li>Identidade visual digital e materiais principais</li>
+<li>8 peças de conteúdo por mês</li>
+<li>Trabalho contínuo para melhorar presença no Google</li>
+<li>Organização do funil de contatos e orçamentos</li>
+<li>Até 2 automações prioritárias</li>
+<li>1 fluxo interno leve, quando fizer sentido</li>
+<li>Ajustes e suporte durante 6 meses</li>
+</ul>
+<a class="mt-7 inline-flex min-h-12 items-center justify-center rounded-xl bg-nexa-navy px-5 text-sm font-extrabold text-white transition hover:bg-nexa-blue" data-wa="Olá! Quero entender o plano de 6 meses da Nexa para o meu negócio." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Quero avaliar 6 meses</a>
+</article>
+<article class="reveal relative flex flex-col rounded-[22px] border-2 border-nexa-blue bg-[#f8fbff] p-7 shadow-lift">
+<div class="absolute -top-3 left-6 rounded-full bg-nexa-yellow px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.08em] text-nexa-navy">Mais vantajoso no ano</div>
+<div class="text-xs font-extrabold uppercase tracking-[.13em] text-nexa-blue">12 meses</div>
+<h3 class="mt-3 text-2xl font-extrabold text-nexa-navy">Construir presença de verdade</h3>
+<p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-600">Para quem quer usar o digital o ano inteiro para gerar confiança, campanhas e uma operação mais organizada.</p>
+<div class="mt-5 border-y border-nexa-line py-5">
+<div class="text-xs text-slate-400">Investimento total do período</div>
+<div class="mt-1 text-[38px] font-extrabold tracking-[-.04em] text-nexa-navy">R$ 10.900</div>
+<div class="mt-2 text-xs font-bold text-nexa-blue">economia de R$ 2.900 versus 2 semestrais</div>
+</div>
+<ul class="plan-list mt-6 space-y-3 text-[13px] leading-6 text-slate-600">
+<li>Site + até 4 páginas para campanhas ou regiões</li>
+<li>Identidade visual completa e guia de aplicação</li>
+<li>10 peças de conteúdo por mês</li>
+<li>Trabalho contínuo para Google e buscas locais</li>
+<li>Organização comercial, automações e integrações</li>
+<li>Até 2 fluxos ou ferramentas internas leves</li>
+<li>Revisão da estratégia a cada trimestre</li>
+<li>Prioridade de suporte durante 12 meses</li>
+</ul>
+<a class="mt-7 inline-flex min-h-12 items-center justify-center rounded-xl bg-nexa-blue px-5 text-sm font-extrabold text-white transition hover:bg-nexa-deep" data-wa="Olá! Quero entender o plano anual da Nexa e como ele pode ser aplicado ao meu negócio." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Quero planejar o ano</a>
+</article>
+</div>
+<p class="mt-4 text-[11px] leading-5 text-slate-400">Domínio, hospedagem, anúncios pagos, licenças externas e captação presencial de foto ou vídeo são orçados à parte quando necessários.</p>
+<div class="reveal mt-10 grid gap-8 rounded-[24px] bg-nexa-navy p-7 text-white sm:p-9 lg:grid-cols-[1fr_auto] lg:items-center">
+<div>
+<div class="text-xs font-extrabold uppercase tracking-[.14em] text-nexa-cyan">Projeto sob medida</div>
+<h3 class="mt-3 text-[29px] font-extrabold leading-tight tracking-[-.03em]">Tem mais de uma unidade, catálogo, orçamento online ou alguma rotina própria?</h3>
+<p class="mt-3 max-w-3xl text-sm leading-7 text-white/65">A gente monta um escopo específico para o seu caso — incluindo integrações, área do cliente, páginas por cidade, ferramentas internas ou o que realmente fizer sentido.</p>
+</div>
+<a class="inline-flex min-h-12 items-center justify-center rounded-xl bg-nexa-yellow px-6 text-sm font-extrabold text-nexa-navy" data-wa="Olá! Meu negócio precisa de um projeto personalizado. Quero explicar o que preciso." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Explicar meu projeto →</a>
+</div>
+</div>
+</section>
+<section class="border-y border-nexa-line bg-[#eef7ff] py-16 lg:py-20">
+<div class="wrap grid gap-9 lg:grid-cols-[1fr_.72fr] lg:items-center">
+<div class="reveal">
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-blue">Comece sem compromisso</div>
+<h2 class="mt-4 max-w-3xl text-[36px] font-extrabold leading-[1.08] tracking-[-.035em] text-nexa-navy sm:text-[48px]">Manda o que você tem hoje. A gente te mostra por onde começaria.</h2>
+<p class="mt-5 max-w-3xl text-[15px] leading-8 text-slate-600">Envie seu site ou Instagram, diga o que você vende e em qual cidade atende. A gente devolve 3 pontos de melhoria antes de falar em contrato.</p>
+<p class="mt-4 max-w-3xl text-[13px] leading-6 text-slate-500">Enquanto sua presença não deixa seu valor claro, parte de quem te encontra continua comparando — e pode acabar fechando com quem explica melhor.</p>
+</div>
+<div class="reveal rounded-[20px] bg-white p-6 shadow-soft">
+<div class="text-sm font-extrabold text-nexa-navy">Para a análise, basta mandar:</div>
+<div class="mt-4 space-y-3 text-sm text-slate-600">
+<div class="flex gap-3"><span class="font-extrabold text-nexa-blue">01</span><span>link do site ou Instagram</span></div>
+<div class="flex gap-3"><span class="font-extrabold text-nexa-blue">02</span><span>o serviço que você mais quer vender</span></div>
+<div class="flex gap-3"><span class="font-extrabold text-nexa-blue">03</span><span>a cidade ou região que atende</span></div>
+</div>
+<a class="mt-6 inline-flex w-full min-h-12 items-center justify-center rounded-xl bg-nexa-yellow px-5 text-sm font-extrabold text-nexa-navy" data-wa="Olá! Quero receber as 3 melhorias para o meu negócio. Vou enviar meu site/Instagram, o serviço principal e a cidade onde atuo." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">Enviar para análise →</a>
+<p class="mt-3 text-[10px] leading-5 text-slate-400">A análise é manual. O início de um projeto depende da agenda de produção disponível na data da aprovação.</p>
+</div>
+</div>
+</section>
+<section class="border-y border-nexa-line bg-white py-16 lg:py-20">
+<div class="wrap">
+<div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+<div>
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-blue">Soluções por intenção</div>
+<h2 class="mt-4 text-[34px] font-extrabold leading-[1.08] tracking-[-.035em] text-nexa-navy sm:text-[44px]">Encontre a estrutura certa para o jeito que seu cliente procura.</h2>
+<p class="mt-4 text-sm leading-7 text-slate-600">Criamos páginas específicas quando a busca é específica — sem copiar conteúdo ou criar páginas vazias só para ocupar resultados.</p>
+</div>
+<div class="grid gap-3 sm:grid-cols-2">
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/criacao-de-sites/">Criação de sites →</a>
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/sites-para-negocios-locais/">Sites para negócios locais →</a>
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/landing-pages/">Landing pages →</a>
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/seo-local/">SEO local →</a>
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/site-para-clinica-com-agendamento-no-whatsapp/">Clínicas e consultórios →</a>
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/site-para-oficina-mecanica-com-orcamento-no-whatsapp/">Oficinas e auto centers →</a>
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/site-para-restaurante-com-cardapio-e-whatsapp/">Restaurantes →</a>
+<a class="rounded-xl border border-nexa-line p-4 text-sm font-bold text-nexa-navy hover:border-nexa-blue" href="/site-para-vidracaria-com-orcamento/">Vidraçarias →</a>
+</div>
+</div>
+</div>
+</section><section class="py-20 lg:py-24" id="duvidas">
+<div class="wrap max-w-[900px]">
+<div class="reveal text-center">
+<div class="text-xs font-extrabold uppercase tracking-[.15em] text-nexa-blue">Dúvidas comuns</div>
+<h2 class="mt-4 text-[36px] font-extrabold tracking-[-.035em] text-nexa-navy sm:text-[46px]">Antes de contratar, é normal querer entender isso.</h2>
+</div>
+<div class="reveal mt-10 border-t border-nexa-line">
+<div class="faq-item border-b border-nexa-line">
+<button class="faq-btn flex w-full items-center justify-between gap-5 py-5 text-left text-[15px] font-extrabold text-nexa-navy" type="button"><span>Vocês fazem só site?</span><span class="faq-icon text-2xl font-normal text-nexa-blue">+</span></button>
+<div class="faq-answer grid"><div><p class="pb-5 pr-10 text-sm leading-7 text-slate-600">Não. O site costuma ser o centro, mas também trabalhamos identidade visual, conteúdo para redes, presença no Google, organização dos contatos, automações e pequenas ferramentas internas.</p></div></div>
+</div>
+<div class="faq-item border-b border-nexa-line">
+<button class="faq-btn flex w-full items-center justify-between gap-5 py-5 text-left text-[15px] font-extrabold text-nexa-navy" type="button"><span>Meu negócio é pequeno. Faz sentido?</span><span class="faq-icon text-2xl font-normal text-nexa-blue">+</span></button>
+<div class="faq-answer grid"><div><p class="pb-5 pr-10 text-sm leading-7 text-slate-600">Sim, desde que exista uma oferta clara e intenção de usar o digital para vender melhor. O plano avulso foi pensado justamente para quem precisa começar com uma base profissional sem assumir um contrato longo.</p></div></div>
+</div>
+<div class="faq-item border-b border-nexa-line">
+<button class="faq-btn flex w-full items-center justify-between gap-5 py-5 text-left text-[15px] font-extrabold text-nexa-navy" type="button"><span>Vocês cuidam do Instagram também?</span><span class="faq-icon text-2xl font-normal text-nexa-blue">+</span></button>
+<div class="faq-answer grid"><div><p class="pb-5 pr-10 text-sm leading-7 text-slate-600">Nos planos recorrentes, sim. Entram linha visual, textos e criação das peças dentro do volume de cada plano. Foto, vídeo presencial e anúncios pagos entram separadamente quando necessários.</p></div></div>
+</div>
+<div class="faq-item border-b border-nexa-line">
+<button class="faq-btn flex w-full items-center justify-between gap-5 py-5 text-left text-[15px] font-extrabold text-nexa-navy" type="button"><span>Vocês ajudam a organizar quem pede orçamento?</span><span class="faq-icon text-2xl font-normal text-nexa-blue">+</span></button>
+<div class="faq-answer grid"><div><p class="pb-5 pr-10 text-sm leading-7 text-slate-600">Sim. Podemos configurar um CRM simples para separar novos contatos, orçamentos, retornos e clientes fechados. O objetivo é deixar o acompanhamento fácil para a rotina da empresa.</p></div></div>
+</div>
+<div class="faq-item border-b border-nexa-line">
+<button class="faq-btn flex w-full items-center justify-between gap-5 py-5 text-left text-[15px] font-extrabold text-nexa-navy" type="button"><span>Posso começar avulso e depois ir para um plano maior?</span><span class="faq-icon text-2xl font-normal text-nexa-blue">+</span></button>
+<div class="faq-answer grid"><div><p class="pb-5 pr-10 text-sm leading-7 text-slate-600">Pode. A ideia é começar pelo que faz sentido agora e deixar a base pronta para receber novas páginas, conteúdo, Google, automações e organização comercial depois.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0B192D] text-white">
+<div class="wrap py-12 lg:py-14">
+<div class="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[1.2fr_.7fr_.7fr_.9fr]">
+<div>
+<img alt="Nexa Sites Dev" class="h-10 w-auto brightness-0 invert" decoding="async" height="52" loading="lazy" src="/assets/nexa-mark.png" width="52"/>
+<p class="mt-5 max-w-sm text-[13px] leading-7 text-white/55">Sites, identidade, conteúdo e organização digital para negócios locais que querem parecer tão profissionais online quanto já são no dia a dia.</p>
+</div>
+<div>
+<div class="text-[11px] font-extrabold uppercase tracking-[.12em] text-white/35">Navegação</div>
+<div class="mt-4 space-y-3 text-[13px] text-white/70">
+<a class="block transition hover:text-white" href="#projetos">Projetos</a>
+<a class="block transition hover:text-white" href="#o-que-fazemos">O que fazemos</a>
+<a class="block transition hover:text-white" href="#planos">Planos</a>
+<a class="block transition hover:text-white" href="#duvidas">Dúvidas</a>
+</div>
+</div>
+<div>
+<div class="text-[11px] font-extrabold uppercase tracking-[.12em] text-white/35">Atalhos</div>
+<div class="mt-4 space-y-3 text-[13px] text-white/70">
+<a class="block transition hover:text-white" href="https://ecoletassorocaba.com.br/" rel="noopener" target="_blank">Ecoletas ↗</a>
+<a class="block transition hover:text-white" href="https://misterwood.com.br/" rel="noopener" target="_blank">Mister Wood ↗</a>
+<a class="block transition hover:text-white" href="https://winf.com.br/" rel="noopener" target="_blank">WINF ↗</a>
+</div>
+</div>
+<div>
+<div class="text-[11px] font-extrabold uppercase tracking-[.12em] text-white/35">Fale com a Nexa</div>
+<div class="mt-4 space-y-3 text-[13px] text-white/70">
+<a class="flex items-center gap-2 transition hover:text-white" data-wa="Olá! Vim pelo site da Nexa e quero conversar sobre meu negócio." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+              (83) 9411-9581
+            </a>
+<a class="flex items-center gap-2 transition hover:text-white" href="https://www.instagram.com/nexasites_dev/" rel="noopener" target="_blank">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg>
+              @nexasites_dev
+            </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3 pt-6 text-[11px] text-white/35 sm:flex-row sm:items-center sm:justify-between">
+<div>© <span id="year"></span> Nexa Sites Dev. Todos os direitos reservados.</div>
+<div>Feito para negócios locais que querem vender melhor no digital.</div>
+</div>
+</div>
+</footer>
+<a aria-label="Falar com a Nexa no WhatsApp" class="fixed bottom-5 right-5 z-40 inline-flex h-[52px] items-center gap-2 rounded-full bg-[#19B965] px-4 text-xs font-extrabold text-white shadow-[0_16px_38px_rgba(25,185,101,.28)] transition hover:-translate-y-0.5" data-wa="Olá! Vim pelo site da Nexa e quero conversar sobre meu negócio." href="https://api.whatsapp.com/send?phone=558394119581" rel="noopener" target="_blank">
+<svg fill="none" height="19" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="19"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+<span class="hidden sm:inline">WhatsApp</span>
+</a>
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
 
-                <div class="md:hidden">
-                    <a href="#contact" class="gradient-bg text-white px-4 py-2 rounded-lg text-sm font-semibold">
-                        Contato
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('nav-open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-        <div class="absolute inset-0 z-0 opacity-20">
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent"></div>
-        </div>
+    mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileNav.classList.remove('nav-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
 
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-4xl mx-auto text-center space-y-6 py-8">
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-700/30 bg-purple-900/10 backdrop-blur-sm">
-                    <span class="iconify w-5 h-5 text-primary" data-icon="mdi:star-circle"></span>
-                    <span class="text-sm font-medium">Foco Total no Seu Lucro</span>
-                </div>
+    document.querySelectorAll('[data-wa]').forEach(link => {
+      const text = link.dataset.wa || '';
+      link.href = `https://api.whatsapp.com/send?phone=558394119581&text=${encodeURIComponent(text)}`;
+    });
 
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                    SEU SITE É UM CUSTO OU UM INVESTIMENTO?
-                    <span class="gradient-text">Nós Criamos a Máquina de Lucro.</span>
-                </h1>
-
-                <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
-                    Chega de sites bonitinhos que não vendem. Se você está cansado de ver a concorrência faturar, é hora de ter um ativo digital que trabalha 24h por dia para encher seu caixa. Sua única preocupação será atender a demanda.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
-                    <a href="https://wa.me/558394119581?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20os%20serviços%20da%20Nexa%20Sites."
-                        target="_blank"
-                        class="gradient-bg text-white px-8 py-4 rounded-lg text-base md:text-lg font-semibold flex items-center gap-2 glow-hover transition-all duration-300 w-full sm:w-auto justify-center">
-                        <span class="iconify w-6 h-6" data-icon="mdi:whatsapp"></span>
-                        Começar Meu Projeto
-                    </a>
-                    <a href="#services"
-                        class="border border-gray-700 text-white px-8 py-4 rounded-lg text-base md:text-lg font-semibold flex items-center gap-2 hover:border-primary transition-colors w-full sm:w-auto justify-center">
-                        <span class="iconify w-6 h-6" data-icon="mdi:arrow-down"></span>
-                        Ver Serviços
-                    </a>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-6 pt-6 text-sm md:text-base">
-                    <div class="flex items-center gap-2">
-                        <span class="iconify w-6 h-6 text-primary" data-icon="mdi:check-circle"></span>
-                        <span>Seja Encontrado no Google</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="iconify w-6 h-6 text-primary" data-icon="mdi:check-circle"></span>
-                        <span>Venda em Qualquer Tela</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="iconify w-6 h-6 text-primary" data-icon="mdi:check-circle"></span>
-                        <span>Alta Conversão</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <span class="iconify w-8 h-8 text-primary" data-icon="mdi:chevron-down"></span>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 md:py-32 relative">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-bold">
-                    Nossos <span class="gradient-text">Serviços</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Soluções completas em desenvolvimento web e marketing digital para impulsionar seu negócio
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Service Card 1 -->
-                <div
-                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
-                    <div
-                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:web"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Sua Marca com Autoridade</h3>
-                    <p class="text-gray-400 mb-4">Chega de cartão de visitas digital. Tenha um site que impõe respeito, transmite credibilidade e transforma sua marca na referência do mercado. Ponto final.
-                        </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Design de Impacto (Para Chamar a Atenção)
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Ranqueamento no Google (sem pagar anúncio)
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Funciona Perfeitamente em Qualquer Tela
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Carregamento Instantâneo (Ninguém Espera)
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div
-                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
-                    <div
-                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:rocket-launch"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Páginas de Vendas (Que Vendem de Verdade)</h3>
-                    <p class="text-gray-400 mb-4">O seu produto é bom, mas sua página não vende? Nós criamos a rota mais curta entre o clique e o PIX na sua conta. Otimizada para o único objetivo: VENDER.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Funil de Vendas (Otimizado para o Lucro)
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Design que Converte (Não é Galeria de Arte)
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Chamada para Ação Irresistível
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Você Sabe Exatamente de Onde Vem Cada Venda
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div
-                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
-                    <div
-                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:shopping"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Loja Virtual (Para Escalar Seu Faturamento)</h3>
-                    <p class="text-gray-400 mb-4">Pare de vender no Instagram. Tenha uma loja que funciona 24h por dia, com um checkout que o cliente não abandona. Sua estrutura para faturar alto.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Produtos Organizados para Vender Mais
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Carrinho que Não Deixa o Cliente Fugir
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Pagamento Integrado e Seguro
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Controle Total do Seu Estoque
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div
-                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
-                    <div
-                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:chart-line"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Domine o Google e o Mercado</h3>
-                    <p class="text-gray-400 mb-4">Não basta ter o melhor site, você precisa ser visto. Estratégias que colocam você na frente da concorrência e fazem o seu telefone tocar.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Otimização Pesada para o Google
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Testes Constantes para Vender Mais
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Segurança Blindada 24h
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Estratégia de Marketing que Funciona
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div
-                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
-                    <div
-                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:code-braces"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Soluções Sob Medida (Para Quem Joga no Alto Nível)</h3>
-                    <p class="text-gray-400 mb-4">Se o seu problema é único, a solução também deve ser. Desenvolvemos sistemas e plataformas que a concorrência nem sonha em ter. Exclusividade para quem quer dominar.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            React/Next.js
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            APIs REST
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Integrações
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Escalabilidade
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div
-                    class="group bg-card/50 backdrop-blur-sm rounded-xl border border-gray-800 p-6 hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.2)]">
-                    <div
-                        class="w-14 h-14 rounded-lg gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-7 h-7 text-white" data-icon="mdi:speedometer"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Otimização de Carregamento Instantâneo (Ninguém Espera)</h3>
-                    <p class="text-gray-400 mb-4">Análise e melhoria de sites existentes para máxima velocidade e
-                        experiência do usuário.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Core Web Vitals
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Compressão
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            CDN
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-gray-500">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:check"></span>
-                            Cache inteligente
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-20 md:py-32 bg-card/30">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-bold">
-                    Por Que Escolher a <span class="gradient-text">Nexa Sites?</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Diferenciais que fazem toda a diferença nos resultados do seu negócio
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div
-                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
-                    <div
-                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
-                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:shield-check"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Autoridade Comprovada</h3>
-                    <p class="text-gray-400">Experiência em desenvolvimento web, cybersecurity e marketing digital com
-                        resultados mensuráveis</p>
-                </div>
-
-                <div
-                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
-                    <div
-                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
-                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:clock-fast"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Entrega Ágil</h3>
-                    <p class="text-gray-400">Metodologias modernas que garantem prazos cumpridos sem comprometer a
-                        qualidade</p>
-                </div>
-
-                <div
-                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
-                    <div
-                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
-                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:chart-timeline-variant"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Foco em Conversão</h3>
-                    <p class="text-gray-400">Cada elemento é estrategicamente planejado para maximizar suas taxas de
-                        conversão</p>
-                </div>
-
-                <div
-                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
-                    <div
-                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
-                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:google"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">SEO Avançado</h3>
-                    <p class="text-gray-400">Técnicas atualizadas de otimização para posicionar seu site no topo do
-                        Google</p>
-                </div>
-
-                <div
-                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
-                    <div
-                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
-                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:devices"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">100% Funciona Perfeitamente em Qualquer Tela</h3>
-                    <p class="text-gray-400">Design adaptável que funciona perfeitamente em todos os dispositivos e
-                        tamanhos de tela</p>
-                </div>
-
-                <div
-                    class="group relative p-6 rounded-xl border border-gray-800 bg-dark/50 backdrop-blur-sm hover:border-purple-700/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,58,237,0.15)]">
-                    <div
-                        class="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
-                        <span class="iconify w-6 h-6 text-white" data-icon="mdi:headset"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Suporte VIP (Você Não Fica na Mão)</h3>
-                    <p class="text-gray-400">git Seu projeto é a nossa prioridade. Suporte rápido e direto, sem robôs ou burocracia. Foco total no seu resultado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section id="results" class="pt-20 pb-4 md:pt-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
-
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-bold">
-                    Resultados Que <span class="gradient-text">Falam Por Si</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Números e depoimentos reais de clientes que transformaram seus negócios
-                </p>
-            </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-                <div
-                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
-                    <div class="flex justify-center mb-4">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:account-multiple"></span>
-                        </div>
-                    </div>
-                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">30+</div>
-                    <div class="text-sm text-gray-400">Clientes Satisfeitos</div>
-                </div>
-
-                <div
-                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
-                    <div class="flex justify-center mb-4">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:web-check"></span>
-                        </div>
-                    </div>
-                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">40+</div>
-                    <div class="text-sm text-gray-400">Projetos Entregues</div>
-                </div>
-
-                <div
-                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
-                    <div class="flex justify-center mb-4">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:chart-line-variant"></span>
-                        </div>
-                    </div>
-                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">85%</div>
-                    <div class="text-sm text-gray-400">Aumento Médio em Conversão</div>
-                </div>
-
-                <div
-                    class="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-purple-700/50 transition-all duration-300">
-                    <div class="flex justify-center mb-4">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="iconify w-6 h-6 text-white" data-icon="mdi:star"></span>
-                        </div>
-                    </div>
-                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">4.9/5</div>
-                    <div class="text-sm text-gray-400">Avaliação Média</div>
-                </div>
-            </div>
-
-        </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="pb-20 pt-8 md:pb-32 relative">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-bold">
-                    Projetos <span class="gradient-text">Recentes</span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
-                    Confira alguns dos projetos de alta performance que desenvolvemos para nossos clientes.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <!-- Projeto 1: Douglas Silva -->
-                <a href="https://douglassilva.netlify.app/" target="_blank"
-                    class="block group rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.02] shadow-xl">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold gradient-text group-hover:text-primary transition-colors">
-                            Douglas Silva - Landing Page Pessoal
-                        </h3>
-                        <p class="text-gray-400 text-sm">
-                            Landing page pessoal para um profissional de marketing digital e automação, destacando suas
-                            habilidades e
-                            projetos.
-                        </p>
-                        <div class="flex items-center gap-2 text-sm text-primary">
-                            <span class="iconify w-5 h-5" data-icon="mdi:link"></span>
-                            <span>Ver Projeto</span>
-                        </div>
-                    </div>
-                    <div class="overflow-hidden">
-                        <img src="assets/portfolio/douglassilva.png" alt="Prévia do Projeto Douglas Silva"
-                            class="w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy">
-                    </div>
-
-
-                </a>
-
-                <!-- Projeto 2: Emergy5 -->
-                <a href="https://emergy5.netlify.app/" target="_blank"
-                    class="block group rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.02] shadow-xl">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold gradient-text group-hover:text-primary transition-colors">
-                            Emergy5 - Landing Page para uma agência de marketing
-                        </h3>
-                        <p class="text-gray-400 text-sm">
-                            Landing page de alta conversão para uma agência, com foco em clareza e chamada para ação, e
-                            um painel de métricas integrado.
-                        </p>
-                        <div class="flex items-center gap-2 text-sm text-primary">
-                            <span class="iconify w-5 h-5" data-icon="mdi:link"></span>
-                            <span>Ver Projeto</span>
-                        </div>
-                    </div>
-                    <div class="overflow-hidden">
-                        <img src="assets/portfolio/emergy5.png" alt="Prévia do Projeto Emergy5"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy">
-                    </div>
-                </a>
-
-                <!-- Projeto 3: Escola Eterna -->
-                <a href="https://escolaeterna.com.br/" target="_blank"
-                    class="block group rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.02] shadow-xl">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold gradient-text group-hover:text-primary transition-colors">
-                            Escola Eterna - Website Educacional
-                        </h3>
-                        <p class="text-gray-400 text-sm">
-                            Website institucional para uma escola online, com informações claras sobre cursos,
-                            benefícios e chamada para a ação.
-                        </p>
-                        <div class="flex items-center gap-2 text-sm text-primary">
-                            <span class="iconify w-5 h-5" data-icon="mdi:link"></span>
-                            <span>Ver Projeto</span>
-                        </div>
-                    </div>
-                    <div class=" overflow-hidden">
-                        <img src="assets/portfolio/escolaeterna.png" alt="Prévia do Projeto Escola Eterna"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy">
-                    </div>
-                </a>
-
-                <!-- Projeto 4: WinFascend -->
-                <a href="https://winfascend.com.br/" target="_blank"
-                    class="block group rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.02] shadow-xl">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold gradient-text group-hover:text-primary transition-colors">
-                            WinFascend - Ecossistema de Licenciamento
-                        </h3>
-                        <p class="text-gray-400 text-sm">
-                            Ecossistema de licenciamento por cidade, com foco em expansão de marca e geração de leads
-                            qualificados.
-                        </p>
-                        <div class="flex items-center gap-2 text-sm text-primary">
-                            <span class="iconify w-5 h-5" data-icon="mdi:link"></span>
-                            <span>Ver Projeto</span>
-                        </div>
-                    </div>
-                    <div class="overflow-hidden">
-                        <img src="assets/portfolio/winfascend.png" alt="Prévia do Projeto WinFascend"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy">
-                    </div>
-                </a>
-                <!-- Projeto 5: Pentest Descomplicado -->
-                <a href="https://pentestdescomplicado.netlify.app/" target="_blank"
-                    class="block group rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.02] shadow-xl">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold gradient-text group-hover:text-primary transition-colors">
-                            Pentest Descomplicado - Landing Page de Curso
-                        </h3>
-                        <p class="text-gray-400 text-sm">
-                            Landing page de alta performance para venda de curso de Hacking Ético, com design focado em
-                            autoridade e conversão.
-                        </p>
-                        <div class="flex items-center gap-2 text-sm text-primary">
-                            <span class="iconify w-5 h-5" data-icon="mdi:link"></span>
-                            <span>Ver Projeto</span>
-                        </div>
-                    </div>
-                    <div class=" overflow-hidden">
-                        <img src="assets/portfolio/pentestdescomplicado.png"
-                            alt="Prévia do Projeto Pentest Descomplicado"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy">
-                    </div>
-                </a>
-
-                <a href="https://estoquedireto.netlify.app/" target="_blank"
-                    class="block group rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm border border-gray-800 hover:border-primary/50 transition-all duration-300 transform hover:scale-[1.02] shadow-xl">
-
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
-                            Estoque Direto - SaaS de Gestão Integrada (Nosso Produto)
-                        </h3>
-                        <p class="text-gray-400 text-sm">
-                            <b>Nosso próprio produto!</b> Um sistema completo de controle de estoque, fornecedores,
-                            vendas e caixa,
-                            tudo integrado. Demonstra nossa capacidade de desenvolver soluções complexas e escaláveis.
-                        </p>
-                        <div class="flex items-center gap-2 text-sm text-primary font-semibold">
-                            <span class="iconify w-5 h-5" data-icon="mdi:rocket-launch"></span>
-                            <span>Ver SaaS e Capacidade Técnica</span>
-                        </div>
-                    </div>
-
-                    <div class="overflow-hidden">
-                        <img src="assets/portfolio/estoquedireto.png" alt="Prévia do SaaS Estoque Direto"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy">
-                    </div>
-
-                </a>
-
-            </div>
-
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class=" relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
-
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12 space-y-4">
-                    <h2 class="text-3xl md:text-5xl font-bold">
-                        Pronto Para <span class="gradient-text">Decolar?</span>
-                    </h2>
-                    <p class="text-lg text-gray-400">
-                        Entre em contato agora e transforme sua presença digital
-                    </p>
-                </div>
-
-                <div
-                    class="bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 md:p-12 space-y-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="flex items-start gap-3">
-                            <div
-                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
-                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
-                            </div>
-                            <span>Estratégia gratuita sob medida para seu negócio</span>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div
-                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
-                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
-                            </div>
-                            <span>Proposta personalizada para seu negócio</span>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div
-                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
-                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
-                            </div>
-                            <span>Orçamento sem compromisso</span>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div
-                                class="flex-shrink-0 w-6 h-6 rounded-full gradient-bg flex items-center justify-center mt-0.5">
-                                <span class="iconify w-4 h-4 text-white" data-icon="mdi:check"></span>
-                            </div>
-                            <span>Resposta rápida</span>
-                        </div>
-                    </div>
-
-                    <div class="text-center space-y-6 pt-6">
-                        <a href="https://wa.me/558394119581?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20os%20serviços%20da%20Nexa%20Sites."
-                            target="_blank"
-                            class="inline-flex gradient-bg text-white px-12 py-5 rounded-lg text-lg font-semibold items-center gap-2 glow-hover transition-all duration-300 hover:scale-105"
-                            onclick="fbq('track', 'Lead'); fbq('track', 'Contact');">
-                            <span class="iconify w-7 h-7" data-icon="mdi:whatsapp"></span>
-                            Falar com Especialista
-                        </a>
-
-                        <p class="text-sm text-gray-400">
-                            Clique no botão acima para iniciar uma conversa no WhatsApp
-                        </p>
-                    </div>
-
-                    <div
-                        class="flex flex-col md:flex-row items-center justify-center gap-6 pt-6 border-t border-gray-800">
-                        <div class="flex items-center gap-2">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:email"></span>
-                            <span class="text-sm text-gray-400">nexasites.contato@gmail.com</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="iconify w-5 h-5 text-primary" data-icon="mdi:clock"></span>
-                            <span class="text-sm text-gray-400">Seg-Sex</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <br><br><br>
-    <!-- Footer -->
-    <footer class="bg-card/30 border-t border-gray-800 py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <!-- Brand -->
-                <div class="space-y-4">
-                    <div class="flex items-center gap-2">
-                        <span class="iconify w-8 h-8 text-primary" data-icon="mdi:rocket-launch"></span>
-                        <span class="text-xl font-bold gradient-text">Nexa Sites</span>
-                    </div>
-                    <p class="text-sm text-gray-400 max-w-xs">
-                        Transformando ideias em experiências digitais de alta performance. Especialistas em
-                        desenvolvimento web e marketing digital.
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="space-y-4">
-                    <h3 class="font-semibold">Links Rápidos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#services"
-                                class="text-sm text-gray-400 hover:text-primary transition-colors">Serviços</a></li>
-                        <li><a href="#benefits"
-                                class="text-sm text-gray-400 hover:text-primary transition-colors">Diferenciais</a></li>
-                        <li><a href="#results"
-                                class="text-sm text-gray-400 hover:text-primary transition-colors">Resultados</a></li>
-                        <li><a href="#portfolio"
-                                class="text-sm text-gray-400 hover:text-primary transition-colors">Portfólio</a></li>
-                        <li><a href="#contact"
-                                class="text-sm text-gray-400 hover:text-primary transition-colors">Contato</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact & Social -->
-                <div class="space-y-4">
-                    <h3 class="font-semibold">Conecte-se</h3>
-                    <div class="space-y-3">
-                        <a href="https://wa.me/558394119581" target="_blank"
-                            class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors">
-                            <span class="iconify w-5 h-5" data-icon="mdi:whatsapp"></span>
-                            WhatsApp
-                        </a>
-                        <a href="https://www.instagram.com/nexasites_dev" target="_blank"
-                            class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors">
-                            <span class="iconify w-5 h-5" data-icon="mdi:instagram"></span>
-                            @nexasites_dev
-                        </a>
-                        <div class="flex items-center gap-2 text-sm text-gray-400">
-
-                            <span class="iconify w-5 h-5" data-icon="mdi:email"></span>
-                            nexasites.contato@gmail.com
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Bar -->
-            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-400 text-center md:text-left">
-                    © 2025 Nexa Sites. Todos os direitos reservados.
-                </p>
-                <div class="flex items-center gap-4">
-                    <a href="https://www.instagram.com/nexasites_dev" target="_blank"
-                        class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-5 h-5 text-white" data-icon="mdi:instagram"></span>
-                    </a>
-                    <a href="https://wa.me/558394119581" target="_blank"
-                        class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <span class="iconify w-5 h-5 text-white" data-icon="mdi:whatsapp"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Smooth scroll script -->
-    <script defer>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+    document.querySelectorAll('.project-switch').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('heroProjectImage').src = btn.dataset.image;
+        document.getElementById('heroProjectLabel').textContent = btn.dataset.label;
+        document.querySelectorAll('.project-switch').forEach(item => {
+          item.classList.remove('bg-nexa-navy','text-white');
+          item.classList.add('bg-white','text-slate-600','ring-1','ring-nexa-line');
         });
-    </script>
+        btn.classList.remove('bg-white','text-slate-600','ring-1','ring-nexa-line');
+        btn.classList.add('bg-nexa-navy','text-white');
+      });
+    });
+
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(other => other.classList.remove('open'));
+        if (!open) item.classList.add('open');
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
-
 </html>
-
-
