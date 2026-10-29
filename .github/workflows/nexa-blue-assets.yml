@@ -1,0 +1,41 @@
+name: NEXA BLUE — importar fotos originais
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-art:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar imagens do site NEXA BLUE previamente publicado
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          source='https://nexa-blue.eagerbean131.chatgpt.site/assets'
+          ok=0
+          for name in surface whales explore abyss; do
+            file="assets/nexa-blue-$name.webp"
+            if curl --fail --location --retry 2 --max-time 35 --silent --show-error "$source/$name.webp" -o "$file"; then
+              if file --mime-type "$file" | grep -Eq 'image/(webp|jpeg|png)'; then
+                echo "Imagem importada: $name"; ok=$((ok+1))
+              else rm -f "$file"; fi
+            else
+              echo "::warning::Imagem $name indisponível; preservado SVG local."
+              rm -f "$file"
+            fi
+          done
+          if [ "$ok" -gt 0 ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add assets/nexa-blue-*.webp
+            if ! git diff --cached --quiet; then
+              git commit -m "assets: importar fotografia oceânica NEXA BLUE"
+              git push
+            fi
+          fi
