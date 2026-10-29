@@ -126,3 +126,54 @@
 @media(max-width:750px){.detail-header .detail-contact-btn{padding:12px 8px;font-size:9px}.plan-page .detail-hero h1{font-size:clamp(52px,12vw,85px)}.plan-page .detail-hero-inner{padding:100px 25px 75px}}
 
 .detail-head-actions{display:flex;align-items:center;gap:clamp(12px,2vw,25px)}.detail-shop-link{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#fff;white-space:nowrap}.detail-shop-link:hover{color:#58beff}@media(max-width:620px){.detail-head-actions{gap:11px}.detail-shop-link{font-size:9px}.detail-head-actions .detail-back{font-size:9px}}
+
+/* Checkout editorial: fechamento transparente para BARCO, IATE e SUBMARINO. */
+.detail-final-checkout{
+ position:relative;isolation:isolate;overflow:hidden;
+ padding:clamp(70px,8vw,125px) clamp(23px,8vw,130px) clamp(64px,8vw,116px);
+ background:radial-gradient(ellipse at 86% 0%,#0a527a73,transparent 52%),linear-gradient(125deg,#03182b 0%,#072c4c 53%,#04172b 100%);
+ border-top:1px solid #79c5fa25;
+}
+.detail-final-checkout::before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;
+ width:min(90vw,900px);height:min(90vw,900px);right:-32%;top:-65%;
+ border:1px solid #60bff124;border-radius:50%;
+ box-shadow:0 0 0 75px #62bbf106,0 0 0 155px #62bbf104;
+}
+.detail-final-checkout-header{max-width:980px;margin:0 0 46px;}
+.detail-final-checkout-header h2{font:300 clamp(38px,5.4vw,75px)/1.12 'Manrope',sans-serif;letter-spacing:-.07em;margin:22px 0;}
+.detail-final-checkout-header h2 em{font-style:normal;font-weight:500;color:#58beff;}
+.detail-final-checkout-header>p{max-width:740px;font:400 clamp(15px,1.3vw,18px)/1.85 'DM Sans',sans-serif;color:#d5eaf8;margin:0;}
+.detail-checkout-scribble{display:inline-block;max-width:100%;margin:27px 0 0 8px;font:400 clamp(15px,2vw,24px)/1.8 'Rock Salt',cursive;letter-spacing:-.07em;color:white;transform:rotate(-3deg);text-wrap:balance;text-shadow:0 3px 15px #000a;}
+.detail-checkout-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#84c1e348;border:1px solid #84c1e348;max-width:1180px;}
+.detail-checkout-option{display:flex;align-items:flex-start;flex-direction:column;background:#05263fdc;min-height:300px;padding:clamp(23px,3vw,42px);gap:18px;}
+.detail-checkout-option-featured{background:#09406ad9;}
+.detail-checkout-option-top{color:#9bdcff;font:600 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.09em;}
+.detail-checkout-option>strong{font:400 clamp(34px,3.55vw,51px)/1.08 'Manrope',sans-serif;letter-spacing:-.055em;color:#fff;}
+.detail-checkout-option>p{font:400 14px/1.75 'DM Sans',sans-serif;color:#c9e0f0;margin:0 0 8px;max-width:450px;}
+.detail-checkout-option>a{
+ margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;
+ padding:18px 19px;border:1px solid #b2e6ff8a;
+ font:600 clamp(9px,.85vw,11px)/1.5 'IBM Plex Mono',monospace;letter-spacing:.045em;
+ color:#fff;transition:background .2s,border-color .2s;
+}
+.detail-checkout-option-featured>a{background:#087dc7;border-color:#087dc7;}
+.detail-checkout-option>a:hover,.detail-checkout-option>a:focus-visible{background:#169cff;border-color:#169cff;}
+.detail-checkout-options-custom{grid-template-columns:1fr;max-width:850px;}
+.detail-checkout-options-custom .detail-checkout-option{min-height:275px;}
+.detail-checkout-footnote{max-width:970px;font:400 12px/1.85 'DM Sans',sans-serif;color:#a6c7da;margin:28px 0 0;}
+@media(max-width:780px){
+ .detail-checkout-options{grid-template-columns:1fr;max-width:720px;}
+ .detail-checkout-option{min-height:270px;}
+}
+@media(max-width:520px){
+ .detail-final-checkout{padding:62px 21px 78px;}
+ .detail-final-checkout-header{margin-bottom:33px;}
+ .detail-final-checkout-header h2{font-size:clamp(34px,9vw,46px);}
+ .detail-checkout-scribble{font-size:clamp(14px,3.9vw,19px);line-height:1.9;margin-top:23px;}
+ .detail-checkout-option{padding:24px;min-height:255px;}
+ .detail-checkout-option>strong{font-size:clamp(31px,8vw,43px);}
+ .detail-checkout-option>a{font-size:10px;padding:17px 13px;}
+ .detail-checkout-footnote{font-size:11px;}
+}
+@media(prefers-reduced-motion:reduce){.detail-checkout-option>a{transition:none;}}
