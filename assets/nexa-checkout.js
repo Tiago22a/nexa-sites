@@ -46,7 +46,7 @@
       '',
       'PLANO E CONDICOES ESCOLHIDAS',
       'Modalidade: '+info.plan,
-      'Preferencia: '+(info.mode==='pix'?'Pix integral':'Contrato anual com parcelas mensais'),
+      'Preferencia: '+({pix:'Pix integral',pix_scheduled:'Pix agendado mensal (12 parcelas)',boleto:'Carne de 12 boletos, sujeito a emissao pelo provedor financeiro'}[info.mode]||'A definir'),
       'Valor anual a vista: '+info.cash,
       'Parcelamento: '+info.monthly,
       'Total parcelado: '+info.total,
@@ -60,6 +60,8 @@
       '2. A prestadora devera informar sua razao social, CNPJ e dados oficiais, e emitir contrato completo para assinatura eletronica.',
       '3. A contratacao depende de aceite expresso, assinatura pelas partes, confirmacao de pagamento e disponibilizacao dos materiais necessarios.',
       '4. Em caso de Pix integral, a chave e o nome do beneficiario devem ser obtidos e confirmados diretamente com a equipe NEXA BLUE.',
+      '4.1. Para Pix agendado, comprovantes de agendamento nao representam pagamentos executados; confirme cada credito na data prevista.',
+      '4.2. Os 12 boletos precisam ser emitidos por provedor financeiro habilitado e seus dados verificados antes de pagar.',
       '5. Em caso de parcelas mensais, a primeira e prevista na assinatura, e as demais vencem nos prazos escritos no contrato.',
       '6. O inicio de execucao ocorre apos as validacoes. A meta de 48 horas uteis aplica-se apenas aos materiais iniciais elegiveis; as demais entregas seguem cronograma aprovado.',
       '7. Escopo, revisoes, suporte, reajustes, direitos de uso, cancelamento, deveres e tratamento de dados devem constar do documento definitivo.',
@@ -116,19 +118,19 @@
     const selection=()=>dock.querySelector('input[type="radio"]:checked')?.value||'pix';
     const summary=()=>{
       const chosen=selection();
-      const condition=chosen==='pix'?'Pix integral '+d.cash:'Contrato anual em '+d.monthly+' (total '+d.total+')';
+      const condition=chosen==='pix'?'Pix integral '+d.cash:chosen==='pix_scheduled'?'12 Pix mensais programados, '+d.monthly+' (total '+d.total+')':'Carne de 12 boletos, '+d.monthly+' (total '+d.total+') - emissao mediante provedor financeiro';
       return 'Plano '+d.planLabel+' | '+condition+' | Chave Pix: solicitar a NEXA BLUE e conferir beneficiario. Proposta e contrato sujeitos a assinatura. Pagamento nao realizado pelo site.';
     };
     const updateLink=()=>{
-      const chosen=selection(),mode=chosen==='pix'?'Pix integral':'Contrato anual parcelado';
-      const text='Ola, NEXA BLUE! Estive na pagina do plano '+d.planLabel+' e escolhi '+mode+'. Gostaria de receber os dados oficiais de pagamento, a proposta final e as instrucoes para assinatura eletrônica. Entendi que a minuta PDF e o comprovante de pagamento devem ser anexados por mim no WhatsApp. Plano: '+location.href.split('#')[0];
+      const chosen=selection(),mode=chosen==='pix'?'Pix integral':chosen==='pix_scheduled'?'Pix mensal agendado em 12 parcelas':'Carne com 12 boletos bancarios';
+      const text='Ola, NEXA BLUE! Estive na pagina do plano '+d.planLabel+' e escolhi '+mode+'. Gostaria de receber os dados oficiais de pagamento, a proposta final e as instrucoes para assinatura eletronica. Sei que comprovante de agendamento nao comprova pagamento, e que os boletos dependem de emissao pela plataforma financeira. Enviarei a minuta e o comprovante da primeira parcela efetivamente paga como anexos no WhatsApp. Plano: '+location.href.split('#')[0];
       link.href='https://wa.me/'+phone+'?text='+encodeURIComponent(text);
     };
     dock.querySelectorAll('input[type="radio"]').forEach(r=>r.addEventListener('change',updateLink));
     updateLink();
     copy.addEventListener('click',async()=>{
       const message=summary();
-      try{if(!navigator.clipboard)throw Error('clipboard unsupported');await navigator.clipboard.writeText(message);status.textContent='Resumo copiado. A chave Pix oficial deve ser solicitada a equipe.';}
+      try{if(!navigator.clipboard)throw Error('clipboard unsupported');await navigator.clipboard.writeText(message);status.textContent='Resumo copiado. Solicite a chave Pix ou os boletos oficiais antes de pagar.';}
       catch{status.textContent='Seu navegador nao permitiu copiar. Use o WhatsApp para obter os dados oficiais.';}
     });
     form.addEventListener('submit',event=>{

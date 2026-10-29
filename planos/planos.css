@@ -229,3 +229,11 @@
 @media(max-width:1050px){.nx-contract-dock{grid-template-columns:1fr;gap:42px}.nx-dock-left{position:static;max-width:790px}.nx-dock-script{font-size:clamp(46px,9vw,73px);margin:12px 0 0}.nx-dock-statement{margin-top:2px}}
 @media(max-width:680px){.nx-contract-dock{padding:60px 22px 80px}.nx-dock-left{gap:15px}.nx-dock-script{font-size:clamp(39px,10vw,58px)}.nx-dock-right h3{font-size:clamp(32px,8vw,46px)}.nx-billing-options{grid-template-columns:1fr}.nx-billing-card-body{min-height:160px}.nx-contract-flow{grid-template-columns:1fr;gap:17px}.nx-form-grid,.nx-dock-actions{grid-template-columns:1fr}.nx-action-primary{grid-column:auto}.nx-form-head{display:block}.nx-form-head p{text-align:left;margin:6px 0 0}}
 @media(prefers-reduced-motion:reduce){.nx-billing-card-body{transition:none}}
+
+/* Payment method variants: Pix, scheduled Pix, boleto booklet */
+.nx-billing-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.nx-billing-card-body{padding:18px 12px 18px 40px;min-height:205px}
+.nx-billing-card>input{left:12px;top:19px}
+.nx-billing-card strong{font-size:clamp(20px,1.8vw,29px)}
+@media(max-width:1250px){.nx-billing-options{grid-template-columns:1fr}.nx-billing-card-body{min-height:125px}}
+@media(max-width:680px){.nx-billing-options{grid-template-columns:1fr}.nx-billing-card-body{min-height:125px}}
