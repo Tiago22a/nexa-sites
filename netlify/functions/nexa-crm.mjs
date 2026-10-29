@@ -1,8 +1,22 @@
 import { scryptSync, createHmac, timingSafeEqual, randomUUID } from "node:crypto";
 import { getStore } from "@netlify/blobs";
 
-const ADMIN_USER = process.env.NEXA_ADMIN_USERNAME || "";
-const ADMIN_HASH = process.env.NEXA_ADMIN_PASSWORD_HASH || "";
+const ADMIN_USERS = (() => {
+  const users = Object.create(null);
+  const json = process.env.NEXA_ADMIN_USERS_JSON || "";
+  if(json){
+    try{
+      const parsed=JSON.parse(json);
+      for(const [name,hash] of Object.entries(parsed)){
+        if(/^[A-Za-z0-9._-]{3,70}$/.test(name)&&typeof hash==="string"&&hash.length<400)users[name]=hash;
+      }
+    }catch{console.error("NEXA_ADMIN_USERS_JSON inválido");}
+  }
+  if(process.env.NEXA_ADMIN_USERNAME&&process.env.NEXA_ADMIN_PASSWORD_HASH){
+    users[process.env.NEXA_ADMIN_USERNAME]=process.env.NEXA_ADMIN_PASSWORD_HASH;
+  }
+  return users;
+})();
 const SECRET = process.env.NEXA_SESSION_SECRET || "";
 const HERMES_KEY = process.env.NEXA_HERMES_API_KEY || "";
 const COOKIE = "nexa_admin_session";
@@ -40,7 +54,7 @@ function readSession(request){
   if(!compare(signature,expected))return null;
   try{
     const data=JSON.parse(Buffer.from(body,"base64url").toString("utf8"));
-    if(data.role!=="admin"||data.user!==ADMIN_USER||Date.now()>data.exp)return null;
+    if(data.role!=="admin"||!Object.hasOwn(ADMIN_USERS,data.user)||Date.now()>data.exp)return null;
     return data;
   }catch{return null;}
 }
@@ -101,16 +115,18 @@ async function onlySummary(){
 export default async (request)=>{
   const url=new URL(request.url);
   const op=url.searchParams.get("op")||"session";
-  if(!SECRET||!ADMIN_HASH||!ADMIN_USER)return response({error:"Painel ainda não configurado. Defina as variáveis secretas na Netlify."},503);
+  if(!SECRET||Object.keys(ADMIN_USERS).length===0)return response({error:"Painel ainda não configurado. Defina as variáveis secretas na Netlify."},503);
   if(request.method==="POST"&&!sameOrigin(request))return response({error:"Origem ou confirmação da requisição inválida."},403);
   try{
     if(op==="login"&&request.method==="POST"){
-      const data=await request.json(),[salt,hex]=ADMIN_HASH.split(":");
+      const data=await request.json();
+      const user=String(data.username||"");
+      const [salt,hex]=String(Object.hasOwn(ADMIN_USERS,user)?ADMIN_USERS[user]:"").split(":");
       if(!salt||!hex||salt.length>128||hex.length!==128)return response({error:"Hash administrativo inválido."},503);
       const derived=scryptSync(String(data.password||"").slice(0,220),Buffer.from(salt,"hex"),64).toString("hex");
-      if(!compare(String(data.username||""),ADMIN_USER)||!compare(derived,hex))return response({error:"Credenciais inválidas."},401);
-      const session=sign({role:"admin",user:ADMIN_USER,exp:Date.now()+8*3600000,nonce:randomUUID()});
-      return response({ok:true,user:ADMIN_USER},200,{"set-cookie":authCookie(session,8*3600)});
+      if(!Object.hasOwn(ADMIN_USERS,user)||!compare(derived,hex))return response({error:"Credenciais inválidas."},401);
+      const session=sign({role:"admin",user,exp:Date.now()+8*3600000,nonce:randomUUID()});
+      return response({ok:true,user},200,{"set-cookie":authCookie(session,8*3600)});
     }
     if(op==="hermes-summary"){
       const bearer=request.headers.get("authorization")||"";
