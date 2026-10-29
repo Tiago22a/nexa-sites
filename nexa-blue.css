@@ -612,3 +612,84 @@
 @media(prefers-reduced-motion:reduce){
   .navigation a,.navigation button.nav-contact-trigger{transition:none;}
 }
+
+/* NEXA / acabamento do hero — sombra difusa, sem tarja, lettering coeso com o mergulho */
+.hero .hero-body{
+  isolation:isolate;
+}
+.hero .hero-body::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-38px -65px -43px;
+  pointer-events:none;
+  background:radial-gradient(ellipse at 50% 47%,
+    rgba(1,9,23,.47) 0%,
+    rgba(1,12,29,.31) 38%,
+    rgba(1,14,30,.12) 62%,
+    transparent 83%);
+  filter:blur(17px);
+}
+.hero .hero-body h1{
+  text-shadow:0 4px 23px rgba(0,0,0,.38),0 2px 5px rgba(0,0,0,.25);
+}
+.hero-editorial .hero-editorial-scribble.scribble.scribble-brush{
+  font-family:'Rock Salt',cursive; /* mesmo tipo do rabisco "SEM NAVEGAR ÀS CEGAS" */
+  font-weight:400;
+  width:max-content;
+  max-width:100%;
+  font-size:clamp(23px,2.95vw,40px);
+  line-height:1.55;
+  letter-spacing:-.095em;
+  padding:4px 10px 19px;
+  margin:0 auto;
+  color:#fff;
+  -webkit-text-fill-color:#fff;
+  text-shadow:0 5px 13px rgba(0,0,0,.62),0 2px 4px rgba(0,0,0,.55);
+  transform:rotate(-3deg);
+  text-align:center;
+}
+.hero-editorial .hero-editorial-scribble.scribble.scribble-brush span{
+  display:block;
+  margin:0;
+  white-space:normal;
+}
+.hero-editorial .hero-editorial-scribble.scribble.scribble-brush span+span{
+  font-size:1.08em;
+  margin-top:-3px;
+}
+.hero-editorial .hero-editorial-scribble.scribble.scribble-brush::after{
+  left:14%;
+  width:72%;
+  bottom:9px;
+  height:2px;
+  background:#fff;
+  opacity:.9;
+  transform:rotate(-2deg);
+  box-shadow:6px 4px 0 -0.7px #ffffffb0;
+}
+.hero-editorial .hero-editorial-support{
+  text-shadow:0 3px 13px rgba(0,0,0,.82),0 1px 4px rgba(0,0,0,.55);
+}
+@media(max-width:850px){
+  .hero .hero-body::before{inset:-28px -30px -38px;filter:blur(14px);}
+  .hero-editorial .hero-editorial-scribble.scribble.scribble-brush{
+    font-size:clamp(19px,3.5vw,32px);
+    line-height:1.5;
+  }
+}
+@media(max-width:520px){
+  .hero .hero-body::before{
+    inset:-20px -15px -28px;
+    background:radial-gradient(ellipse at 50% 47%,rgba(1,9,23,.50),rgba(1,12,29,.30) 48%,transparent 85%);
+    filter:blur(12px);
+  }
+  .hero-editorial .hero-editorial-scribble.scribble.scribble-brush{
+    font-size:clamp(15px,4.3vw,21px);
+    padding:2px 1px 16px;
+    letter-spacing:-.095em;
+    line-height:1.58;
+    transform:rotate(-2deg);
+  }
+  .hero-editorial .hero-editorial-scribble.scribble.scribble-brush::after{bottom:6px;}
+}
