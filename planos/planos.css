@@ -60,3 +60,47 @@
 .vessel-story-main p{max-width:660px;color:#cce3f3;font:400 clamp(15px,1.4vw,18px)/1.85 'DM Sans',sans-serif}
 .vessel-story-main a{display:inline-flex;gap:25px;border-bottom:1px solid #bbdef1;padding:12px 0;margin-top:18px;font:600 10px 'IBM Plex Mono',monospace}
 @media(max-width:750px){.vessel-story-section{grid-template-columns:1fr;gap:22px}.vessel-story-aside{gap:10px}.vessel-story-script{font-size:17px}.vessel-story-main h2{font-size:clamp(35px,8vw,48px)}}
+
+/* layout editorial cinematográfico inspirado em navegação por seções */
+.detail-header{position:absolute;top:0;left:0;right:0;z-index:35;background:linear-gradient(180deg,#021021cf,transparent);border-bottom:1px solid #ffffff18}
+.detail-hero{min-height:100svh;align-items:center;background-position:center}
+.detail-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#020f20c9,#02132a24 72%);pointer-events:none}
+.detail-hero-inner{position:relative;z-index:1;padding-top:175px;max-width:1150px}
+.detail-hero h1{font-size:clamp(70px,13vw,165px);text-shadow:0 7px 40px #00132660}
+.detail-hero-overline{display:block;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;color:#9bd4f8;margin-bottom:12px}
+.detail-head-actions{display:flex;gap:24px;align-items:center}
+.official-detail-logo{display:flex;flex-direction:column;width:clamp(110px,12vw,168px);letter-spacing:0;gap:0}
+.official-detail-logo img{width:100%;object-fit:contain;aspect-ratio:3.3/1}
+.official-detail-logo small{font-size:7px;line-height:1.45;letter-spacing:.14em;margin:0 0 0 5%;white-space:nowrap}
+.detail-contact-button{color:white;background:transparent;border:1px solid #ffffff65;padding:11px 18px;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em}
+.detail-contact-button:hover{background:#0b75b6}
+.detail-stepnav{display:flex;position:fixed;right:clamp(13px,2.5vw,45px);top:38%;z-index:30;flex-direction:column;align-items:center;gap:12px}
+.detail-stepnav a{border-radius:50%;width:10px;height:10px;border:1px solid #ffffffb0;box-shadow:0 0 0 1px #00121c5b;background:#0c213e89;transition:transform .2s,background .2s}
+.detail-stepnav a.active,.detail-stepnav a:hover{background:white;transform:scale(1.25)}
+.detail-gallery-section,.detail-operation-section{padding:clamp(80px,8vw,125px) clamp(22px,8vw,130px);background:#041b31}
+.detail-gallery-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:48px}
+.detail-gallery-heading h2,.detail-operation-section h2{font:300 clamp(38px,5vw,71px)/1.1 'Manrope',sans-serif;letter-spacing:-.065em;margin:0}
+.detail-gallery-heading h2 em,.detail-operation-section h2 em{font-style:normal;color:#58beff;font-weight:500}
+.detail-gallery-count{font:500 11px 'IBM Plex Mono',monospace;color:#c5dcf0}
+.detail-visual-grid{display:grid;grid-template-columns:1.18fr .91fr .91fr;gap:13px}
+.detail-gallery-tile{position:relative;overflow:hidden;aspect-ratio:3/4;margin:0;isolation:isolate;background:#06385b;clip-path:polygon(13% 0%,100% 0%,87% 100%,0% 100%)}
+.detail-gallery-tile:first-child{clip-path:polygon(7% 0%,100% 0%,93% 100%,0 100%);aspect-ratio:1/1}
+.detail-gallery-tile img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:transform .5s}
+.detail-gallery-tile:hover img{transform:scale(1.06)}
+.detail-gallery-tile:after{content:'';position:absolute;inset:30% 0 0;background:linear-gradient(transparent,#0009);z-index:0}
+.detail-gallery-tile figcaption{position:absolute;bottom:25px;left:14%;z-index:1;font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.12em;display:grid;gap:8px}
+.detail-gallery-tile figcaption span{color:#8dd4ff}
+.detail-operation-section{background:#031323}
+.detail-operation-section>h2{max-width:950px;margin:23px 0 40px}
+.detail-switch-tabs{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+.detail-switch-tabs button{background:transparent;color:#accde2;border:1px solid #5a9bcb7b;padding:14px 25px;font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;min-height:48px;cursor:pointer}
+.detail-switch-tabs button:hover,.detail-switch-tabs button.is-active{color:white;border-color:#89cfff;background:#0c4672}
+.detail-switch-content{display:grid;grid-template-columns:1fr .95fr;gap:35px;align-items:center;border-top:1px solid #477a9a5e;padding-top:35px}
+.detail-switch-content [data-plan-panel]{min-height:210px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.detail-switch-content [data-plan-panel][hidden]{display:none!important}
+.detail-switch-content p{font:400 clamp(16px,1.9vw,23px)/1.7 'DM Sans',sans-serif;color:#d9ecf8;max-width:620px}
+.detail-switch-content a{font:600 11px 'IBM Plex Mono',monospace;border-bottom:1px solid #7bbcd9;padding-bottom:9px;margin-top:15px}
+.detail-switch-visual{width:100%;aspect-ratio:1.55;border-radius:4px;overflow:hidden;background:#07314f}
+.detail-switch-visual img{width:100%;height:100%;object-fit:cover}
+@media(max-width:770px){.detail-hero{min-height:87svh}.detail-hero-inner{padding-top:130px}.detail-hero h1{font-size:clamp(57px,11vw,90px)}.detail-head-actions{gap:8px}.detail-back{font-size:8px}.detail-contact-button{font-size:9px;padding:10px}.official-detail-logo{width:120px}.detail-stepnav{right:10px}.detail-visual-grid{grid-template-columns:1fr 1fr}.detail-gallery-tile:first-child{grid-column:1/-1;aspect-ratio:2/1}.detail-gallery-tile{aspect-ratio:1/1}.detail-switch-content{grid-template-columns:1fr}.detail-switch-content [data-plan-panel]{min-height:0}.detail-switch-visual{aspect-ratio:1.5}.detail-gallery-heading{gap:14px}}
+@media(max-width:500px){.detail-header{padding:20px 15px}.official-detail-logo{width:95px}.official-detail-logo small{font-size:5px}.detail-head-actions{gap:7px}.detail-back{font-size:8px}.detail-contact-button{padding:8px;font-size:9px}.detail-stepnav{display:none}.detail-gallery-section,.detail-operation-section{padding:65px 22px}.detail-gallery-heading{display:block}.detail-gallery-heading h2{margin:18px 0}.detail-gallery-tile figcaption{font-size:10px;bottom:12px}.detail-switch-tabs button{flex:1;padding:12px 10px;font-size:10px}.detail-switch-content{gap:18px}}

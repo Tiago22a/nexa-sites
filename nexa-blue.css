@@ -244,3 +244,17 @@
  .vessel-plan .plan-vessel-art{height:118px}
  .vessel-plan .plan-vessel-art .vessel-svg{height:110px}
 }
+
+/* refinamento da marca original, navegação e capítulos */
+.nexa-official-logo{width:clamp(123px,14vw,196px);max-width:40vw;gap:0;display:flex;flex-direction:column;align-items:flex-start}
+.nexa-official-logo img{width:100%;height:auto;aspect-ratio:3.3/1;object-fit:contain;object-position:left center}
+.nexa-official-logo small{font:500 8px/1.7 var(--mono);letter-spacing:.22em;margin:0 0 0 4%;color:#fff}
+.header-end{display:flex;align-items:center;gap:18px}
+.maw-ghost{display:grid;place-items:center}
+.nav-contact-button{font:500 11px var(--mono);letter-spacing:.08em;padding:13px 8px;border:0;background:transparent;color:#fff;text-align:left}
+.nav-contact-button:hover{color:#58beff}
+.hero-body>.eyebrow,.story>.eyebrow{font-size:clamp(12px,1.15vw,17px);font-weight:600;letter-spacing:.16em;display:inline-flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid #b2e9ff8c;text-shadow:0 2px 15px #031629bf}
+.story>.eyebrow{font-size:clamp(13px,1.27vw,19px)}
+.story h2{margin-top:28px}
+@media(max-width:850px){.story>.eyebrow{font-size:clamp(12px,2vw,17px)}}
+@media(max-width:520px){.nexa-official-logo{width:135px;max-width:45vw}.nexa-official-logo small{font-size:6px;letter-spacing:.1em}.header-end{gap:11px}.hero-body>.eyebrow,.story>.eyebrow{font-size:12px}.maw-ghost{width:38px;height:48px}.nav-contact-button{font-size:10px}}
