@@ -104,3 +104,23 @@
 .detail-switch-visual img{width:100%;height:100%;object-fit:cover}
 @media(max-width:770px){.detail-hero{min-height:87svh}.detail-hero-inner{padding-top:130px}.detail-hero h1{font-size:clamp(57px,11vw,90px)}.detail-head-actions{gap:8px}.detail-back{font-size:8px}.detail-contact-button{font-size:9px;padding:10px}.official-detail-logo{width:120px}.detail-stepnav{right:10px}.detail-visual-grid{grid-template-columns:1fr 1fr}.detail-gallery-tile:first-child{grid-column:1/-1;aspect-ratio:2/1}.detail-gallery-tile{aspect-ratio:1/1}.detail-switch-content{grid-template-columns:1fr}.detail-switch-content [data-plan-panel]{min-height:0}.detail-switch-visual{aspect-ratio:1.5}.detail-gallery-heading{gap:14px}}
 @media(max-width:500px){.detail-header{padding:20px 15px}.official-detail-logo{width:95px}.official-detail-logo small{font-size:5px}.detail-head-actions{gap:7px}.detail-back{font-size:8px}.detail-contact-button{padding:8px;font-size:9px}.detail-stepnav{display:none}.detail-gallery-section,.detail-operation-section{padding:65px 22px}.detail-gallery-heading{display:block}.detail-gallery-heading h2{margin:18px 0}.detail-gallery-tile figcaption{font-size:10px;bottom:12px}.detail-switch-tabs button{flex:1;padding:12px 10px;font-size:10px}.detail-switch-content{gap:18px}}
+
+/* Cinematic, editorial sections for vessel plans */
+.detail-header{gap:16px}
+.detail-header .detail-contact-btn{border:1px solid #58beff7d;background:transparent;color:#fff;padding:13px 18px;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;cursor:pointer}
+.detail-header .detail-contact-btn:hover{background:#0864a1}
+.plan-page .detail-hero{min-height:88svh;background-position:center;background-size:cover;align-items:center;isolation:isolate}
+.plan-page .detail-hero-inner{max-width:100%;position:relative;padding-top:150px;padding-bottom:110px}
+.plan-page .detail-hero h1{font-size:clamp(78px,12vw,170px);text-shadow:0 8px 50px #00132277;max-width:1000px}
+.plan-page .detail-hero .detail-lead{max-width:570px}
+.plan-page .detail-jump{margin-top:44px}
+.detail-section{position:relative;overflow:hidden}
+.detail-section h2{max-width:850px}
+.detail-intro{background:linear-gradient(115deg,#062b4b,#041b30)}
+.detail-intro .detail-narrow{max-width:930px}
+.detail-checklist{gap:1px 42px}
+.detail-checklist li{padding:24px 0 24px 26px}
+.detail-steps{margin-top:66px}
+.detail-steps>div{padding-bottom:20px}
+.detail-faq details summary{min-height:75px}
+@media(max-width:750px){.detail-header .detail-contact-btn{padding:12px 8px;font-size:9px}.plan-page .detail-hero h1{font-size:clamp(52px,12vw,85px)}.plan-page .detail-hero-inner{padding:100px 25px 75px}}
