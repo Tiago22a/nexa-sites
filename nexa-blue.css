@@ -125,3 +125,59 @@
 .modal-small{display:block;font:400 11px/1.65 var(--body);color:#a5c5d9;margin-top:14px}
 @media(max-width:920px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan-interactive{min-height:550px}}
 @media(max-width:650px){.plan-interactive{min-height:auto;padding:29px 24px}.plan .price{font-size:36px}.modal-columns,.modal-actions{grid-template-columns:1fr}.modal-pay-prices{display:block;font-size:21px}.modal-pay-prices span{display:block}.modal-pay-prices span+span{padding:10px 0 0;border:0}.plan-dialog-inner{padding:22px}.process-grid{grid-template-columns:1fr;gap:12px}.plan-dialog h2{font-size:clamp(34px,9vw,46px)}.plan-dialog .modal-summary{font-size:14px}}
+
+/* NEXA BLUE / Final refinements — lettering, footer, header, cards */
+.header{align-items:center}
+.header-end{gap:14px;align-items:center}
+.maw-ghost{width:clamp(49px,4.6vw,65px);height:clamp(55px,5.1vw,72px);flex:0 0 auto}
+.maw-ghost img{width:100%;height:100%;max-height:none;object-fit:contain;filter:none}
+#nav-toggle{flex-direction:row;gap:12px;align-items:center;font-size:12px;padding:10px 0 10px 6px}
+#nav-toggle .hamburger{gap:6px}
+#nav-toggle .hamburger i{width:23px;height:2px;background:#fff}
+.hero .hero-body{top:25%;width:min(980px,calc(100% - 82px))}
+.hero h1{margin-bottom:19px}
+.hero-lettering{display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff;font-family:'Rock Salt',cursive;text-shadow:0 2px 8px #041a316e;line-height:1.2;max-width:100%;transform:rotate(-3deg)}
+.hero-lettering .brush-top,.hero-lettering .brush-middle{display:block;font-size:clamp(17px,2.3vw,34px);max-width:100%;letter-spacing:-.085em;white-space:normal}
+.hero-lettering .brush-middle{font-size:clamp(19px,2.55vw,38px);transform:translateX(11px) rotate(-1deg);position:relative;padding-bottom:13px}
+.hero-lettering .brush-middle::after{content:'';position:absolute;height:2px;bottom:3px;background:white;width:81%;left:10%;transform:rotate(-2.2deg);box-shadow:6px 4px 0 -1px #fff9}
+.hero-lettering .brush-bottom{display:block;font-size:clamp(11px,1.38vw,19px);line-height:2;max-width:96%;margin-top:12px;letter-spacing:-.065em;transform:rotate(1.8deg)}
+.scribble.scribble-brush{font-family:'Rock Salt',cursive;color:#fff!important;-webkit-text-fill-color:#fff;font-size:clamp(25px,3.4vw,49px);line-height:1.5;letter-spacing:-.095em;transform:rotate(-5deg);margin:24px 0 30px 0;padding:6px 4px 15px;max-width:97%;text-shadow:0 2px 5px #041a315b}
+.scribble.scribble-brush.alt{font-family:'Rock Salt',cursive;font-size:clamp(24px,3.15vw,45px);transform:rotate(4deg);margin-left:0}
+.scribble.scribble-brush::after{background:#fff;width:70%;height:2px;bottom:9px;transform:rotate(-2.4deg)}
+.manifesto .scribble.scribble-brush.manifesto-scribble{font-family:'Rock Salt',cursive;font-size:clamp(19px,2.45vw,36px);line-height:1.65;transform:rotate(-3deg)}
+.footer-signature{font-family:'Rock Salt',cursive;font-size:clamp(14px,1.6vw,21px);transform:rotate(-4deg);margin-top:34px}
+.footer-social{display:flex;justify-content:flex-end;align-items:center;gap:clamp(15px,1.8vw,25px);flex-wrap:wrap;margin:14px 0 2px}
+.footer-social .social-icon{display:inline-flex;color:#fff;align-items:center;justify-content:center;width:36px;height:36px;flex:0 0 36px}
+.footer-social .social-icon svg{width:23px;height:23px;transition:transform .2s ease,opacity .2s ease}
+.footer-social a.social-icon:hover svg{transform:translateY(-3px) scale(1.1)}
+.footer-social .social-soon{opacity:.64;cursor:default}
+.plan-interactive{position:relative;cursor:default}
+.plan-page-link{position:static;z-index:1}
+.plan-page-link::after{content:'';position:absolute;inset:0;z-index:1}
+.plan-interactive:focus-within{outline:2px solid #58beff;outline-offset:3px}
+.plan-interactive:hover .plan-page-link{background:#169cff;transform:translateY(-2px)}
+@media(max-width:850px){
+ .maw-ghost{width:50px;height:57px}
+ .hero .hero-body{top:26%;width:calc(100% - 60px)}
+ .hero-lettering .brush-top,.hero-lettering .brush-middle{font-size:clamp(18px,3.3vw,28px)}
+ .hero-lettering .brush-bottom{font-size:clamp(12px,2vw,16px)}
+ .scribble.scribble-brush{font-size:clamp(23px,4.5vw,36px)}
+ .scribble.scribble-brush.alt{font-size:clamp(22px,4.25vw,34px)}
+}
+@media(max-width:520px){
+ .header{padding:18px 17px}.header-end{gap:9px}
+ .maw-ghost{display:flex;width:42px;height:49px}
+ #nav-toggle{gap:7px;font-size:10px}
+ #nav-toggle .hamburger i{width:19px}
+ .hero .hero-body{width:calc(100% - 42px);top:26%}
+ .hero h1{font-size:clamp(35px,10vw,53px)}
+ .hero-lettering{gap:5px}
+ .hero-lettering .brush-top{font-size:clamp(14px,4vw,20px)}
+ .hero-lettering .brush-middle{font-size:clamp(15px,4.6vw,22px);padding-bottom:9px}
+ .hero-lettering .brush-bottom{font-size:clamp(10px,2.9vw,14px);line-height:1.85}
+ .scribble.scribble-brush{font-size:clamp(19px,5.6vw,28px);line-height:1.5;letter-spacing:-.1em}
+ .scribble.scribble-brush.alt{font-size:clamp(18px,5.3vw,27px)}
+ .footer-social{justify-content:center;gap:11px;margin-top:24px}
+ .footer-social .social-icon{width:34px;height:34px;flex-basis:34px}
+ .footer-social .social-icon svg{width:21px;height:21px}
+}
