@@ -177,3 +177,55 @@
  .detail-checkout-footnote{font-size:11px;}
 }
 @media(prefers-reduced-motion:reduce){.detail-checkout-option>a{transition:none;}}
+
+
+/* NEXA / terminal checkout 2-column — "NÃO É SORTE" + condições contratuais */
+.nx-contract-dock{display:grid;grid-template-columns:minmax(270px,.74fr) minmax(0,1.26fr);gap:clamp(36px,5vw,100px);background:radial-gradient(ellipse at 95% 0%,#0a4e76a3,transparent 48%),linear-gradient(125deg,#020f20,#05263e 64%,#041a30);padding:clamp(70px,8vw,124px) clamp(22px,6.4vw,110px);border-top:1px solid #75bdf631;align-items:start}
+.nx-dock-left{position:sticky;top:30px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.nx-dock-eyebrow{font:600 10px/1.6 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#9cdbff}
+.nx-dock-script{font:400 clamp(46px,6.3vw,95px)/1.4 'Rock Salt',cursive;letter-spacing:-.1em;color:#fff;transform:rotate(-5deg);margin:38px 0 27px;text-shadow:0 4px 15px #0008}
+.nx-dock-script span{font-size:1.14em}
+.nx-dock-statement{font:500 clamp(18px,2.2vw,28px)/1.45 'Manrope',sans-serif;letter-spacing:-.045em;color:#fff;margin:0}
+.nx-dock-left>p:not(.nx-dock-statement){font:400 15px/1.8 'DM Sans',sans-serif;color:#b7d6e9;max-width:390px;margin:0}
+.nx-dock-back{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.05em;border-bottom:1px solid #bfe9ff7d;padding:14px 0;margin-top:20px;width:max-content;max-width:100%}
+.nx-dock-right{min-width:0}
+.nx-dock-right h3{font:300 clamp(37px,4.4vw,64px)/1.13 'Manrope',sans-serif;letter-spacing:-.065em;margin:17px 0}
+.nx-dock-right h3 em{font-style:normal;font-weight:500;color:#58beff}
+.nx-dock-subtitle{font:400 15px/1.7 'DM Sans',sans-serif;color:#d2e8f7;max-width:650px}
+.nx-billing-options{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:31px 0 13px}
+.nx-billing-card{display:block;position:relative;cursor:pointer;min-width:0}
+.nx-billing-card>input{position:absolute;left:19px;top:21px;accent-color:#58beff;width:18px;height:18px;z-index:1}
+.nx-billing-card-body{display:flex;min-height:198px;height:100%;flex-direction:column;gap:12px;background:#ffffff08;border:1px solid #7cb9db69;border-radius:5px;padding:21px 19px 22px 48px;transition:background .2s,border-color .2s}
+.nx-billing-card>input:checked+.nx-billing-card-body{background:#0b4773b5;border-color:#7dd0ff;box-shadow:0 0 0 1px #7dd0ff40}
+.nx-billing-card:focus-within .nx-billing-card-body{outline:2px solid #93d5ff;outline-offset:3px}
+.nx-billing-eyebrow{font:600 9px/1.55 'IBM Plex Mono',monospace;color:#9ed9f9;letter-spacing:.065em;min-height:30px}
+.nx-billing-card strong{font:500 clamp(24px,2.5vw,35px)/1.1 'Manrope',sans-serif;letter-spacing:-.06em;color:white}
+.nx-billing-card small{font:400 12px/1.6 'DM Sans',sans-serif;color:#c8e1f0}
+.nx-billing-note{font:400 12px/1.75 'DM Sans',sans-serif;color:#b4d0e2;margin:12px 0 30px}
+.nx-contract-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:29px 0;padding:24px 0;border-top:1px solid #bde9ff36;border-bottom:1px solid #bde9ff36}
+.nx-contract-flow div{display:flex;gap:12px;align-items:start}
+.nx-contract-flow span{color:#8ed6ff;font:600 11px 'IBM Plex Mono',monospace}
+.nx-contract-flow p{margin:0;color:#cce4f3;font:400 12px/1.65 'DM Sans',sans-serif}
+.nx-form-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:23px 0 17px}
+.nx-form-head p{font:400 11px/1.5 'DM Sans',sans-serif;color:#8fb3c9;text-align:right;margin:0}
+.nx-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.nx-form-grid label{display:flex;flex-direction:column;gap:8px;color:#cfe5f5;font:500 12px/1.4 'DM Sans',sans-serif;min-width:0}
+.nx-form-grid input{width:100%;min-width:0;height:45px;background:#00182b9e;color:#fff;border:1px solid #77b2d464;padding:11px 12px;border-radius:3px;font:400 13px 'DM Sans',sans-serif}
+.nx-form-grid input:focus{outline:2px solid #79caff;outline-offset:1px}
+.nx-form-grid input::placeholder{color:#829eb5}
+.nx-consent{display:flex;align-items:start;gap:12px;color:#c6e3f3;font:400 12px/1.7 'DM Sans',sans-serif;margin:20px 0 24px}
+.nx-consent input{width:18px;height:18px;flex:0 0 18px;accent-color:#178fe0;margin:2px 0 0}
+.nx-dock-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.nx-dock-actions button,.nx-dock-actions a{min-height:57px;padding:17px 15px;font:600 10px/1.45 'IBM Plex Mono',monospace;letter-spacing:.035em;cursor:pointer;border-radius:2px;display:flex;justify-content:space-between;align-items:center;text-align:left;gap:15px}
+.nx-action-primary{border:1px solid #0e8ee0;color:#fff;background:#087dc7;grid-column:1/-1}
+.nx-action-whatsapp{border:1px solid #0e8ee0;color:#fff;background:#0b4166}
+.nx-action-copy{border:1px solid #77bcdf;color:#fff;background:#ffffff08}
+.nx-dock-actions button:hover,.nx-dock-actions a:hover{background:#1392dc}
+.nx-dock-status{min-height:20px;color:#9edcff;font:400 12px/1.7 'DM Sans',sans-serif;margin:12px 0 0}
+.nx-onboarding{border-left:2px solid #65c5fc;padding:3px 0 3px 18px;margin:32px 0 17px}
+.nx-onboarding>span{font:600 10px 'IBM Plex Mono',monospace;color:#94d9ff;letter-spacing:.08em}
+.nx-onboarding p{font:400 13px/1.75 'DM Sans',sans-serif;color:#cfdeeb;margin:12px 0 0}
+.nx-dock-disclaimer{font:400 11px/1.7 'DM Sans',sans-serif;color:#87aabd;margin:19px 0 0}
+@media(max-width:1050px){.nx-contract-dock{grid-template-columns:1fr;gap:42px}.nx-dock-left{position:static;max-width:790px}.nx-dock-script{font-size:clamp(46px,9vw,73px);margin:12px 0 0}.nx-dock-statement{margin-top:2px}}
+@media(max-width:680px){.nx-contract-dock{padding:60px 22px 80px}.nx-dock-left{gap:15px}.nx-dock-script{font-size:clamp(39px,10vw,58px)}.nx-dock-right h3{font-size:clamp(32px,8vw,46px)}.nx-billing-options{grid-template-columns:1fr}.nx-billing-card-body{min-height:160px}.nx-contract-flow{grid-template-columns:1fr;gap:17px}.nx-form-grid,.nx-dock-actions{grid-template-columns:1fr}.nx-action-primary{grid-column:auto}.nx-form-head{display:block}.nx-form-head p{text-align:left;margin:6px 0 0}}
+@media(prefers-reduced-motion:reduce){.nx-billing-card-body{transition:none}}
