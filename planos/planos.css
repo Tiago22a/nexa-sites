@@ -50,3 +50,13 @@
 .detail-footer a:first-child{font-size:15px;margin-right:auto}.detail-footer small{color:#9bbdd2}
 @media(max-width:750px){.detail-hero{min-height:68svh}.detail-header{height:86px}.detail-back{font-size:9px}.detail-hero-inner{padding:38px 25px 55px}.detail-hero h1{font-size:clamp(47px,11vw,84px)}.detail-checklist,.detail-steps{grid-template-columns:1fr}.detail-steps{gap:10px}.detail-section,.detail-intro{padding:75px 22px}.detail-prices{gap:25px}.detail-ctas{display:grid}.detail-ctas a{min-width:0}.detail-footer{justify-content:center;text-align:center}.detail-footer a:first-child{width:100%;margin:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Narrative bridge on each detailed vessel page */
+.vessel-story-section{background:radial-gradient(circle at left top,#0d4160,#041728 65%);display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(35px,6vw,110px);padding:clamp(65px,8vw,110px) clamp(25px,8vw,130px)}
+.vessel-story-aside{display:flex;flex-direction:column;gap:40px}
+.vessel-story-script{font:400 clamp(17px,2vw,28px)/1.8 'Rock Salt',cursive;letter-spacing:-.065em;transform:rotate(-5deg);color:white}
+.vessel-story-main h2{font:300 clamp(34px,4.3vw,65px)/1.13 'Manrope',sans-serif;letter-spacing:-.06em;margin:0 0 28px}
+.vessel-story-main h2 em{font-style:normal;color:#58beff;font-weight:500}
+.vessel-story-main p{max-width:660px;color:#cce3f3;font:400 clamp(15px,1.4vw,18px)/1.85 'DM Sans',sans-serif}
+.vessel-story-main a{display:inline-flex;gap:25px;border-bottom:1px solid #bbdef1;padding:12px 0;margin-top:18px;font:600 10px 'IBM Plex Mono',monospace}
+@media(max-width:750px){.vessel-story-section{grid-template-columns:1fr;gap:22px}.vessel-story-aside{gap:10px}.vessel-story-script{font-size:17px}.vessel-story-main h2{font-size:clamp(35px,8vw,48px)}}

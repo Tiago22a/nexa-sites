@@ -181,3 +181,66 @@
  .footer-social .social-icon{width:34px;height:34px;flex-basis:34px}
  .footer-social .social-icon svg{width:21px;height:21px}
 }
+
+
+/* BRAND SYSTEM: a pescaria como estratégia, não como promessa de resultados */
+.about-nexa{position:relative;overflow:hidden;background:radial-gradient(circle at 97% 14%,#0c4a73 0%,#05243b 34%,#041629 82%);isolation:isolate}
+.about-nexa::before{content:'';position:absolute;top:-220px;right:-130px;width:700px;height:700px;border:1px solid #51b5ed20;border-radius:50%;pointer-events:none;box-shadow:0 0 0 85px #51b5ed09,0 0 0 175px #51b5ed06}
+.about-nexa .about-topline{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:32px}
+.about-coordinate{font:500 10px var(--mono);color:#8db7cf;letter-spacing:.12em}
+.about-layout{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);align-items:start;gap:clamp(36px,5vw,110px)}
+.about-heading h2{font:300 clamp(42px,5.2vw,82px)/1.13 var(--display);letter-spacing:-.065em;margin:0}
+.about-heading h2 em{font-style:normal;font-weight:500;color:var(--blue300)}
+.about-scribble{font:400 clamp(15px,1.9vw,26px)/1.85 'Rock Salt',cursive;letter-spacing:-.075em;display:block;transform:rotate(-4deg);color:white;margin:40px 0 25px 12px}
+.about-copy{max-width:590px;border-left:1px solid #72bde24d;padding-left:clamp(20px,3vw,39px)}
+.about-copy p{font:400 clamp(14px,1.2vw,17px)/1.94 var(--body);color:#cce3f3;margin:0 0 22px}
+.about-copy .about-lead{font-size:clamp(16px,1.55vw,21px);line-height:1.65;color:#fff;margin-bottom:24px}
+.about-copy strong{color:#fff;font-weight:700}
+.about-vessels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:65px;background:#80c9e62b;border:1px solid #80c9e62b}
+.about-vessel{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-height:335px;background:#051d33;padding:clamp(22px,2.6vw,36px);transition:background .25s ease;overflow:hidden}
+.about-vessel:hover,.about-vessel:focus-visible{background:#0b4263}
+.about-vessel-id{font:500 10px/1.3 var(--mono);letter-spacing:.1em;color:#9bd9ff}
+.vessel-svg{display:block;width:100%;height:auto;max-height:165px;color:#a6ddff}
+.about-vessel .vessel-svg{width:min(100%,255px);height:140px;margin:11px auto 4px}
+.about-vessel strong{font:400 clamp(32px,3.1vw,48px)/1.05 var(--display);letter-spacing:-.07em;margin-top:auto}
+.about-vessel strong span{color:#58beff}
+.about-vessel small{font:400 13px/1.6 var(--body);color:#c9dceb;margin-top:8px}
+.about-vessel-arrow{position:absolute;right:30px;bottom:32px;font-size:22px;color:#a6ddff}
+.about-ending{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:45px}
+.about-ending p{font-size:clamp(15px,1.35vw,19px);line-height:1.65;margin:0;color:#d4e8f5}
+.about-ending strong{color:white}
+.vessel-plan-grid{gap:1px}
+.vessel-plan{min-height:710px;padding-top:28px}
+.vessel-plan .plan-top{align-items:center}
+.vessel-plan .plan-symbol{font:500 12px var(--mono);color:#80bce0}
+.vessel-plan .plan-vessel-art{height:145px;display:flex;align-items:center;justify-content:center;opacity:.9;margin:8px 0 -1px;overflow:hidden}
+.vessel-plan .plan-vessel-art .vessel-svg{max-width:270px;height:135px}
+.vessel-plan h3{margin:12px 0 16px;font-size:clamp(39px,4.7vw,70px)}
+.vessel-plan .plan-desc{max-width:350px}
+.vessel-plan .plan-highlight{margin-bottom:26px}
+.vessel-plan .plan-bottom{position:relative}
+.vessel-plan .plan-view{position:static}
+.vessel-plan .plan-view::after{content:'';position:absolute;inset:0;z-index:1}
+@media(max-width:930px){
+ .about-layout{grid-template-columns:1fr;gap:20px}
+ .about-copy{max-width:790px}
+ .about-vessels{margin-top:42px}
+ .about-vessel{min-height:300px}
+ .vessel-plan{min-height:590px}
+}
+@media(max-width:650px){
+ .about-nexa .about-topline{flex-wrap:wrap}
+ .about-coordinate{display:none}
+ .about-heading h2{font-size:clamp(39px,9vw,54px)}
+ .about-copy{padding-left:20px}
+ .about-scribble{font-size:clamp(14px,4.1vw,20px);line-height:1.9;margin:28px 0 24px 0}
+ .about-vessels{grid-template-columns:1fr}
+ .about-vessel{min-height:225px;padding:20px 25px}
+ .about-vessel .vessel-svg{height:90px;width:175px;margin:5px auto}
+ .about-vessel strong{font-size:38px}
+ .about-vessel small{margin-top:4px}
+ .about-ending{align-items:flex-start}
+ .vessel-plan{min-height:0}
+ .vessel-plan .plan-vessel-art{height:118px}
+ .vessel-plan .plan-vessel-art .vessel-svg{height:110px}
+}

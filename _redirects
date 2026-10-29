@@ -1,3 +1,6 @@
 http://nexasitesdev.com.br/* https://nexasitesdev.com.br/:splat 301!
 http://www.nexasitesdev.com.br/* https://nexasitesdev.com.br/:splat 301!
 https://www.nexasitesdev.com.br/* https://nexasitesdev.com.br/:splat 301!
+/planos/anzol/ /planos/barco/ 301
+/planos/rede/ /planos/iate/ 301
+/planos/modo-submarino/ /planos/submarino/ 301
