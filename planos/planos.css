@@ -237,3 +237,25 @@
 .nx-billing-card strong{font-size:clamp(20px,1.8vw,29px)}
 @media(max-width:1250px){.nx-billing-options{grid-template-columns:1fr}.nx-billing-card-body{min-height:125px}}
 @media(max-width:680px){.nx-billing-options{grid-template-columns:1fr}.nx-billing-card-body{min-height:125px}}
+
+/* Footer dos três planos / as três marcas e canais na mesma linha */
+.nx-detail-footer{display:block;text-align:left;padding:0!important;background:#010b17;border-top:1px solid #ffffff18;}
+.nx-footer-upper{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:38px clamp(22px,5vw,85px);min-height:125px;}
+.nx-footer-brand-row{display:flex;align-items:center;gap:clamp(10px,1.6vw,28px);min-width:0;}
+.nx-footer-brand{display:flex;align-items:center;justify-content:center;max-height:54px;min-width:0;}
+.nx-footer-brand img{display:block;max-height:43px;max-width:180px;width:auto;object-fit:contain;}
+.nx-nexa img{width:clamp(105px,11vw,153px);}
+.nx-winf img{width:clamp(110px,14vw,190px);}
+.nx-maw{gap:5px;}
+.nx-maw img{height:42px;width:auto;}
+.nx-maw strong{font:700 clamp(12px,1.35vw,18px) 'Manrope',sans-serif;letter-spacing:-.04em;white-space:nowrap;}
+.nx-footer-separator{font:300 25px 'Manrope',sans-serif;color:#58beff;}
+.nx-footer-social{display:flex;gap:clamp(7px,1.3vw,20px);align-items:center;flex-wrap:wrap;justify-content:flex-end;}
+.nx-footer-social .social-icon{display:inline-flex;justify-content:center;align-items:center;width:32px;height:36px;color:#fff;opacity:.88;}
+.nx-footer-social .social-icon svg{width:21px;height:21px;}
+.nx-footer-social .social-icon.social-soon{opacity:.48;cursor:default;}
+.nx-footer-social a.social-icon:hover{opacity:1;color:#58beff;}
+.nx-footer-bottom{border-top:1px solid #ffffff20;padding:16px clamp(22px,5vw,85px);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.nx-footer-bottom small{font:400 9px/1.6 'IBM Plex Mono',monospace;color:#9fb9cb;}
+@media(max-width:1100px){.nx-footer-upper{flex-direction:column;align-items:center;gap:25px}.nx-footer-brand-row{justify-content:center}.nx-footer-social{justify-content:center}}
+@media(max-width:570px){.nx-footer-upper{padding:30px 17px}.nx-footer-brand-row{gap:8px;flex-wrap:wrap}.nx-nexa img{width:99px}.nx-winf img{width:109px}.nx-maw img{height:33px}.nx-maw strong{font-size:11px}.nx-footer-separator{font-size:19px}.nx-footer-social{gap:8px 14px}.nx-footer-bottom{align-items:center;justify-content:center;text-align:center;padding:15px}}
