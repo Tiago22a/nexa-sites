@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Rock+Salt&family=Caveat+Brush&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/nexa-blue.css">
-<script defer src="/nexa-blue.js"></script><script defer src="/assets/nexa-contact.js"></script>
+<script defer src="/nexa-blue.js"></script><script defer src="/assets/nexa-clients.js"></script><script defer src="/assets/nexa-contact.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"NEXA BLUE","url":"https://nexasitesdev.com.br/","description":"Criação de sites, aplicativos, presença no Google e gestão de redes sociais","contactPoint":{"@type":"ContactPoint","telephone":"+55-13-99781-5375","contactType":"customer service","availableLanguage":"Portuguese"}}</script>
 </head>
 <body>
@@ -26,7 +26,7 @@
   <a class="logo nexa-official-logo" href="#inicio" aria-label="Nexa Blue, voltar ao início"><img src="/assets/nexa-logo-oficial.svg" alt="NEXA"><small>BLUE · AGÊNCIA DIGITAL</small></a>
   <div class="header-end"><button id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu"><span class="hamburger" aria-hidden="true"><i></i><i></i></span><span class="menu-word">MENU</span></button><span class="maw-ghost" title="M.A.W. — agência parceira"><img src="/assets/nexa-maw-ghost.svg" alt="Símbolo oficial da M.A.W."></span></div>
   <nav class="navigation" id="main-nav" aria-label="Navegação principal">
-    <a href="#inicio">Início</a><a href="#mergulho">A jornada</a><a href="#sobre">Quem somos</a><a href="#solucoes">Soluções</a><a href="#planos">Planos</a><a href="/shop/">Shop</a><button type="button" class="nav-contact-trigger" data-open-contact>Contato ↗</button>
+    <a href="#inicio">Início</a><a href="#mergulho">A jornada</a><a href="#sobre">Quem somos</a><a href="#solucoes">Soluções</a><a href="#planos">Planos</a><a href="#clientes">Clientes</a><a href="/shop/">Shop</a><button type="button" class="nav-contact-trigger" data-open-contact>Contato ↗</button>
   </nav>
 </header>
 <nav class="depth-nav" aria-label="Navegação por profundidade">
@@ -178,6 +178,27 @@
     </div>
     <p class="disclaimer">O valor anunciado é para contratação anual de 12 meses, com pagamento integral à vista ou em 12 parcelas com acréscimo informado. No parcelamento, a primeira parcela é paga na assinatura e as 11 seguintes vencem mensalmente. O início da vigência e a execução dependem de contrato assinado e confirmação do pagamento inicial. Serviços têm limites de escopo descritos nos detalhes de cada plano. Domínio, hospedagem, mídia paga, ferramentas de terceiros e custos externos são cobrados separadamente quando necessários e previamente aprovados.</p>
   </section>
+  <section id="clientes" class="clients-spotlight content-section" aria-labelledby="clientes-heading">
+    <div class="clients-heading-row">
+      <div>
+        <span class="eyebrow blue-text">NEXA BLUE / PORTFÓLIO</span>
+        <h2 id="clientes-heading">CONHEÇA <em>NOSSOS CLIENTES.</em></h2>
+        <p>Projetos, identidades e experiências digitais desenvolvidas para marcas de diferentes segmentos. Em breve, conheça as empresas e explore seus sites.</p>
+      </div>
+      <a href="#contato" class="clients-discover">SUA MARCA PODE SER A PRÓXIMA <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="clients-glass-band" id="clients-glass-band" aria-label="Portfólio de clientes e links para seus sites">
+      <div class="clients-placeholder" id="clients-placeholder" aria-live="polite">
+        <span class="clients-placeholder-mark" aria-hidden="true">✳</span>
+        <span>CASES E IDENTIDADES EM CURADORIA</span>
+        <small>As marcas oficiais serão apresentadas aqui.</small>
+      </div>
+      <div class="clients-marquee" id="clients-marquee" hidden aria-label="Clientes NEXA BLUE">
+        <div class="clients-track" id="clients-track"></div>
+      </div>
+    </div>
+    <p class="clients-caption">Cada marca conta uma história. Cada projeto exige uma rota própria.</p>
+  </section>
   <section id="shop-teaser" class="shop-promo content-section"><div class="shop-promo-intro"><span class="eyebrow blue-text">NEXA SHOP / PRODUTOS AVULSOS</span><h2>MAIS UMA JOGADA<br><em>PARA SUA MARCA.</em></h2><p>Vídeos comerciais em combos de 3, 5 ou 10. Packs de 24 artes com textos. Impressos, placas, banners e três níveis de impulsionamento.</p><a href="/shop/" class="shop-promo-cta">EXPLORAR O NEXA SHOP ↗</a></div><div class="shop-promo-preview"><div><strong>03 / 05 / 10</strong><small>VÍDEOS COMERCIAIS</small></div><div><strong>24</strong><small>ARTES + TEXTOS</small></div><div><strong>03</strong><small>IMPULSIONAMENTO</small></div></div></section>
   <section class="process content-section" aria-labelledby="process-heading">
     <div class="section-intro">
@@ -209,7 +230,7 @@
     <p class="footer-signature" aria-label="Não é sorte. É estratégia, direção e coragem para navegar mais fundo.">não é sorte. é estratégia, direção e coragem para navegar mais fundo.</p>
     <p class="footer-legal">© <span id="year">2026</span> NEXA BLUE. Todos os direitos reservados. Marcas de terceiros pertencem aos respectivos titulares.</p>
   </div>
-  <div class="footer-bottom"><div class="footer-links"><a href="#sobre">QUEM SOMOS</a><a href="#solucoes">SERVIÇOS</a><a href="#planos">PLANOS</a><a href="/shop/">SHOP</a><button type="button" data-open-contact class="footer-contact-trigger">CONTATO</button><a href="https://wa.me/5513997815375" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp oficial">WHATSAPP ↗</a></div></div>
+  <div class="footer-bottom"><div class="footer-links"><a href="#sobre">QUEM SOMOS</a><a href="#solucoes">SERVIÇOS</a><a href="#planos">PLANOS</a><a href="#clientes">CLIENTES</a><a href="/shop/">SHOP</a><button type="button" data-open-contact class="footer-contact-trigger">CONTATO</button><a href="https://wa.me/5513997815375" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp oficial">WHATSAPP ↗</a></div></div>
 </footer>
 
 
