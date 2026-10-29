@@ -1,0 +1,38 @@
+name: NEXA SHOP - exportar capas PNG
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/shop/*.svg'
+      - '.github/workflows/nexa-shop-previews.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  export-previews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Instalar conversor SVG para PNG
+        run: python -m pip install --quiet cairosvg
+      - name: Gerar PNGs para cards e previews de WhatsApp
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import cairosvg
+          for f in sorted(Path("assets/shop").glob("*.svg")):
+              out=f.with_suffix(".png")
+              cairosvg.svg2png(url=str(f),write_to=str(out),output_width=1200,output_height=760)
+              print(f"{f} -> {out}")
+          PY
+      - name: Publicar imagens resultantes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/shop/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(shop): exportar capas PNG para previews"
+            git push
+          fi
