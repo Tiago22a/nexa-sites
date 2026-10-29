@@ -77,3 +77,51 @@
 @media(prefers-reduced-motion:reduce){
   .scribble.scribble-brush,.footer-signature {transition:none;}
 }
+
+/* NEXA BLUE | Planos anuais, detalhes e fluxo comercial */
+.plan-interactive{cursor:pointer;position:relative;outline-offset:5px;min-height:650px}
+.plan-interactive:focus-visible{outline:2px solid #58beff;outline-offset:3px}
+.plan-interactive:hover .plan-view,.plan-interactive:focus-visible .plan-view{background:#169cff;transform:translateY(-2px)}
+.plan-highlight{font-size:12px;line-height:1.6;color:#a6ddff;border-top:1px solid #ffffff2f;padding-top:17px;margin:16px 0 0}
+.plan-price-label{font:500 10px/1.6 var(--mono);letter-spacing:.08em;color:#9dcbe7;margin:0 0 7px}
+.plan .price{white-space:nowrap;font-size:clamp(29px,3vw,44px)}
+.plan .price.custom{white-space:normal;font-size:clamp(29px,2.8vw,40px)}
+.price-cents{font-size:.48em;vertical-align:baseline;margin-left:2px;font-weight:400}
+.installment{font-size:clamp(13px,1.1vw,16px);color:#fff;margin:10px 0 7px}
+.installment strong{font-weight:700}
+.plan .price-note{font-size:11px;line-height:1.55;min-height:34px;margin:0 0 21px;color:#c9deed}
+.plan-view{background:#087dc7;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px 15px;font:600 10px/1.35 var(--mono);letter-spacing:.025em;transition:background .2s ease,transform .2s ease}
+.plan-view span{font-size:20px}
+.plans .disclaimer{max-width:1100px;color:#d2e3ef;font:400 12px/1.75 var(--body);margin-top:27px}
+.process{background:#071f36}
+.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:21px;margin-top:54px}
+.process-grid>div{border-top:1px solid #3d779c;padding:24px 4px 10px 0}
+.process-grid>div>span{font:500 10px var(--mono);color:#58beff;letter-spacing:.09em}
+.process-grid h3{font:500 clamp(20px,2vw,29px)/1.2 var(--display);letter-spacing:-.05em;margin:22px 0 12px}
+.process-grid p{font:400 13px/1.8 var(--body);color:#c4ddea}
+.plan-dialog{width:min(970px,calc(100% - 24px));max-width:970px;max-height:min(91dvh,1000px);border:1px solid #2787bb;background:#041a31;color:#fff;padding:0;box-shadow:0 30px 120px #000a;overflow:auto;overscroll-behavior:contain;border-radius:3px}
+.plan-dialog[open]{display:block}
+.plan-dialog::backdrop{background:#020913dd;backdrop-filter:blur(7px)}
+.plan-dialog-inner{padding:clamp(24px,4vw,50px)}
+.plan-dialog-close{position:sticky;display:flex;align-items:center;justify-content:center;margin:-12px -12px 0 auto;top:12px;float:right;width:44px;height:44px;border:1px solid #ffffff49;background:#0b3552;color:white;border-radius:50%;font-size:27px;z-index:1}
+.plan-dialog-close:hover{background:#0864a1}
+.plan-dialog h2{font:400 clamp(38px,6vw,67px)/1.05 var(--display);letter-spacing:-.06em;margin:22px 0 14px;padding-right:30px}
+.plan-dialog .modal-summary{font:400 15px/1.8 var(--body);color:#e2f1fc;max-width:750px}
+.modal-columns{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(20px,4vw,60px);margin-top:29px}
+.modal-columns h3,.modal-financial h3{font:500 11px var(--mono);letter-spacing:.12em;color:#58beff;border-bottom:1px solid #ffffff38;padding-bottom:16px}
+.scope-list{list-style:none;padding:0;margin:16px 0}
+.scope-list li{font-size:13px;line-height:1.65;color:#e4f0f9;margin:0 0 13px;padding-left:19px;position:relative}
+.scope-list li::before{content:'·';position:absolute;left:0;color:#58beff;font-size:23px;line-height:15px}
+.modal-financial{background:#052a49;border:1px solid #ffffff26;padding:18px 22px;margin-top:18px}
+.modal-financial h3{margin:0}
+.modal-pay-prices{display:flex;gap:22px;flex-wrap:wrap;margin:18px 0 6px;font-family:var(--display);font-size:clamp(18px,2.1vw,28px);font-weight:500}
+.modal-pay-prices span+span{border-left:1px solid #ffffff44;padding-left:22px}
+.modal-financial p,.modal-safety{font:400 12px/1.75 var(--body);color:#c6e2f2}
+.modal-safety{padding:4px 0;margin:16px 0}
+.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.modal-cta{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:14px 10px;background:#087dc7;font:600 11px/1.4 var(--mono);letter-spacing:.025em}
+.modal-cta.secondary{background:transparent;border:1px solid #58beff;color:#fff}
+.modal-cta:hover{background:#169cff;color:#fff}
+.modal-small{display:block;font:400 11px/1.65 var(--body);color:#a5c5d9;margin-top:14px}
+@media(max-width:920px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan-interactive{min-height:550px}}
+@media(max-width:650px){.plan-interactive{min-height:auto;padding:29px 24px}.plan .price{font-size:36px}.modal-columns,.modal-actions{grid-template-columns:1fr}.modal-pay-prices{display:block;font-size:21px}.modal-pay-prices span{display:block}.modal-pay-prices span+span{padding:10px 0 0;border:0}.plan-dialog-inner{padding:22px}.process-grid{grid-template-columns:1fr;gap:12px}.plan-dialog h2{font-size:clamp(34px,9vw,46px)}.plan-dialog .modal-summary{font-size:14px}}
