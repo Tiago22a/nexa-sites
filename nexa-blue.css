@@ -734,3 +734,12 @@
 @media(max-width:900px){.clients-heading-row{display:block;}.clients-discover{display:inline-block;margin-top:19px;}.clients-glass-band{margin-top:35px;}}
 @media(max-width:600px){.clients-glass-band{width:calc(100% + 44px);margin-left:-22px;margin-right:-22px;min-height:140px;}.clients-placeholder{min-height:140px;padding:20px;}.clients-logo-link{width:145px;height:90px;min-width:145px;}.clients-logo-link img{max-height:60px;}}
 @media(prefers-reduced-motion:reduce){.clients-track{animation:none;}.clients-marquee{overflow-x:auto;scrollbar-width:thin;}.clients-logo-set:nth-child(2){display:none;}}
+
+/* Faixa de marcas — logos brancos e nomes como fallback até receber arte oficial. */
+.nexa-showcase-tile{position:relative;min-height:140px;flex-direction:column;gap:11px;width:clamp(175px,15vw,235px);min-width:175px;opacity:.88;padding:12px 0;}
+.nexa-showcase-tile img{width:auto;max-width:180px;max-height:60px;object-fit:contain;filter:brightness(0) invert(1);}
+.nexa-showcase-tile strong{font:600 clamp(17px,1.55vw,23px)/1.2 'Manrope',sans-serif;letter-spacing:-.065em;color:#fff;text-align:center;white-space:nowrap;}
+.nexa-showcase-tile small{font:500 8px/1.5 'IBM Plex Mono',monospace;letter-spacing:.09em;color:#9ac5df;text-align:center;white-space:nowrap;}
+.nexa-maw-tile img{max-height:51px;}
+.nexa-showcase-tile:not(a){cursor:default;}
+@media(max-width:600px){.nexa-showcase-tile{width:170px;min-width:170px;min-height:115px}.nexa-showcase-tile strong{font-size:17px}.nexa-showcase-tile img{max-width:145px;max-height:49px;}}

@@ -1,41 +1,51 @@
 'use strict';
-/*
- * NEXA BLUE — logos oficiais de clientes.
- * Adicionar APENAS clientes e cases efetivos, após receber o logotipo e o link público.
- * Exemplo de entrada (NÃO ativa até ser incluída na lista):
- * {name:'Empresa',logo:'/assets/clientes/empresa-logo-branca.png',url:'https://empresa.com.br/'}
+/* Identidades fornecidas no repositório usam seus SVGs oficiais.
+ * Outros nomes entram como wordmarks tipográficos temporários — sem criar logotipos.
+ * Preencher logo: /assets/clientes/<arquivo>.svg e url: https://site-oficial
+ * apenas após receber arquivos/URLs confirmados.
  */
-const NEXA_CLIENTS = [];
+const NEXA_SHOWCASE = [
+  {name:'WINF Partners',kind:'ecosistema',logo:'/assets/nexa-winf-partners.svg',url:null},
+  {name:'M.A.W. Agência',kind:'ecosistema',logo:'/assets/nexa-maw-ghost.svg',url:null},
+  {name:'SYNTHWAVE',kind:'ecosistema',logo:null,url:null},
+  {name:'UNIVERSO DARK',kind:'ecosistema',logo:null,url:null},
+  {name:'NeoSkin',kind:'ecosistema',logo:null,url:null},
+  {name:'AeroCore',kind:'ecosistema',logo:null,url:null},
+  {name:'Ceramic Armoring',kind:'ecosistema',logo:null,url:null},
+  {name:'Gceiro',kind:'cliente',logo:null,url:null},
+  {name:'MC Gesso',kind:'cliente',logo:null,url:null}
+];
 (()=>{
-  const row=document.querySelector('#clients-track');
-  const empty=document.querySelector('#clients-placeholder');
-  const marquee=document.querySelector('#clients-marquee');
-  if(!row||!empty||!marquee||!NEXA_CLIENTS.length)return;
-  const valid=NEXA_CLIENTS.filter(x=>x&&typeof x.name==='string'&&x.name.trim()&&typeof x.logo==='string'&&x.logo.startsWith('/assets/clientes/')&&typeof x.url==='string'&&/^https:\/\//i.test(x.url));
-  if(!valid.length)return;
-  const makeSet=(duplicate=false)=>{
+  const band=document.querySelector('#clients-marquee');
+  const track=document.querySelector('#clients-track');
+  const placeholder=document.querySelector('#clients-placeholder');
+  if(!band||!track||!placeholder)return;
+  const entries=NEXA_SHOWCASE.filter(x=>x&&x.name&&['ecosistema','cliente'].includes(x.kind));
+  if(!entries.length)return;
+  const make=(duplicate)=>{
     const group=document.createElement('div');
     group.className='clients-logo-set';
     if(duplicate)group.setAttribute('aria-hidden','true');
-    for(const client of valid){
-      const link=document.createElement('a');
-      link.href=client.url;
-      link.target='_blank';
-      link.rel='noopener noreferrer';
-      link.className='clients-logo-link';
-      link.setAttribute('aria-label','Conhecer o site de '+client.name);
-      if(duplicate)link.tabIndex=-1;
-      const logo=document.createElement('img');
-      logo.src=client.logo;
-      logo.alt=duplicate?'':client.name;
-      logo.loading='lazy';
-      logo.decoding='async';
-      link.append(logo);
-      group.append(link);
+    for(const entry of entries){
+      const verified=typeof entry.url==='string'&&/^https:\/\/[^ ]+$/i.test(entry.url);
+      const tile=document.createElement(verified?'a':'div');
+      tile.className='clients-logo-link nexa-showcase-tile';
+      tile.title=entry.name+(verified?' — abrir site':' — endereço ainda não informado');
+      if(verified){tile.href=entry.url;tile.target='_blank';tile.rel='noopener noreferrer';tile.setAttribute('aria-label','Visitar '+entry.name);}
+      if(duplicate)tile.tabIndex=-1;
+      if(entry.logo&&entry.logo.startsWith('/assets/')){
+        const img=document.createElement('img');
+        img.src=entry.logo;img.alt=duplicate?'':entry.name;img.loading='lazy';img.decoding='async';
+        tile.append(img);
+        if(entry.name==='M.A.W. Agência')tile.classList.add('nexa-maw-tile');
+      }else{tile.append(Object.assign(document.createElement('strong'),{textContent:entry.name}));}
+      const tag=document.createElement('small');
+      tag.textContent=entry.kind==='cliente'?'CLIENTE / CASE':'ECOSSISTEMA WINF';
+      tile.append(tag);
+      group.append(tile);
     }
     return group;
   };
-  row.append(makeSet(),makeSet(true));
-  empty.hidden=true;
-  marquee.hidden=false;
+  track.replaceChildren(make(false),make(true));
+  placeholder.hidden=true;band.hidden=false;
 })();
