@@ -30,10 +30,29 @@ jobs:
               rm -f "$file"
             fi
           done
-          if [ "$ok" -gt 0 ]; then
+          # Vídeo de abertura: falha opcional com fotografia de reserva
+          video='assets/nexa-blue-fisherman.mp4'
+          if curl --fail --location --retry 2 --max-time 50 --silent --show-error "$source/fisherman.mp4" -o "$video"; then
+            if file --mime-type "$video" | grep -q 'video/mp4'; then
+              echo "Vídeo do pescador importado"
+            else
+              rm -f "$video"
+              echo "::warning::Arquivo do pescador não é MP4; preservada imagem estática."
+            fi
+          else
+            rm -f "$video"
+            echo "::warning::Vídeo não encontrado; preservada imagem estática."
+          fi
+          # Preservar a identidade oficial WINF com logo PNG transparente
+          if python -m pip install --quiet cairosvg; then
+            python -c "import cairosvg; cairosvg.svg2png(url='assets/nexa-winf-partners.svg', write_to='assets/nexa-winf-partners.png', output_width=950)" || true
+          fi
+          if [ "$ok" -gt 0 ] || [ -f "$video" ] || [ -f assets/nexa-winf-partners.png ]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git add assets/nexa-blue-*.webp
+            [ ! -f "$video" ] || git add "$video"
+            [ ! -f assets/nexa-winf-partners.png ] || git add assets/nexa-winf-partners.png
             if ! git diff --cached --quiet; then
               git commit -m "assets: importar fotografia oceânica NEXA BLUE"
               git push
