@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#05172a">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<title>NEXA BLUE — Centro de Comando</title>
+<link rel="icon" href="/assets/nexa-mark.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/crm.css"><script src="/admin/crm.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Ir para o conteúdo</a>
+<header class="crm-head">
+  <a href="/" class="crm-brand" aria-label="NEXA BLUE — site"><img src="/assets/nexa-logo-oficial.svg" alt="NEXA"><small>BLUE · AGÊNCIA DIGITAL</small></a>
+  <span class="crm-head-label">CENTRO DE COMANDO / ACESSO RESTRITO</span>
+  <a href="/" class="crm-visit">VER SITE ↗</a>
+</header>
+<main id="content">
+<section id="login-view" class="login-view" aria-labelledby="login-title">
+ <div class="login-story">
+  <span class="eyebrow">NEXA BLUE / OPERAÇÃO INTERNA</span>
+  <h1 id="login-title">SUA MARCA.<br><em>SEU COMANDO.</em></h1>
+  <p class="script">sem navegar às cegas.</p>
+  <p>Clientes, entregas, portfólios e pagamentos sob uma mesma direção.</p>
+ </div>
+ <form id="login-form" class="login-box">
+  <span class="eyebrow">PAINEL ADMINISTRATIVO</span>
+  <h2>ACESSE O CRM.</h2>
+  <label>USUÁRIO<input name="username" id="login-username" autocomplete="username" required maxlength="100" placeholder="Seu usuário"></label>
+  <label>SENHA<input name="password" id="login-password" type="password" autocomplete="current-password" required maxlength="220" placeholder="Sua senha"></label>
+  <button type="submit" class="main-button">ENTRAR NO COMANDO ↗</button>
+  <p class="feedback" id="login-message" role="alert"></p>
+  <small>Login disponível somente após a configuração privada das credenciais na hospedagem. Não existe senha-padrão.</small>
+ </form>
+</section>
+<section id="crm-view" class="crm-view" hidden>
+ <div class="dashboard-head">
+  <div><span class="eyebrow">CENTRO DE COMANDO / NEXA BLUE</span><h1>UM OCEANO DE <em>CONTROLE.</em></h1><p>Organize a operação comercial sem perder nenhuma entrega de vista.</p></div>
+  <button type="button" id="logout" class="outline-button">SAIR ↗</button>
+ </div>
+ <div id="stats" class="stats" aria-label="Indicadores"></div>
+ <section class="alerts-panel" aria-labelledby="alerts-title">
+  <span class="eyebrow">01 / ALERTAS DE COBRANÇA</span><h2 id="alerts-title">VENCIMENTOS <em>NO RADAR.</em></h2>
+  <div id="alerts" class="alerts" aria-live="polite"></div>
+  <p class="smallprint"><strong>Condição contratual proposta:</strong> 3 dias corridos de tolerância após o vencimento. O alerta não suspende serviços nem derruba sites automaticamente; a medida depende do contrato aplicável, aviso e revisão administrativa. Pix agendado não comprova pagamento.</p>
+ </section>
+ <nav class="tabs" id="crm-tabs" aria-label="Módulos do CRM">
+  <button type="button" data-tab="clients" class="active">CLIENTES</button>
+  <button type="button" data-tab="projects">PROJETOS</button>
+  <button type="button" data-tab="invoices">MENSALIDADES</button>
+  <button type="button" data-tab="portfolio">PORTFÓLIOS</button>
+ </nav>
+ <section class="workspace" aria-labelledby="work-title">
+  <div class="workspace-head"><div><span class="eyebrow">02 / BASE OPERACIONAL</span><h2 id="work-title">CLIENTES.</h2></div><button type="button" class="main-button" id="add-record">+ NOVO REGISTRO</button></div>
+  <p id="work-description" class="workspace-description"></p>
+  <div class="table-scroll"><table class="records"><thead id="record-head"></thead><tbody id="record-body"></tbody></table></div>
+  <p id="empty-records" class="empty" hidden>Nenhum registro cadastrado ainda.</p>
+  <section id="editor" class="editor" hidden aria-labelledby="editor-title">
+   <div class="editor-head"><h3 id="editor-title">NOVO REGISTRO</h3><button type="button" class="outline-button" id="close-editor">FECHAR ×</button></div>
+   <form id="record-form"><div id="editor-fields" class="editor-fields"></div>
+    <div class="editor-actions"><button type="submit" class="main-button">SALVAR REGISTRO</button><button type="button" class="outline-button" id="cancel-editor">CANCELAR</button></div>
+    <p class="feedback" id="editor-message" role="status"></p>
+   </form>
+  </section>
+ </section>
+ <section class="integrations">
+  <span class="eyebrow">03 / CONEXÕES</span><h2>HERMES <em>AI.</em></h2>
+  <p>Conector previsto para consulta privada de indicadores. O Hermes não pode cobrar, enviar mensagens nem suspender serviços pela integração inicial.</p>
+  <div class="integration-tags"><span>HERMES · CONSULTA PRIVADA</span><span>BOLETO / PIX · INTEGRAÇÃO PENDENTE</span><span>ASSINATURA DIGITAL · PENDENTE</span></div>
+ </section>
+</section>
+</main>
+<footer class="crm-footer"><span>NEXA BLUE · OPERAÇÕES</span><span>© <span id="year">2026</span> · ACESSO AUTORIZADO</span></footer>
+</body>
+</html>
