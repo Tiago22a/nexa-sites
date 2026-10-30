@@ -28,3 +28,24 @@
 .collection-actions .row-button{margin:0;display:inline-flex;align-items:center;min-height:34px}
 @media(max-width:1050px){.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.collection-grid{grid-template-columns:1fr}.collection-cover{height:195px}.collection-toolbar{align-items:stretch}#collection-count{padding-bottom:0}}
+
+/* Onboarding do cliente: SLA 24–48 horas */
+.onboarding-panel{margin:24px 0 35px;padding:26px;background:linear-gradient(145deg,#082740,#041b31);border:1px solid #78c6f15b}
+.onboarding-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:22px}
+.onboarding-head h3{font:400 clamp(22px,3vw,35px)/1.2 var(--display);letter-spacing:-.05em;margin:10px 0}
+.onboarding-head p{font-size:12px;color:#afd3e9;margin:0}
+#onboarding-count{white-space:nowrap;color:#90d6ff;font:600 11px var(--mono)}
+.onboarding-list{display:grid;gap:13px;max-height:690px;overflow:auto}
+.onboard-card{border:1px solid #6daace5a;background:#061e34;padding:20px}
+.onboard-row,.onboard-bottom{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.onboard-row h4{margin:0 0 5px;font:500 19px var(--display)}
+.onboard-row small{color:#9fc4da;font:400 11px var(--body)}
+.onboard-flag{color:#b8e9ff;font:600 10px var(--mono);padding:8px 11px;border:1px solid #59b8f17a}
+.onboard-flag.overdue{color:#ffb6a8;border-color:#ec8b83}
+.onboard-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin:20px 0 15px}
+.onboard-step{position:relative;border-top:3px solid #376484;padding-top:11px;display:flex;flex-direction:column;gap:5px}
+.onboard-step.reached{border-color:#6ac8ff}
+.onboard-step strong{font:600 12px var(--mono);color:#c8efff}
+.onboard-step span{font:400 11px/1.5 var(--body);color:#9dbed2}
+.onboard-progress{font:500 11px var(--mono);color:#b7dffc}
+@media(max-width:600px){.onboarding-panel{padding:16px}.onboarding-head{flex-direction:column}.onboard-card{padding:14px}.onboard-step span{font-size:10px}}
