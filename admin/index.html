@@ -49,7 +49,8 @@
   <p class="smallprint"><strong>AVISO CONTRATUAL — INADIMPLÊNCIA:</strong> após o vencimento da mensalidade, aplica-se tolerância de 3 (três) dias corridos. Decorrido esse prazo sem confirmação de pagamento, os serviços digitais contratados poderão ser suspensos, inclusive o acesso público ao site, conforme previsão expressa no contrato e mediante comunicação ao cliente. <strong>Não existe suspensão automática habilitada neste painel.</strong> O bloqueio exige confirmação da inadimplência e revisão administrativa; dados e backups não devem ser apagados. Pix agendado não equivale a pagamento confirmado.</p>
  </section>
  <nav class="tabs" id="crm-tabs" aria-label="Módulos do CRM">
-  <button type="button" data-tab="clients" class="active">CLIENTES</button>
+  <button type="button" data-tab="dashboard" class="active">VISÃO GERAL</button>
+  <button type="button" data-tab="clients">CLIENTES</button>
   <button type="button" data-tab="projects">PROJETOS</button>
   <button type="button" data-tab="invoices">MENSALIDADES</button>
   <button type="button" data-tab="portfolio">PORTFÓLIOS</button>
@@ -57,7 +58,16 @@
   <button type="button" data-tab="contracts">CONTRATOS</button>
   <button type="button" data-tab="expenses">DESPESAS</button>
  </nav>
- <section class="workspace" aria-labelledby="work-title">
+ <section id="overview-panel" class="overview-panel" aria-labelledby="overview-title">
+  <div class="overview-heading"><div><span class="eyebrow">RADAR OPERACIONAL / NEXA BLUE</span><h2 id="overview-title">TUDO SOB <em>CONTROLE.</em></h2><p>Uma visão da operação, dos novos embarques aos próximos vencimentos.</p></div><span class="radar-live">● PAINEL PRIVADO</span></div>
+  <div class="overview-grid">
+   <article class="overview-feature"><span class="eyebrow">01 / ROTA DE ENTRADA</span><h3>CLIENTES NO <em>RADAR.</em></h3><div id="overview-onboarding" class="overview-feed"></div><button type="button" class="overview-link" data-go="clients">VER CLIENTES E ONBOARDING ↗</button></article>
+   <article class="overview-feature"><span class="eyebrow">02 / PRODUÇÃO</span><h3>PROJETOS EM <em>CURSO.</em></h3><div id="overview-projects" class="overview-feed"></div><button type="button" class="overview-link" data-go="projects">ABRIR PROJETOS ↗</button></article>
+   <article class="overview-feature"><span class="eyebrow">03 / FINANCEIRO</span><h3>VENCIMENTOS NO <em>RADAR.</em></h3><div id="overview-finance" class="overview-feed"></div><button type="button" class="overview-link" data-go="invoices">VER MENSALIDADES ↗</button></article>
+   <article class="overview-feature overview-shortcuts"><span class="eyebrow">04 / ACESSOS RÁPIDOS</span><h3>PRÓXIMA <em>MANOBRA.</em></h3><div class="overview-shortcut-grid"><button type="button" data-go="clients">+ NOVO CLIENTE</button><button type="button" data-go="portfolio">COLEÇÕES ↗</button><button type="button" data-go="tasks">TAREFAS ↗</button><button type="button" data-go="contracts">CONTRATOS ↗</button></div></article>
+  </div>
+ </section>
+ <section class="workspace" aria-labelledby="work-title" hidden>
   <div class="workspace-head"><div><span class="eyebrow">02 / BASE OPERACIONAL</span><h2 id="work-title">CLIENTES.</h2></div><button type="button" class="main-button" id="add-record">+ NOVO REGISTRO</button></div>
   <p id="work-description" class="workspace-description"></p>
   <section id="onboarding-panel" class="onboarding-panel" hidden aria-labelledby="onboarding-title"><div class="onboarding-head"><div><span class="eyebrow">ONBOARDING / PRIMEIRAS 48 HORAS</span><h3 id="onboarding-title">LINHA DO TEMPO DOS CLIENTES.</h3><p>O prazo inicia no cadastro do cliente. Atualize a etapa pelo botão ACOMPANHAR.</p></div><span id="onboarding-count"></span></div><div id="onboarding-list" class="onboarding-list"></div></section><div id="collections-panel" class="collections-panel" hidden><div class="collection-toolbar"><label>BUSCAR COLEÇÕES<input id="collection-search" type="search" placeholder="Buscar por cliente ou coleção..." autocomplete="off"></label><label>FILTRAR POR TIPO<select id="collection-kind"><option value="todos">Todas as categorias</option></select></label><span id="collection-count" aria-live="polite"></span></div><div id="collection-grid" class="collection-grid"></div><p class="smallprint">Esta biblioteca organiza links de coleções. Imagens e arquivos privados devem permanecer em armazenamento com permissões adequadas; links externos podem exigir autenticação própria.</p></div><div class="table-scroll" id="record-table"><table class="records"><thead id="record-head"></thead><tbody id="record-body"></tbody></table></div>
