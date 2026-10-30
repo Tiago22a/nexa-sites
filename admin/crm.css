@@ -84,3 +84,41 @@
 .overview-shortcut-grid button:hover{background:#13527a}
 @media(max-width:800px){.service-sections{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.overview-grid,.service-results,.service-sections{grid-template-columns:1fr}.overview-heading{align-items:flex-start;flex-direction:column}.service-search,.service-file,.overview-feature{padding:17px}}
+
+/* NEXA / Executive operations theme. Keeps brand identity subdued. */
+:root{--bg:#0e1623;--blue:#8db8da;--muted:#98a7b8;--border:#d8e4ef1c}
+body{background:var(--bg);color:#e9eef4}
+.crm-head,.crm-footer{background:#101926}
+.crm-view{padding-top:44px}
+.dashboard-head h1{font-size:clamp(30px,4.1vw,54px);letter-spacing:-.045em;margin:10px 0}
+.dashboard-head p,.overview-heading p{color:#9caaba}
+.eyebrow{color:#94aabe;letter-spacing:.06em}
+.login-story h1{font-size:clamp(38px,4.3vw,65px)}
+.login-view{background:linear-gradient(110deg,#101926f5,#132339f1)}
+.login-box,.service-search,.service-file,.overview-feature,.onboarding-panel,.workspace,.stat,.collection-card,.editor{background:#152232;box-shadow:none;border-color:#ffffff18}
+.stats{margin:28px 0;gap:8px}
+.stat{padding:16px}
+.stat strong{font-size:clamp(23px,2.7vw,38px)}
+.stat span{color:#9faebe}
+.tabs{border-bottom:1px solid #ffffff21;padding-bottom:9px}
+.tabs button{border:0;border-radius:5px;padding:12px 13px;color:#acb9c7}
+.tabs button.active,.tabs button:hover{background:#26374a;color:#f5f8fb;border:0}
+.overview-panel{padding-top:26px;border:0}
+.overview-heading h2,.catalog-heading h2{font:500 clamp(26px,3vw,38px)/1.2 var(--display);letter-spacing:-.035em}
+.overview-feature h3{font-size:19px}
+.overview-feature h3 em,.overview-heading h2 em{color:inherit;font-style:normal}
+.service-search,.service-file{border-radius:8px}
+.service-search input,.collection-toolbar input,.collection-toolbar select{border-radius:5px;background:#111c2b;border-color:#ffffff30}
+.service-client,.service-section,.overview-shortcut-grid button{background:#1b2c3d;border-color:#ffffff1e;border-radius:5px}
+.overview-feature,.stat{border-radius:8px}
+.main-button{background:#365f81;border-color:#365f81;border-radius:5px;font-weight:600}
+.main-button:hover{background:#46799f}
+.catalog-panel{padding:30px 0 60px;border-top:1px solid #ffffff25}
+.catalog-heading p{font-size:13px;color:#aab9c7;max-width:720px}
+.catalog-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.catalog-layout>div{background:#152232;border:1px solid #ffffff20;border-radius:9px;padding:22px}
+.catalog-layout h3{font:600 15px var(--display);margin:0 0 16px}
+.catalog-items{display:grid;gap:8px}
+.catalog-item{display:block;background:#1c2b3c;border:1px solid #ffffff17;padding:13px 15px;border-radius:5px;font-size:13px;color:#d7e2ed}
+a.catalog-item:hover{border-color:#85aecf;color:#fff}
+@media(max-width:700px){.catalog-layout{grid-template-columns:1fr}.crm-view{padding-top:32px}}
