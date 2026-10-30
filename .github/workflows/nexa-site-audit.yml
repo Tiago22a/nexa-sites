@@ -1,0 +1,29 @@
+name: NEXA BLUE - auditoria de navegacao e publicacao
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter repositorio
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Testar links internos e formularios
+        run: node scripts/site-audit.mjs
+      - name: Preparar publicacao Netlify
+        run: node scripts/netlify-build.mjs
+      - name: Conferir paginas geradas
+        run: |
+          test -f dist/index.html
+          test -f dist/shop/index.html
+          test -f dist/planos/barco/index.html
+          test -f dist/planos/iate/index.html
+          test -f dist/planos/submarino/index.html
+          test ! -e dist/admin/BUSINESS-PLAN.md
