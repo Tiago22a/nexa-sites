@@ -158,12 +158,22 @@ function renderTable(){
  $('empty-records').hidden=state.items[state.tab].length>0;
 }
 
+
+const sitePlans=[['ANZOL','/planos/anzol/'],['BARCO','/planos/barco/'],['IATE','/planos/iate/'],['SUBMARINO','/planos/submarino/'],['REDE','/planos/rede/'],['MODO SUBMARINO','/planos/modo-submarino/']];
+const siteServices=['Sites e One Pages','Aplicativos e Sistemas','Perfil da Empresa no Google','Gestão de Redes Sociais','Branding e Estratégia Digital'];
+function renderCatalog(){
+ const plans=$('catalog-plans'),services=$('catalog-services');
+ plans.replaceChildren();services.replaceChildren();
+ for(const [name,path] of sitePlans){const item=make('a',name+' ↗','catalog-item');item.href=path;item.target='_blank';item.rel='noopener noreferrer';plans.append(item);}
+ for(const name of siteServices){services.append(make('div',name,'catalog-item'));}
+}
+
 let selectedClientId=null;
 function showTab(tab){
  state.tab=tab;closeEditor();
- $('overview-panel').hidden=tab!=='dashboard';document.querySelector('.workspace').hidden=tab==='dashboard';
+ $('overview-panel').hidden=tab!=='dashboard';$('catalog-panel').hidden=tab!=='catalog';document.querySelector('.workspace').hidden=tab==='dashboard'||tab==='catalog';
  for(const b of $('crm-tabs').querySelectorAll('[data-tab]'))b.classList.toggle('active',b.dataset.tab===tab);
- if(tab==='dashboard')renderOverview();else renderTable();
+ if(tab==='dashboard')renderOverview();else if(tab==='catalog')renderCatalog();else renderTable();
 }
 function renderOverview(){
  const query=$('service-client-search').value.trim().toLocaleLowerCase('pt-BR');
