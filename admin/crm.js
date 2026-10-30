@@ -4,18 +4,13 @@ const endpoint='/.netlify/functions/nexa-crm';
 const $=id=>document.getElementById(id);
 const all=['clients','projects','invoices','portfolio','tasks','contracts','expenses'];
 const cfg={
- tasks:{title:'TAREFAS.',columns:['Atividade','Cliente','Responsável','Prazo','Situação'],description:'Acompanhe responsáveis, prazos e execução.',fields:[
- ['clientId','Cliente','client',true],['title','Atividade','text',true],['assignee','Responsável','select',['Você','Tiago']],['deadline','Prazo','date',false],['priority','Prioridade','select',['alta','média','baixa']],['status','Situação','select',['pendente','em andamento','aguardando','concluída']],['notes','Detalhes','textarea',false]]},
- contracts:{title:'CONTRATOS.',columns:['Contrato','Cliente','Renovação','Status'],description:'Controle planos, início, valor e renovação; não substitui assinatura eletrônica.',fields:[
- ['clientId','Cliente','client',true],['title','Nome do contrato','text',true],['plan','Plano','select',['BARCO','IATE','SUBMARINO','AVULSO']],['amount','Valor mensal R
- clients:{title:'CLIENTES.',columns:['Nome','Empresa','Plano','Status'],description:'Relacione empresas, oportunidades e clientes ativos.',fields:[
-  ['name','Nome do responsável','text',true],['company','Empresa','text',false],['email','E-mail','email',false],['phone','Telefone','tel',false],['plan','Modalidade','select',['BARCO','IATE','SUBMARINO','AVULSO']],['status','Situação','select',['lead','proposta','ativo','inativo']],['notes','Observações','textarea',false]]},
- projects:{title:'PROJETOS.',columns:['Projeto','Cliente','Prazo','Status'],description:'Organize entregas, cronogramas e links de briefing.',fields:[
-  ['clientId','Cliente','client',true],['title','Projeto','text',true],['deadline','Prazo de entrega','date',false],['status','Etapa','select',['planejado','em produção','aguardando cliente','concluído','pausado']],['briefingUrl','Link de briefing (https)','url',false],['notes','Observações','textarea',false]]},
- invoices:{title:'MENSALIDADES.',columns:['Cliente','Valor','Vencimento','Status'],description:'Controle manual de parcelas pagas, programadas e pendentes.',fields:[
-  ['clientId','Cliente','client',true],['amount','Valor R$ (sem pontos de milhar)','number',true],['dueDate','Vencimento','date',true],['paidOn','Pagamento confirmado em','date',false],['method','Forma','select',['Pix','Pix agendado','Boleto','Outro']],['status','Situação','select',['pendente','em verificação','pago','cancelado']],['notes','Observações','textarea',false]]},
- portfolio:{title:'PORTFÓLIOS.',columns:['Coleção','Cliente','Tipo','Link'],description:'Organize links de coleções e entregas. Arquivos privados devem ficar em armazenamento protegido.',fields:[
-  ['clientId','Cliente','client',true],['title','Nome da coleção','text',true],['kind','Tipo de conteúdo','select',['Imagens','Vídeos','Website','Documentos','Campanha','Outro']],['url','Link HTTPS','url',false],['notes','Observações','textarea',false]]}
+ clients:{title:'CLIENTES.',columns:['Nome','Empresa','Plano','Status'],description:'Empresas, contatos e relacionamento.',fields:[['name','Responsável','text',true],['company','Empresa','text',false],['email','E-mail','email',false],['phone','Telefone','tel',false],['plan','Plano','select',['BARCO','IATE','SUBMARINO','AVULSO']],['status','Situação','select',['lead','proposta','ativo','inativo']],['notes','Observações','textarea',false]]},
+ projects:{title:'PROJETOS.',columns:['Projeto','Cliente','Prazo','Status'],description:'Entregas e produção.',fields:[['clientId','Cliente','client',true],['title','Projeto','text',true],['deadline','Prazo','date',false],['status','Etapa','select',['planejado','em produção','aguardando cliente','concluído','pausado']],['briefingUrl','Briefing HTTPS','url',false],['notes','Observações','textarea',false]]},
+ invoices:{title:'MENSALIDADES.',columns:['Cliente','Valor','Vencimento','Status'],description:'Controle de pagamentos.',fields:[['clientId','Cliente','client',true],['amount','Valor R$','number',true],['dueDate','Vencimento','date',true],['paidOn','Pagamento confirmado em','date',false],['method','Forma','select',['Pix','Pix agendado','Boleto','Outro']],['status','Situação','select',['pendente','em verificação','pago','cancelado']],['notes','Observações','textarea',false]]},
+ portfolio:{title:'COLEÇÕES DOS CLIENTES.',columns:['Coleção','Cliente','Categoria','Status'],description:'Biblioteca criativa e entregas organizadas por cliente.',fields:[['clientId','Cliente','client',true],['title','Nome da coleção','text',true],['kind','Categoria','select',['Imagens','Vídeos','Website','Documentos','Campanha','Outro']],['status','Etapa','select',['em produção','em revisão','aprovada','entregue']],['url','Link seguro da coleção (HTTPS)','url',false],['coverUrl','URL da capa (HTTPS)','url',false],['notes','Descrição e observações','textarea',false]]},
+ tasks:{title:'TAREFAS.',columns:['Atividade','Cliente','Responsável','Prazo','Situação'],description:'Atividades e responsáveis.',fields:[['clientId','Cliente','client',true],['title','Atividade','text',true],['assignee','Responsável','select',['Você','Tiago']],['deadline','Prazo','date',false],['priority','Prioridade','select',['alta','média','baixa']],['status','Situação','select',['pendente','em andamento','aguardando','concluída']],['notes','Detalhes','textarea',false]]},
+ contracts:{title:'CONTRATOS.',columns:['Contrato','Cliente','Renovação','Status'],description:'Planos e renovações.',fields:[['clientId','Cliente','client',true],['title','Contrato','text',true],['plan','Plano','select',['BARCO','IATE','SUBMARINO','AVULSO']],['amount','Valor mensal R$','number',false],['startDate','Início','date',false],['renewalDate','Renovação','date',false],['status','Situação','select',['rascunho','em assinatura','vigente','encerrado']],['url','Documento HTTPS','url',false],['notes','Observações','textarea',false]]},
+ expenses:{title:'DESPESAS.',columns:['Descrição','Categoria','Valor','Vencimento','Status'],description:'Despesas e compromissos.',fields:[['title','Descrição','text',true],['category','Categoria','select',['Software','Hospedagem','Marketing','Equipe','Impostos','Outros']],['amount','Valor R$','number',true],['dueDate','Vencimento','date',true],['paidOn','Pago em','date',false],['status','Situação','select',['pendente','pago','cancelado']],['notes','Observações','textarea',false]]}
 };
 const state={tab:'clients',items:{clients:[],projects:[],invoices:[],portfolio:[],tasks:[],contracts:[],expenses:[]},edit:null};
 const make=(tag,text,className)=>{
@@ -80,27 +75,50 @@ const cells={
  invoices:r=>[owner(r.clientId),'R$ '+money(r.amount),r.dueDate||'—',r.paidOn?'Pago':r.status||'pendente'],
  portfolio:r=>[r.title,owner(r.clientId),r.kind||'—',r.url?'Link cadastrado':'—']
 };
+let collectionSearch='',collectionCategory='todos';
+function renderCollections(){
+ const section=$('collections-panel'),grid=$('collection-grid'),table=$('record-table');
+ section.hidden=false;table.hidden=true;$('empty-records').hidden=true;
+ const kinds=['todos',...new Set(state.items.portfolio.map(i=>i.kind||'Outro'))];
+ const filter=$('collection-kind');
+ const current=collectionCategory;
+ filter.replaceChildren(...kinds.map(k=>new Option(k==='todos'?'Todas as categorias':k,k)));
+ filter.value=kinds.includes(current)?current:'todos';collectionCategory=filter.value;
+ const items=state.items.portfolio.filter(i=>(collectionCategory==='todos'||(i.kind||'Outro')===collectionCategory)&&[i.title,owner(i.clientId),i.notes].join(' ').toLocaleLowerCase('pt-BR').includes(collectionSearch.toLocaleLowerCase('pt-BR')));
+ $('collection-count').textContent=items.length+' coleção(ões)';
+ grid.replaceChildren();
+ if(!items.length){grid.append(make('p','Nenhuma coleção encontrada. Crie uma coleção ou ajuste os filtros.','empty'));return;}
+ for(const item of items){
+  const card=make('article',null,'collection-card');
+  const cover=make('div',null,'collection-cover');
+  const safeUrl=(value)=>{try{let u=new URL(value);return u.protocol==='https:'?u.href:null}catch{return null}};
+  const pic=safeUrl(item.coverUrl);
+  if(pic){const img=make('img');img.src=pic;img.alt='Capa da coleção '+item.title;img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=()=>{img.remove();cover.append(make('span','N /','collection-placeholder'))};cover.append(img);}
+  else cover.append(make('span','N /','collection-placeholder'));
+  cover.append(make('span',item.kind||'Coleção','collection-kind-tag'));
+  const content=make('div',null,'collection-content');
+  content.append(make('span',owner(item.clientId),'collection-owner'),make('h3',item.title),make('p',item.notes||'Coleção criativa organizada para este cliente.'));
+  content.append(make('span',item.status||'em produção','collection-status'));
+  const actions=make('div',null,'collection-actions');
+  const link=safeUrl(item.url);
+  if(link){const a=make('a','ABRIR COLEÇÃO ↗','row-button');a.href=link;a.target='_blank';a.rel='noopener noreferrer';actions.append(a);}
+  const edit=make('button','EDITAR','row-button');edit.type='button';edit.addEventListener('click',()=>openEditor(item));actions.append(edit);
+  const del=make('button','EXCLUIR','row-button');del.type='button';del.addEventListener('click',()=>removeRecord(item));actions.append(del);
+  content.append(actions);card.append(cover,content);grid.append(card);
+ }
+}
 function renderTable(){
  const config=cfg[state.tab];
- $('work-title').textContent=config.title;
- $('work-description').textContent=config.description;
- const head=$('record-head'),body=$('record-body');
- head.replaceChildren();body.replaceChildren();
- const tr=make('tr');
- for(const label of config.columns.concat('AÇÕES'))tr.append(make('th',label));
- head.append(tr);
+ $('work-title').textContent=config.title;$('work-description').textContent=config.description;
+ $('collections-panel').hidden=state.tab!=='portfolio';
+ $('record-table').hidden=state.tab==='portfolio';
+ if(state.tab==='portfolio'){renderCollections();return;}
+ const head=$('record-head'),body=$('record-body');head.replaceChildren();body.replaceChildren();
+ const tr=make('tr');for(const label of config.columns.concat('AÇÕES'))tr.append(make('th',label));head.append(tr);
  for(const item of state.items[state.tab]){
-  const row=make('tr');
-  for(const val of cells[state.tab](item))row.append(make('td',val));
-  const actions=make('td');
-  const edit=make('button','EDITAR','row-button');
-  edit.type='button';edit.addEventListener('click',()=>openEditor(item));
-  actions.append(edit);
-  if(state.tab!=='clients'){
-   const del=make('button','EXCLUIR','row-button');
-   del.type='button';del.addEventListener('click',()=>removeRecord(item));
-   actions.append(del);
-  }
+  const row=make('tr');for(const val of cells[state.tab](item))row.append(make('td',val));
+  const actions=make('td');const edit=make('button','EDITAR','row-button');edit.type='button';edit.addEventListener('click',()=>openEditor(item));actions.append(edit);
+  if(state.tab!=='clients'){const del=make('button','EXCLUIR','row-button');del.type='button';del.addEventListener('click',()=>removeRecord(item));actions.append(del);}
   row.append(actions);body.append(row);
  }
  $('empty-records').hidden=state.items[state.tab].length>0;
@@ -175,351 +193,11 @@ $('record-form').addEventListener('submit',async event=>{
   closeEditor();await load();
  }catch(e){feedback('editor-message',e.message);}
 });
+$('collection-search').addEventListener('input',e=>{collectionSearch=e.target.value;renderCollections();});
+$('collection-kind').addEventListener('change',e=>{collectionCategory=e.target.value;renderCollections();});
 $('year').textContent=new Date().getFullYear();
 api('session').then(showApp).catch(e=>{
  $('login-view').hidden=false;$('crm-view').hidden=true;
  if(!/sessão|autorizado|expirada/i.test(e.message))feedback('login-message',e.message);
 });
-})();,'number',false],['startDate','Início','date',false],['renewalDate','Renovação','date',false],['status','Situação','select',['rascunho','em assinatura','vigente','encerrado']],['url','Link HTTPS do documento','url',false],['notes','Observações','textarea',false]]},
- expenses:{title:'DESPESAS.',columns:['Descrição','Categoria','Valor','Vencimento','Status'],description:'Acompanhe compromissos financeiros e despesas pagas.',fields:[
- ['title','Descrição','text',true],['category','Categoria','select',['Software','Hospedagem','Marketing','Equipe','Impostos','Outros']],['amount','Valor R
- clients:{title:'CLIENTES.',columns:['Nome','Empresa','Plano','Status'],description:'Relacione empresas, oportunidades e clientes ativos.',fields:[
-  ['name','Nome do responsável','text',true],['company','Empresa','text',false],['email','E-mail','email',false],['phone','Telefone','tel',false],['plan','Modalidade','select',['BARCO','IATE','SUBMARINO','AVULSO']],['status','Situação','select',['lead','proposta','ativo','inativo']],['notes','Observações','textarea',false]]},
- projects:{title:'PROJETOS.',columns:['Projeto','Cliente','Prazo','Status'],description:'Organize entregas, cronogramas e links de briefing.',fields:[
-  ['clientId','Cliente','client',true],['title','Projeto','text',true],['deadline','Prazo de entrega','date',false],['status','Etapa','select',['planejado','em produção','aguardando cliente','concluído','pausado']],['briefingUrl','Link de briefing (https)','url',false],['notes','Observações','textarea',false]]},
- invoices:{title:'MENSALIDADES.',columns:['Cliente','Valor','Vencimento','Status'],description:'Controle manual de parcelas pagas, programadas e pendentes.',fields:[
-  ['clientId','Cliente','client',true],['amount','Valor R$ (sem pontos de milhar)','number',true],['dueDate','Vencimento','date',true],['paidOn','Pagamento confirmado em','date',false],['method','Forma','select',['Pix','Pix agendado','Boleto','Outro']],['status','Situação','select',['pendente','em verificação','pago','cancelado']],['notes','Observações','textarea',false]]},
- portfolio:{title:'PORTFÓLIOS.',columns:['Coleção','Cliente','Tipo','Link'],description:'Organize links de coleções e entregas. Arquivos privados devem ficar em armazenamento protegido.',fields:[
-  ['clientId','Cliente','client',true],['title','Nome da coleção','text',true],['kind','Tipo de conteúdo','select',['Imagens','Vídeos','Website','Documentos','Campanha','Outro']],['url','Link HTTPS','url',false],['notes','Observações','textarea',false]]}
-};
-const state={tab:'clients',items:{clients:[],projects:[],invoices:[],portfolio:[]},edit:null};
-const make=(tag,text,className)=>{
- const el=document.createElement(tag);
- if(text!==undefined&&text!==null)el.textContent=String(text);
- if(className)el.className=className;
- return el;
-};
-const feedback=(id,msg)=>{$(id).textContent=msg||'';};
-async function api(op,options){
- const opts=options||{};
- const url=new URL(endpoint,location.origin);
- url.searchParams.set('op',op);
- if(opts.type)url.searchParams.set('type',opts.type);
- const res=await fetch(url,{method:opts.method||'GET',credentials:'same-origin',cache:'no-store',headers:{'content-type':'application/json','x-nexa-admin':'1'},body:opts.method==='POST'?JSON.stringify(opts.body||{}):undefined});
- let json={};try{json=await res.json();}catch{}
- if(!res.ok)throw Error(json.error||'Falha ao comunicar com o servidor.');
- return json;
-}
-const owner=(id)=>{
- const row=state.items.clients.find(x=>x.id===id);
- return row?(row.company||row.name):'Cliente não encontrado';
-};
-const money=x=>Number(x||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-const todayUTC=()=>{const d=new Date();return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate());};
-const days=(s)=>{
- if(!/^\d{4}-\d{2}-\d{2}$/.test(String(s||'')))return -99999;
- const t=s.split('-').map(Number);
- return Math.round((todayUTC()-Date.UTC(t[0],t[1]-1,t[2]))/86400000);
-};
-const unpaid=i=>!i.paidOn&&i.status!=='pago'&&i.status!=='cancelado';
-function renderStats(){
- const rows=state.items,open=rows.invoices.filter(unpaid);
- const summary=[['CLIENTES',rows.clients.length],['PROJETOS',rows.projects.length],['MENSALIDADES',rows.invoices.length],['EM ATRASO',open.filter(x=>days(x.dueDate)>0).length],['PRÓXIMOS 7 DIAS',open.filter(x=>days(x.dueDate)>=-7&&days(x.dueDate)<=0).length]];
- $('stats').replaceChildren();
- for(const item of summary){
-  const card=make('div',null,'stat');
-  card.append(make('strong',item[1]),make('span',item[0]));
-  $('stats').append(card);
- }
-}
-function renderAlerts(){
- const list=$('alerts');list.replaceChildren();
- const due=state.items.invoices.filter(x=>unpaid(x)&&days(x.dueDate)>=-7).sort((a,b)=>days(b.dueDate)-days(a.dueDate));
- if(!due.length){list.append(make('p','Sem parcelas vencidas ou previstas para os próximos 7 dias.','empty'));return;}
- for(const bill of due){
-  const age=days(bill.dueDate),wrap=make('article',null,'alert'+(age>3?' late':age>0?' warning':''));
-  const info=make('div');info.append(make('strong',owner(bill.clientId)),make('small','R$ '+money(bill.amount)+' · Vencimento: '+bill.dueDate+' · '+(bill.method||'A definir')));
-  let badge='VENCE EM '+(-age)+' DIA(S)';
-  if(age===0)badge='VENCE HOJE';
-  if(age>0&&age<=3)badge='TOLERÂNCIA: '+(3-age)+' DIA(S)';
-  if(age>3)badge='REVISAR · APÓS TOLERÂNCIA';
-  wrap.append(info,make('span',badge,'alert-label'));list.append(wrap);
- }
-}
-const cells={
- clients:r=>[r.name,r.company||'—',r.plan||'—',r.status||'—'],
- projects:r=>[r.title,owner(r.clientId),r.deadline||'—',r.status||'—'],
- invoices:r=>[owner(r.clientId),'R$ '+money(r.amount),r.dueDate||'—',r.paidOn?'Pago':r.status||'pendente'],
- portfolio:r=>[r.title,owner(r.clientId),r.kind||'—',r.url?'Link cadastrado':'—']
-};
-function renderTable(){
- const config=cfg[state.tab];
- $('work-title').textContent=config.title;
- $('work-description').textContent=config.description;
- const head=$('record-head'),body=$('record-body');
- head.replaceChildren();body.replaceChildren();
- const tr=make('tr');
- for(const label of config.columns.concat('AÇÕES'))tr.append(make('th',label));
- head.append(tr);
- for(const item of state.items[state.tab]){
-  const row=make('tr');
-  for(const val of cells[state.tab](item))row.append(make('td',val));
-  const actions=make('td');
-  const edit=make('button','EDITAR','row-button');
-  edit.type='button';edit.addEventListener('click',()=>openEditor(item));
-  actions.append(edit);
-  if(state.tab!=='clients'){
-   const del=make('button','EXCLUIR','row-button');
-   del.type='button';del.addEventListener('click',()=>removeRecord(item));
-   actions.append(del);
-  }
-  row.append(actions);body.append(row);
- }
- $('empty-records').hidden=state.items[state.tab].length>0;
-}
-function render(){renderStats();renderAlerts();renderTable();}
-async function load(){
- for(const type of all)state.items[type]=(await api('list',{type})).items||[];
- render();
-}
-function makeField(def,record){
- const key=def[0],label=def[1],kind=def[2],rule=def[3];
- const group=make('label');
- group.append(make('span',label));
- let input;
- if(kind==='select'||kind==='client'){
-  input=document.createElement('select');
-  input.append(new Option('Selecione',''));
-  const options=kind==='client'?state.items.clients.map(c=>({label:c.company||c.name,value:c.id})):rule.map(v=>({label:v,value:v}));
-  for(const opt of options)input.append(new Option(opt.label,opt.value));
- }else if(kind==='textarea')input=document.createElement('textarea');
- else{input=document.createElement('input');input.type=kind==='number'?'number':kind;input.maxLength=kind==='url'?450:kind==='email'?150:120;if(kind==='number'){input.min='0';input.step='0.01';}}
- input.name=key;input.value=record&&record[key]?record[key]:'';
- input.required=rule===true;
- group.append(input);
- return group;
-}
-function openEditor(item){
- state.edit=item||null;
- $('editor-title').textContent=item?'EDITAR REGISTRO':'NOVO REGISTRO';
- $('editor-fields').replaceChildren();
- for(const def of cfg[state.tab].fields)$('editor-fields').append(makeField(def,item));
- $('editor').hidden=false;feedback('editor-message','');
- $('editor').scrollIntoView({block:'nearest',behavior:'smooth'});
-}
-function closeEditor(){state.edit=null;$('editor').hidden=true;$('record-form').reset();}
-async function removeRecord(item){
- if(!confirm('Excluir este registro? Esta ação não pode ser desfeita.'))return;
- try{await api('delete',{method:'POST',body:{type:state.tab,id:item.id}});await load();}
- catch(e){alert(e.message);}
-}
-async function showApp(){
- $('login-view').hidden=true;$('crm-view').hidden=false;feedback('login-message','');
- try{await load();}catch(e){alert('Não foi possível carregar o CRM: '+e.message);}
-}
-$('login-form').addEventListener('submit',async event=>{
- event.preventDefault();const btn=event.submitter;btn.disabled=true;feedback('login-message','');
- try{
-  await api('login',{method:'POST',body:{username:$('login-username').value,password:$('login-password').value}});
-  $('login-password').value='';await showApp();
- }catch(e){feedback('login-message',e.message);}finally{btn.disabled=false;}
-});
-$('logout').addEventListener('click',async()=>{
- try{await api('logout',{method:'POST'});}catch{}
- $('crm-view').hidden=true;$('login-view').hidden=false;all.forEach(t=>state.items[t]=[]);
-});
-$('crm-tabs').addEventListener('click',event=>{
- const target=event.target.closest('[data-tab]');
- if(!target)return;
- state.tab=target.dataset.tab;closeEditor();
- for(const b of $('crm-tabs').querySelectorAll('[data-tab]'))b.classList.toggle('active',b===target);
- renderTable();
-});
-$('add-record').addEventListener('click',()=>openEditor(null));
-$('close-editor').addEventListener('click',closeEditor);
-$('cancel-editor').addEventListener('click',closeEditor);
-$('record-form').addEventListener('submit',async event=>{
- event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;
- const data=Object.fromEntries(new FormData(form).entries());
- if(state.tab==='invoices'&&data.amount)data.amount=Number(data.amount).toFixed(2);
- try{
-  await api('save',{method:'POST',body:{type:state.tab,id:state.edit&&state.edit.id,data}});
-  closeEditor();await load();
- }catch(e){feedback('editor-message',e.message);}
-});
-$('year').textContent=new Date().getFullYear();
-api('session').then(showApp).catch(e=>{
- $('login-view').hidden=false;$('crm-view').hidden=true;
- if(!/sessão|autorizado|expirada/i.test(e.message))feedback('login-message',e.message);
-});
-})();,'number',true],['dueDate','Vencimento','date',true],['paidOn','Pago em','date',false],['status','Situação','select',['pendente','pago','cancelado']],['notes','Observações','textarea',false]]},
- clients:{title:'CLIENTES.',columns:['Nome','Empresa','Plano','Status'],description:'Relacione empresas, oportunidades e clientes ativos.',fields:[
-  ['name','Nome do responsável','text',true],['company','Empresa','text',false],['email','E-mail','email',false],['phone','Telefone','tel',false],['plan','Modalidade','select',['BARCO','IATE','SUBMARINO','AVULSO']],['status','Situação','select',['lead','proposta','ativo','inativo']],['notes','Observações','textarea',false]]},
- projects:{title:'PROJETOS.',columns:['Projeto','Cliente','Prazo','Status'],description:'Organize entregas, cronogramas e links de briefing.',fields:[
-  ['clientId','Cliente','client',true],['title','Projeto','text',true],['deadline','Prazo de entrega','date',false],['status','Etapa','select',['planejado','em produção','aguardando cliente','concluído','pausado']],['briefingUrl','Link de briefing (https)','url',false],['notes','Observações','textarea',false]]},
- invoices:{title:'MENSALIDADES.',columns:['Cliente','Valor','Vencimento','Status'],description:'Controle manual de parcelas pagas, programadas e pendentes.',fields:[
-  ['clientId','Cliente','client',true],['amount','Valor R$ (sem pontos de milhar)','number',true],['dueDate','Vencimento','date',true],['paidOn','Pagamento confirmado em','date',false],['method','Forma','select',['Pix','Pix agendado','Boleto','Outro']],['status','Situação','select',['pendente','em verificação','pago','cancelado']],['notes','Observações','textarea',false]]},
- portfolio:{title:'PORTFÓLIOS.',columns:['Coleção','Cliente','Tipo','Link'],description:'Organize links de coleções e entregas. Arquivos privados devem ficar em armazenamento protegido.',fields:[
-  ['clientId','Cliente','client',true],['title','Nome da coleção','text',true],['kind','Tipo de conteúdo','select',['Imagens','Vídeos','Website','Documentos','Campanha','Outro']],['url','Link HTTPS','url',false],['notes','Observações','textarea',false]]}
-};
-const state={tab:'clients',items:{clients:[],projects:[],invoices:[],portfolio:[]},edit:null};
-const make=(tag,text,className)=>{
- const el=document.createElement(tag);
- if(text!==undefined&&text!==null)el.textContent=String(text);
- if(className)el.className=className;
- return el;
-};
-const feedback=(id,msg)=>{$(id).textContent=msg||'';};
-async function api(op,options){
- const opts=options||{};
- const url=new URL(endpoint,location.origin);
- url.searchParams.set('op',op);
- if(opts.type)url.searchParams.set('type',opts.type);
- const res=await fetch(url,{method:opts.method||'GET',credentials:'same-origin',cache:'no-store',headers:{'content-type':'application/json','x-nexa-admin':'1'},body:opts.method==='POST'?JSON.stringify(opts.body||{}):undefined});
- let json={};try{json=await res.json();}catch{}
- if(!res.ok)throw Error(json.error||'Falha ao comunicar com o servidor.');
- return json;
-}
-const owner=(id)=>{
- const row=state.items.clients.find(x=>x.id===id);
- return row?(row.company||row.name):'Cliente não encontrado';
-};
-const money=x=>Number(x||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-const todayUTC=()=>{const d=new Date();return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate());};
-const days=(s)=>{
- if(!/^\d{4}-\d{2}-\d{2}$/.test(String(s||'')))return -99999;
- const t=s.split('-').map(Number);
- return Math.round((todayUTC()-Date.UTC(t[0],t[1]-1,t[2]))/86400000);
-};
-const unpaid=i=>!i.paidOn&&i.status!=='pago'&&i.status!=='cancelado';
-function renderStats(){
- const rows=state.items,open=rows.invoices.filter(unpaid);
- const summary=[['CLIENTES',rows.clients.length],['PROJETOS',rows.projects.length],['MENSALIDADES',rows.invoices.length],['EM ATRASO',open.filter(x=>days(x.dueDate)>0).length],['PRÓXIMOS 7 DIAS',open.filter(x=>days(x.dueDate)>=-7&&days(x.dueDate)<=0).length]];
- $('stats').replaceChildren();
- for(const item of summary){
-  const card=make('div',null,'stat');
-  card.append(make('strong',item[1]),make('span',item[0]));
-  $('stats').append(card);
- }
-}
-function renderAlerts(){
- const list=$('alerts');list.replaceChildren();
- const due=state.items.invoices.filter(x=>unpaid(x)&&days(x.dueDate)>=-7).sort((a,b)=>days(b.dueDate)-days(a.dueDate));
- if(!due.length){list.append(make('p','Sem parcelas vencidas ou previstas para os próximos 7 dias.','empty'));return;}
- for(const bill of due){
-  const age=days(bill.dueDate),wrap=make('article',null,'alert'+(age>3?' late':age>0?' warning':''));
-  const info=make('div');info.append(make('strong',owner(bill.clientId)),make('small','R$ '+money(bill.amount)+' · Vencimento: '+bill.dueDate+' · '+(bill.method||'A definir')));
-  let badge='VENCE EM '+(-age)+' DIA(S)';
-  if(age===0)badge='VENCE HOJE';
-  if(age>0&&age<=3)badge='TOLERÂNCIA: '+(3-age)+' DIA(S)';
-  if(age>3)badge='REVISAR · APÓS TOLERÂNCIA';
-  wrap.append(info,make('span',badge,'alert-label'));list.append(wrap);
- }
-}
-const cells={
- clients:r=>[r.name,r.company||'—',r.plan||'—',r.status||'—'],
- projects:r=>[r.title,owner(r.clientId),r.deadline||'—',r.status||'—'],
- invoices:r=>[owner(r.clientId),'R$ '+money(r.amount),r.dueDate||'—',r.paidOn?'Pago':r.status||'pendente'],
- portfolio:r=>[r.title,owner(r.clientId),r.kind||'—',r.url?'Link cadastrado':'—']
-};
-function renderTable(){
- const config=cfg[state.tab];
- $('work-title').textContent=config.title;
- $('work-description').textContent=config.description;
- const head=$('record-head'),body=$('record-body');
- head.replaceChildren();body.replaceChildren();
- const tr=make('tr');
- for(const label of config.columns.concat('AÇÕES'))tr.append(make('th',label));
- head.append(tr);
- for(const item of state.items[state.tab]){
-  const row=make('tr');
-  for(const val of cells[state.tab](item))row.append(make('td',val));
-  const actions=make('td');
-  const edit=make('button','EDITAR','row-button');
-  edit.type='button';edit.addEventListener('click',()=>openEditor(item));
-  actions.append(edit);
-  if(state.tab!=='clients'){
-   const del=make('button','EXCLUIR','row-button');
-   del.type='button';del.addEventListener('click',()=>removeRecord(item));
-   actions.append(del);
-  }
-  row.append(actions);body.append(row);
- }
- $('empty-records').hidden=state.items[state.tab].length>0;
-}
-function render(){renderStats();renderAlerts();renderTable();}
-async function load(){
- for(const type of all)state.items[type]=(await api('list',{type})).items||[];
- render();
-}
-function makeField(def,record){
- const key=def[0],label=def[1],kind=def[2],rule=def[3];
- const group=make('label');
- group.append(make('span',label));
- let input;
- if(kind==='select'||kind==='client'){
-  input=document.createElement('select');
-  input.append(new Option('Selecione',''));
-  const options=kind==='client'?state.items.clients.map(c=>({label:c.company||c.name,value:c.id})):rule.map(v=>({label:v,value:v}));
-  for(const opt of options)input.append(new Option(opt.label,opt.value));
- }else if(kind==='textarea')input=document.createElement('textarea');
- else{input=document.createElement('input');input.type=kind==='number'?'number':kind;input.maxLength=kind==='url'?450:kind==='email'?150:120;if(kind==='number'){input.min='0';input.step='0.01';}}
- input.name=key;input.value=record&&record[key]?record[key]:'';
- input.required=rule===true;
- group.append(input);
- return group;
-}
-function openEditor(item){
- state.edit=item||null;
- $('editor-title').textContent=item?'EDITAR REGISTRO':'NOVO REGISTRO';
- $('editor-fields').replaceChildren();
- for(const def of cfg[state.tab].fields)$('editor-fields').append(makeField(def,item));
- $('editor').hidden=false;feedback('editor-message','');
- $('editor').scrollIntoView({block:'nearest',behavior:'smooth'});
-}
-function closeEditor(){state.edit=null;$('editor').hidden=true;$('record-form').reset();}
-async function removeRecord(item){
- if(!confirm('Excluir este registro? Esta ação não pode ser desfeita.'))return;
- try{await api('delete',{method:'POST',body:{type:state.tab,id:item.id}});await load();}
- catch(e){alert(e.message);}
-}
-async function showApp(){
- $('login-view').hidden=true;$('crm-view').hidden=false;feedback('login-message','');
- try{await load();}catch(e){alert('Não foi possível carregar o CRM: '+e.message);}
-}
-$('login-form').addEventListener('submit',async event=>{
- event.preventDefault();const btn=event.submitter;btn.disabled=true;feedback('login-message','');
- try{
-  await api('login',{method:'POST',body:{username:$('login-username').value,password:$('login-password').value}});
-  $('login-password').value='';await showApp();
- }catch(e){feedback('login-message',e.message);}finally{btn.disabled=false;}
-});
-$('logout').addEventListener('click',async()=>{
- try{await api('logout',{method:'POST'});}catch{}
- $('crm-view').hidden=true;$('login-view').hidden=false;all.forEach(t=>state.items[t]=[]);
-});
-$('crm-tabs').addEventListener('click',event=>{
- const target=event.target.closest('[data-tab]');
- if(!target)return;
- state.tab=target.dataset.tab;closeEditor();
- for(const b of $('crm-tabs').querySelectorAll('[data-tab]'))b.classList.toggle('active',b===target);
- renderTable();
-});
-$('add-record').addEventListener('click',()=>openEditor(null));
-$('close-editor').addEventListener('click',closeEditor);
-$('cancel-editor').addEventListener('click',closeEditor);
-$('record-form').addEventListener('submit',async event=>{
- event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;
- const data=Object.fromEntries(new FormData(form).entries());
- if(state.tab==='invoices'&&data.amount)data.amount=Number(data.amount).toFixed(2);
- try{
-  await api('save',{method:'POST',body:{type:state.tab,id:state.edit&&state.edit.id,data}});
-  closeEditor();await load();
- }catch(e){feedback('editor-message',e.message);}
-});
-$('year').textContent=new Date().getFullYear();
-api('session').then(showApp).catch(e=>{
- $('login-view').hidden=false;$('crm-view').hidden=true;
- if(!/sessão|autorizado|expirada/i.test(e.message))feedback('login-message',e.message);
-});
-})();
+})()
