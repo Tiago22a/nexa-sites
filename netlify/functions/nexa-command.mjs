@@ -187,6 +187,7 @@ export default async function handler(request){
     const prior=await db.getWithMetadata(key,{type:"json",consistency:"strong"});
     if(!prior?.data)return json({error:"Registro não encontrado."},404);
     old=prior.data;etag=prior.etag;
+    if(!payload.updatedAt||payload.updatedAt!==old.updatedAt)return json({error:"Este registro mudou desde que você o abriu. Atualize a página antes de editar."},409);
    }
    const item={...data,id,type,createdAt:old?.createdAt||time,createdBy:old?.createdBy||auth.user,updatedAt:time,updatedBy:auth.user};
    const result=await db.setJSON(key,item,old?{onlyIfMatch:etag}:{onlyIfNew:true});
