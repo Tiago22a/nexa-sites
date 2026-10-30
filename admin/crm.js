@@ -4,7 +4,7 @@ const endpoint='/.netlify/functions/nexa-crm';
 const $=id=>document.getElementById(id);
 const all=['clients','projects','invoices','portfolio','tasks','contracts','expenses'];
 const cfg={
- clients:{title:'CLIENTES.',columns:['Nome','Empresa','Plano','Status'],description:'Empresas, contatos e relacionamento.',fields:[['name','Responsável','text',true],['company','Empresa','text',false],['email','E-mail','email',false],['phone','Telefone','tel',false],['plan','Plano','select',['BARCO','IATE','SUBMARINO','AVULSO']],['status','Situação','select',['lead','proposta','ativo','inativo']],['notes','Observações','textarea',false]]},
+ clients:{title:'CLIENTES.',columns:['Nome','Empresa','Plano','Status'],description:'Empresas, contatos e relacionamento.',fields:[['name','Responsável','text',true],['company','Empresa','text',false],['email','E-mail','email',false],['phone','Telefone','tel',false],['plan','Plano','select',['BARCO','IATE','SUBMARINO','AVULSO']],['status','Situação','select',['lead','proposta','ativo','inativo']],['onboardingStatus','Etapa de onboarding','select',['novo','contato realizado','briefing recebido','iniciado','concluído']],['notes','Observações','textarea',false]]},
  projects:{title:'PROJETOS.',columns:['Projeto','Cliente','Prazo','Status'],description:'Entregas e produção.',fields:[['clientId','Cliente','client',true],['title','Projeto','text',true],['deadline','Prazo','date',false],['status','Etapa','select',['planejado','em produção','aguardando cliente','concluído','pausado']],['briefingUrl','Briefing HTTPS','url',false],['notes','Observações','textarea',false]]},
  invoices:{title:'MENSALIDADES.',columns:['Cliente','Valor','Vencimento','Status'],description:'Controle de pagamentos.',fields:[['clientId','Cliente','client',true],['amount','Valor R$','number',true],['dueDate','Vencimento','date',true],['paidOn','Pagamento confirmado em','date',false],['method','Forma','select',['Pix','Pix agendado','Boleto','Outro']],['status','Situação','select',['pendente','em verificação','pago','cancelado']],['notes','Observações','textarea',false]]},
  portfolio:{title:'COLEÇÕES DOS CLIENTES.',columns:['Coleção','Cliente','Categoria','Status'],description:'Biblioteca criativa e entregas organizadas por cliente.',fields:[['clientId','Cliente','client',true],['title','Nome da coleção','text',true],['kind','Categoria','select',['Imagens','Vídeos','Website','Documentos','Campanha','Outro']],['status','Etapa','select',['em produção','em revisão','aprovada','entregue']],['url','Link seguro da coleção (HTTPS)','url',false],['coverUrl','URL da capa (HTTPS)','url',false],['notes','Descrição e observações','textarea',false]]},
@@ -107,12 +107,46 @@ function renderCollections(){
   content.append(actions);card.append(cover,content);grid.append(card);
  }
 }
+
+const onboardingStages=['novo','contato realizado','briefing recebido','iniciado','concluído'];
+function renderOnboarding(){
+ const panel=$('onboarding-panel');panel.hidden=state.tab!=='clients';
+ if(panel.hidden)return;
+ const list=$('onboarding-list');list.replaceChildren();
+ const clients=[...state.items.clients].sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));
+ $('onboarding-count').textContent=clients.length+' cliente(s)';
+ if(!clients.length){list.append(make('p','Cadastre um cliente para iniciar automaticamente sua linha do tempo de 24 a 48 horas.','empty'));return;}
+ for(const client of clients){
+  const start=new Date(client.createdAt),valid=Number.isFinite(start.getTime());
+  const elapsed=valid?Math.max(0,(Date.now()-start.getTime())/3600000):null;
+  const stage=onboardingStages.includes(client.onboardingStatus)?client.onboardingStatus:'novo';
+  const done=stage==='concluído';
+  const status=done?'Concluído':elapsed===null?'Cadastro antigo':elapsed>48?'Prazo ultrapassado':elapsed>=24?'Atenção · 24–48h':'Dentro das primeiras 24h';
+  const box=make('article',null,'onboard-card');
+  const top=make('div',null,'onboard-row');
+  const details=make('div');details.append(make('h4',client.company||client.name),make('small',valid?'Início: '+start.toLocaleString('pt-BR'):'Cadastro sem data de início'));
+  const flag=make('span',status,'onboard-flag'+(!done&&elapsed!==null&&elapsed>48?' overdue':''));
+  top.append(details,flag);
+  const track=make('div',null,'onboard-track');
+  const ticks=[{hour:0,label:'Cadastro'},{hour:24,label:'Contato + briefing'},{hour:48,label:'Início planejado'}];
+  for(const tick of ticks){
+   const step=make('div',null,'onboard-step'+(elapsed!==null&&elapsed>=tick.hour?' reached':''));
+   step.append(make('strong',tick.hour+'h'),make('span',tick.label));track.append(step);
+  }
+  const bottom=make('div',null,'onboard-bottom');
+  const progress=make('span','Etapa atual: '+stage,'onboard-progress');
+  const btn=make('button','ACOMPANHAR ↗','row-button');btn.type='button';btn.addEventListener('click',()=>openEditor(client));
+  bottom.append(progress,btn);box.append(top,track,bottom);list.append(box);
+ }
+}
+
 function renderTable(){
  const config=cfg[state.tab];
  $('work-title').textContent=config.title;$('work-description').textContent=config.description;
  $('collections-panel').hidden=state.tab!=='portfolio';
  $('record-table').hidden=state.tab==='portfolio';
  if(state.tab==='portfolio'){renderCollections();return;}
+ renderOnboarding();
  const head=$('record-head'),body=$('record-body');head.replaceChildren();body.replaceChildren();
  const tr=make('tr');for(const label of config.columns.concat('AÇÕES'))tr.append(make('th',label));head.append(tr);
  for(const item of state.items[state.tab]){
