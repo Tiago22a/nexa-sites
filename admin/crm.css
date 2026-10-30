@@ -49,3 +49,38 @@
 .onboard-step span{font:400 11px/1.5 var(--body);color:#9dbed2}
 .onboard-progress{font:500 11px var(--mono);color:#b7dffc}
 @media(max-width:600px){.onboarding-panel{padding:16px}.onboarding-head{flex-direction:column}.onboard-card{padding:14px}.onboard-step span{font-size:10px}}
+
+/* Centro de atendimento minimalista NEXA BLUE */
+.overview-panel{border-top:1px solid var(--border);padding:34px 0 42px}
+.overview-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.overview-heading h2{font:300 clamp(29px,4vw,54px)/1.15 var(--display);letter-spacing:-.055em;margin:12px 0}
+.overview-heading h2 em,.overview-feature h3 em{font-style:normal;color:var(--blue)}
+.overview-heading p{color:var(--muted);font-size:13px}
+.radar-live{font:600 10px var(--mono);color:#91d6f7;white-space:nowrap}
+.service-search{background:#061e33;border:1px solid #6daace66;padding:24px;margin:28px 0 18px}
+.service-search label{display:block;font:600 10px var(--mono);color:#a3dcff;letter-spacing:.09em;margin-bottom:13px}
+.service-search input{display:block;width:100%;background:#011324;border:1px solid #6daace8a;color:#fff;min-height:52px;padding:15px;font-size:15px;outline-offset:3px}
+.service-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:13px}
+.service-client{text-align:left;min-height:42px;background:#0a2a44;border:1px solid #70aace57;color:#e5f5ff;padding:11px 13px;font-size:12px}
+.service-client:hover,.service-client:focus-visible{border-color:#6bc8ff;background:#0d3b5f}
+.service-file{border:1px solid #79bee76e;background:#051b30;padding:25px;margin-bottom:22px}
+.service-file-head{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+.service-file-head h3{font:400 clamp(25px,3vw,40px) var(--display);margin:9px 0;letter-spacing:-.04em}
+.service-file-head p{font-size:12px;color:#a9c9da}
+.service-sections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.service-section{border:1px solid #79bee743;padding:18px;background:#072238;min-width:0}
+.service-section h4{font:600 11px var(--mono);letter-spacing:.08em;color:#a7ddfa;margin:0 0 12px}
+.service-detail{font:400 12px/1.6 var(--body);border-bottom:1px solid #8dc5e629;padding-bottom:8px}
+.overview-empty{font:400 12px/1.5 var(--body);color:#96b9ce}
+.overview-link{border:0;background:none;padding:10px 0;color:#96d8ff;font:600 10px var(--mono);text-align:left;cursor:pointer}
+.overview-link:hover{text-decoration:underline}
+.overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.overview-feature{background:#061f35;border:1px solid #74b5db45;padding:23px}
+.overview-feature h3{font:400 23px/1.3 var(--display);margin:12px 0}
+.overview-feed{min-height:75px}
+.overview-entry{font:400 12px/1.5 var(--body);color:#c1dbea;padding:8px 0;border-bottom:1px solid #8dc5e629}
+.overview-shortcut-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.overview-shortcut-grid button{min-height:44px;color:#d6f1ff;background:#0b324f;border:1px solid #7fbce753;font:600 10px var(--mono);cursor:pointer}
+.overview-shortcut-grid button:hover{background:#13527a}
+@media(max-width:800px){.service-sections{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.overview-grid,.service-results,.service-sections{grid-template-columns:1fr}.overview-heading{align-items:flex-start;flex-direction:column}.service-search,.service-file,.overview-feature{padding:17px}}
