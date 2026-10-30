@@ -262,3 +262,6 @@
 
 /* Entregáveis explicados — BARCO / IATE */
 .nexa-deliverables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}.nexa-deliverable{display:flex;gap:16px;padding:25px;border:1px solid rgba(130,194,226,.26);border-radius:12px;background:rgba(19,57,79,.13)}.nexa-deliverable-number{flex:none;font:600 13px 'IBM Plex Mono',monospace;color:#6abfe8}.nexa-deliverable h3{font:600 clamp(17px,2vw,22px)/1.35 Manrope,sans-serif;color:#e9f7ff;margin:0 0 11px}.nexa-deliverable p{font:400 14px/1.8 'DM Sans',sans-serif;color:#c1d4e3;margin:0}@media(max-width:760px){.nexa-deliverables{grid-template-columns:1fr}.nexa-deliverable{padding:18px}}
+
+/* Conversão direta por WhatsApp nos cartões de planos */
+.plan-whatsapp-direct{display:flex;align-items:center;justify-content:center;margin-top:10px;padding:14px 12px;min-height:44px;text-align:center;font:600 11px/1.4 'DM Sans',sans-serif;letter-spacing:.055em;color:#e7faff!important;background:rgba(18,115,138,.21);border:1px solid rgba(112,209,228,.5);border-radius:7px;text-decoration:none;transition:background .2s ease}.plan-whatsapp-direct:hover,.plan-whatsapp-direct:focus-visible{background:rgba(20,143,167,.43);outline-offset:3px}
