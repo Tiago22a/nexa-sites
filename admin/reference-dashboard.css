@@ -1,0 +1,34 @@
+/* NEXA Admin / editorial glass dashboard */
+:root{--bg:#0c1726;--blue:#8ad8f5;--muted:#a8c5d5}
+body{background:radial-gradient(ellipse at 30% 3%,#164a63 0,transparent 47%),#081522;color:#f4f8fb}
+.crm-head{border:0;background:rgba(7,22,35,.7);backdrop-filter:blur(16px)}
+.crm-view{max-width:1550px;margin:auto;padding:32px clamp(16px,4vw,70px) 80px}
+.dashboard-head h1{font-size:clamp(30px,3.4vw,48px);font-weight:500}
+.dashboard-head h1 em{color:#8dcde9}
+.stats{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:20px 0 26px}
+.stat{border-radius:20px;background:rgba(147,202,229,.09);border:1px solid #ffffff24;backdrop-filter:blur(22px)}
+.stat strong{font-weight:550}
+.tabs{display:flex;gap:6px;margin:0 0 20px;border:0}
+.tabs button{border-radius:13px;background:#ffffff0a;border:1px solid #ffffff0f}
+.tabs button.active{background:#83cde325;color:#f4fbff;border:1px solid #a9e6ff56}
+.overview-panel{padding:0}
+.overview-heading{margin:4px 0 18px}
+.overview-heading h2{font-size:clamp(25px,3vw,40px)}
+.service-search{border-radius:24px;background:#102b3ab8;border:1px solid #b4e4ff36;backdrop-filter:blur(20px)}
+.service-search input{border-radius:12px}
+.service-file{border-radius:22px;background:#0f2938c9}
+.overview-grid{grid-template-columns:1.2fr 1fr;gap:12px}
+.overview-feature{border-radius:23px;background:linear-gradient(140deg,#ffffff18,#ffffff08);border:1px solid #c1e9fb29;backdrop-filter:blur(24px);min-height:205px}
+.overview-feature h3{font-weight:500}
+.overview-feature:first-child{position:relative;min-height:280px;background:linear-gradient(90deg,#0d3549ec 0%,#0b3243a8 55%,#0a263a22 100%),url('/assets/nexa-blue-whales.webp') 70% center/cover}
+.overview-feature:first-child:after{content:'NEXA / EM MOVIMENTO';position:absolute;bottom:18px;right:22px;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#d5f3fe}
+.overview-feature:first-child .overview-feed{max-width:62%}
+.overview-feature:first-child h3{max-width:54%;font-size:clamp(24px,3vw,39px);line-height:1.07}
+.overview-shortcuts{background:linear-gradient(150deg,#16394d99,#0b1f31e8)}
+.overview-shortcut-grid button{border-radius:11px;min-height:50px;background:#ffffff12}
+.collection-card,.onboard-card,.strategy-cards article,.strategy-record{border-radius:18px;backdrop-filter:blur(15px)}
+.workspace{margin-top:20px}
+.login-view{background:linear-gradient(100deg,#061522ef,#0b3141a6),url('/assets/nexa-blue-whales.webp') center/cover}
+.login-box{border-radius:22px;background:#0d2535dd;backdrop-filter:blur(18px)}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}.overview-grid{grid-template-columns:1fr}.overview-feature:first-child .overview-feed,.overview-feature:first-child h3{max-width:80%}.overview-feature:first-child{background-position:58% center}.tabs{overflow-x:auto;flex-wrap:nowrap}.tabs button{flex:0 0 auto;white-space:nowrap}}
