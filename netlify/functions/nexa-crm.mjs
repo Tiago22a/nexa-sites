@@ -27,11 +27,13 @@ const TYPES = {
   portfolio: ["clientId","title","kind","status","url","coverUrl","notes"],
   tasks: ["clientId","title","assignee","deadline","priority","status","notes"],
   contracts: ["clientId","title","plan","amount","startDate","renewalDate","status","url","notes"],
-  expenses: ["title","category","amount","dueDate","paidOn","status","notes"]
+  expenses: ["title","category","amount","dueDate","paidOn","status","notes"],
+  goals: ["title","category","period","target","current","deadline","notes"],
+  habits: ["title","frequency","assignee","status","notes"]
 };
 const MAX_FIELDS = { name:130, company:150, email:150, phone:35, plan:50, status:40, onboardingStatus:45,
   notes:1200, clientId:80, title:150, deadline:15, startDate:15, renewalDate:15, assignee:100, priority:30, category:80, briefingUrl:450, amount:25,
-  dueDate:15, paidOn:15, method:45, kind:45, url:450, coverUrl:450 };
+  dueDate:15, paidOn:15, method:45, kind:45, url:450, coverUrl:450, frequency:45, period:30, target:25, current:25 };
 
 function response(value,status=200,headers={}){
   return new Response(JSON.stringify(value),{status,headers:{
@@ -91,6 +93,8 @@ function clean(type,input){
   if(type==="tasks"&&(!result.clientId||!result.title))return null;
   if(type==="contracts"&&(!result.clientId||!result.title))return null;
   if(type==="expenses"&&(!result.title||!result.amount||!result.dueDate))return null;
+  if(type==="goals"&&(!result.title||!result.period||!result.target))return null;
+  if(type==="habits"&&(!result.title||!result.frequency))return null;
   for(const key of ["dueDate","deadline","paidOn","startDate","renewalDate"]){
     if(result[key] && !/^\d{4}-\d{2}-\d{2}$/.test(result[key]))return null;
   }
@@ -102,6 +106,7 @@ function clean(type,input){
   }
   if(result.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(result.email))return null;
   if(result.amount&&!/^\d+(?:\.\d{1,2})?$/.test(result.amount))return null;
+  for(const key of ["target","current"])if(result[key]&&!/^\d+(?:\.\d{1,2})?$/.test(result[key]))return null;
   return result;
 }
 async function allRecords(type){
@@ -164,7 +169,7 @@ export default async (request)=>{
         if(!prev?.data)return response({error:"Registro não encontrado."},404);
         old=prev.data;etag=prev.etag;
       }
-      if(!["clients","expenses"].includes(type)){
+      if(!["clients","expenses","goals","habits"].includes(type)){
         const owner=await s.get("clients/"+data.clientId,{type:"json",consistency:"strong"});
         if(!owner)return response({error:"Selecione um cliente cadastrado."},400);
       }
