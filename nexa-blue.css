@@ -802,3 +802,84 @@
  .clients-spotlight .clients-marquee{overflow-x:auto;scrollbar-width:thin}
  .clients-spotlight .clients-logo-set:nth-child(2){display:none}
 }
+
+/* CASES NEXA — introdução editorial em tipografia de marca, acima do marquee oficial. */
+.clients-spotlight .clients-glass-band{
+  padding:clamp(32px,3.6vw,62px) 0 clamp(48px,5vw,84px);
+  min-height:0;
+}
+.clients-spotlight .clients-belt-editorial{
+  position:relative;
+  z-index:4;
+  width:calc(100% - clamp(44px,10vw,180px));
+  max-width:1500px;
+  margin:0 auto clamp(36px,4.2vw,72px);
+  pointer-events:none;
+}
+.clients-spotlight .clients-belt-kicker{
+  display:block;
+  font:600 10px/1.6 'IBM Plex Mono',monospace;
+  letter-spacing:.13em;
+  color:#a9ddff;
+  margin-bottom:clamp(20px,2vw,38px);
+}
+.clients-spotlight .clients-belt-headline{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  align-items:center;
+  gap:clamp(24px,4.4vw,75px);
+  min-width:0;
+}
+.clients-spotlight .clients-belt-headline h3{
+  max-width:820px;
+  margin:0;
+  font:300 clamp(43px,5.5vw,94px)/1.03 'Manrope',Arial,sans-serif;
+  letter-spacing:-.078em;
+  color:#fff;
+  text-wrap:balance;
+}
+.clients-spotlight .clients-belt-headline h3 em{
+  display:block;
+  color:#58beff;
+  font-style:normal;
+  font-weight:500;
+}
+.clients-spotlight .clients-belt-handwritten{
+  justify-self:center;
+  position:relative;
+  max-width:100%;
+  margin:0;
+  padding:5px 7px 14px;
+  font:400 clamp(27px,3.3vw,55px)/1.03 'Caveat Brush','Rock Salt',cursive;
+  letter-spacing:-.035em;
+  text-align:center;
+  text-transform:uppercase;
+  color:#fff;
+  -webkit-text-fill-color:#fff;
+  text-shadow:0 4px 12px rgba(0,0,0,.28);
+  transform:rotate(-4deg);
+}
+.clients-spotlight .clients-belt-handwritten::after{
+  content:'';
+  position:absolute;
+  left:22%;
+  right:10%;
+  bottom:0;
+  height:2px;
+  background:rgba(255,255,255,.93);
+  transform:rotate(-2deg);
+  box-shadow:7px 4px 0 -0.7px rgba(255,255,255,.45);
+}
+@media(max-width:850px){
+  .clients-spotlight .clients-belt-editorial{width:calc(100% - 48px);margin-bottom:45px;}
+  .clients-spotlight .clients-belt-headline{grid-template-columns:1fr;gap:25px;}
+  .clients-spotlight .clients-belt-headline h3{font-size:clamp(42px,9.2vw,78px);}
+  .clients-spotlight .clients-belt-handwritten{font-size:clamp(28px,5.8vw,48px);justify-self:start;text-align:left;margin-left:6px;}
+}
+@media(max-width:600px){
+  .clients-spotlight .clients-glass-band{padding:36px 0 45px;}
+  .clients-spotlight .clients-belt-editorial{width:calc(100% - 40px);margin-bottom:34px;}
+  .clients-spotlight .clients-belt-kicker{font-size:9px;margin-bottom:17px;}
+  .clients-spotlight .clients-belt-headline h3{font-size:clamp(39px,10.8vw,62px);line-height:1.06;}
+  .clients-spotlight .clients-belt-handwritten{font-size:clamp(25px,7.4vw,39px);line-height:1.02;}
+}
