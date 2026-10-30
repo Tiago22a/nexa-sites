@@ -265,3 +265,6 @@
 
 /* Conversão direta por WhatsApp nos cartões de planos */
 .plan-whatsapp-direct{display:flex;align-items:center;justify-content:center;margin-top:10px;padding:14px 12px;min-height:44px;text-align:center;font:600 11px/1.4 'DM Sans',sans-serif;letter-spacing:.055em;color:#e7faff!important;background:rgba(18,115,138,.21);border:1px solid rgba(112,209,228,.5);border-radius:7px;text-decoration:none;transition:background .2s ease}.plan-whatsapp-direct:hover,.plan-whatsapp-direct:focus-visible{background:rgba(20,143,167,.43);outline-offset:3px}
+
+/* CTA direto com rastreio por plano, acessivel antes da rolagem */
+.nexa-direct-whatsapp{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;margin:12px 0 4px;border:1px solid rgba(116,224,243,.65);border-radius:7px;background:rgba(9,92,119,.54);backdrop-filter:blur(9px);color:#eefbff!important;font:700 11px/1.5 'DM Sans',sans-serif;letter-spacing:.05em;text-decoration:none;transition:background .2s ease}.nexa-direct-whatsapp:hover,.nexa-direct-whatsapp:focus-visible{background:rgba(17,138,165,.8);outline-offset:3px}
