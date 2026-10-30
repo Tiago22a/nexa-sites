@@ -743,3 +743,62 @@
 .nexa-maw-tile img{max-height:51px;}
 .nexa-showcase-tile:not(a){cursor:default;}
 @media(max-width:600px){.nexa-showcase-tile{width:170px;min-width:170px;min-height:115px}.nexa-showcase-tile strong{font-size:17px}.nexa-showcase-tile img{max-width:145px;max-height:49px;}}
+
+
+/* CASES NEXA / logomarcas oficiais vetorizadas e centralizadas */
+.clients-spotlight .clients-glass-band{
+ min-height:325px;padding:65px 0 60px;position:relative;overflow:hidden;
+ background:linear-gradient(100deg,rgba(5,30,53,.23),rgba(107,194,245,.11) 50%,rgba(5,30,53,.23));
+ border-top:1px solid rgba(151,219,255,.4);border-bottom:1px solid rgba(151,219,255,.4);
+ -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+}
+.clients-spotlight .clients-belt-label{
+ position:absolute;top:20px;left:50%;transform:translateX(-50%);z-index:5;
+ font:600 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.18em;
+ color:#e5f5ff;white-space:nowrap;pointer-events:none;
+}
+.clients-spotlight .clients-marquee{width:100%;overflow:hidden}
+.clients-spotlight .clients-marquee[hidden]{display:none}
+.clients-spotlight .clients-track{
+ display:flex;align-items:center;width:max-content;animation:nexa-client-drift 52s linear infinite;
+}
+.clients-spotlight .clients-logo-set{
+ display:flex;align-items:center;flex:0 0 auto;
+ gap:clamp(22px,3.2vw,62px);padding:8px clamp(22px,3vw,60px);
+}
+.clients-spotlight .clients-logo-link{
+ display:flex;align-items:center;justify-content:center;flex:0 0 300px;
+ width:300px;min-width:300px;height:184px;opacity:1;
+ background:transparent;border:0;color:#fff;text-decoration:none;
+}
+.clients-spotlight .clients-logo-link img{
+ display:block;width:100%;max-width:290px;height:auto;max-height:166px;
+ object-fit:contain;filter:none!important;
+}
+.clients-spotlight .clients-logo-link[data-slug="maw"] img{max-width:225px;max-height:164px}
+.clients-spotlight .clients-logo-link[data-slug="ceramic"] img{max-width:277px;max-height:133px}
+.clients-spotlight .clients-logo-link[data-slug="mc-gesso"] img{max-width:177px;max-height:163px}
+.clients-spotlight .clients-logo-link[data-slug="winf"] img{max-width:217px;max-height:135px}
+.clients-spotlight a.clients-logo-link:hover,.clients-spotlight a.clients-logo-link:focus-visible{
+ transform:scale(1.06);opacity:1
+}
+.clients-spotlight .clients-glass-band:hover .clients-track,
+.clients-spotlight .clients-glass-band:focus-within .clients-track{animation-play-state:paused}
+.clients-spotlight .clients-placeholder{min-height:180px}
+.clients-spotlight .clients-placeholder[hidden]{display:none!important}
+.clients-spotlight .clients-caption{font-size:11px;line-height:1.7;opacity:.75}
+@media(max-width:720px){
+ .clients-spotlight .clients-glass-band{min-height:252px;padding:51px 0 40px}
+ .clients-spotlight .clients-belt-label{font-size:9px;top:16px}
+ .clients-spotlight .clients-logo-set{gap:22px;padding:8px 20px}
+ .clients-spotlight .clients-logo-link{flex-basis:240px;width:240px;min-width:240px;height:142px}
+ .clients-spotlight .clients-logo-link img{max-width:229px;max-height:131px}
+ .clients-spotlight .clients-logo-link[data-slug="maw"] img{max-width:190px;max-height:132px}
+ .clients-spotlight .clients-logo-link[data-slug="ceramic"] img{max-width:215px;max-height:113px}
+ .clients-spotlight .clients-logo-link[data-slug="mc-gesso"] img{max-height:129px}
+}
+@media(prefers-reduced-motion:reduce){
+ .clients-spotlight .clients-track{animation:none!important}
+ .clients-spotlight .clients-marquee{overflow-x:auto;scrollbar-width:thin}
+ .clients-spotlight .clients-logo-set:nth-child(2){display:none}
+}
