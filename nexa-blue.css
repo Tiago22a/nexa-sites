@@ -728,7 +728,7 @@
 .clients-logo-link{display:flex;justify-content:center;align-items:center;min-width:145px;width:clamp(145px,14vw,225px);height:112px;flex:0 0 auto;transition:transform .25s ease,opacity .25s ease;opacity:.72;}
 .clients-logo-link:hover,.clients-logo-link:focus-visible{opacity:1;transform:scale(1.065);}
 .clients-logo-link img{display:block;max-width:100%;max-height:78px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);}
-.clients-glass-band:hover .clients-track,.clients-glass-band:focus-within .clients-track{animation-play-state:paused;}
+/* A faixa continua rolando mesmo com o cursor ou foco sobre os cases. */
 .clients-caption{color:#88a9c2;font:400 11px/1.8 var(--body);margin:21px 0 0;letter-spacing:.04em;}
 @keyframes nexa-client-drift{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @media(max-width:900px){.clients-heading-row{display:block;}.clients-discover{display:inline-block;margin-top:19px;}.clients-glass-band{margin-top:35px;}}
@@ -782,8 +782,7 @@
 .clients-spotlight a.clients-logo-link:hover,.clients-spotlight a.clients-logo-link:focus-visible{
  transform:scale(1.06);opacity:1
 }
-.clients-spotlight .clients-glass-band:hover .clients-track,
-.clients-spotlight .clients-glass-band:focus-within .clients-track{animation-play-state:paused}
+/* Sem pausa em hover ou foco: movimento contínuo no carrossel de cases. */
 .clients-spotlight .clients-placeholder{min-height:180px}
 .clients-spotlight .clients-placeholder[hidden]{display:none!important}
 .clients-spotlight .clients-caption{font-size:11px;line-height:1.7;opacity:.75}
