@@ -46,7 +46,7 @@
       '',
       'PLANO E CONDICOES ESCOLHIDAS',
       'Modalidade: '+info.plan,
-      'Preferencia: '+({pix:'Pix integral',pix_scheduled:'Pix agendado mensal (12 parcelas)',boleto:'Carne de 12 boletos, sujeito a emissao pelo provedor financeiro'}[info.mode]||'A definir'),
+      'Preferencia: '+({pix:'Pix integral',pix_scheduled:'Pix agendado mensal (12 parcelas)',boleto:'12 boletos mensais, sujeitos a emissao pelo provedor financeiro'}[info.mode]||'A definir'),
       'Valor anual a vista: '+info.cash,
       'Parcelamento: '+info.monthly,
       'Total parcelado: '+info.total,
@@ -120,11 +120,11 @@
     const summary=()=>{
       if(custom)return 'SUBMARINO | Projeto sob consulta. Escopo, investimento e condições serão definidos em proposta personalizada.';
       const chosen=selection();
-      const condition=chosen==='pix'?'Pix integral '+d.cash:chosen==='pix_scheduled'?'12 Pix mensais programados, '+d.monthly+' (total '+d.total+')':'Carne de 12 boletos, '+d.monthly+' (total '+d.total+') - emissao mediante provedor financeiro';
+      const condition=chosen==='pix'?'Pix integral '+d.cash:chosen==='pix_scheduled'?'12 Pix mensais programados, '+d.monthly+' (total '+d.total+')':'12 boletos mensais, '+d.monthly+' (total '+d.total+') - emissao mediante provedor financeiro';
       return 'Plano '+d.planLabel+' | '+condition+' | Chave Pix: solicitar a NEXA BLUE e conferir beneficiario. Proposta e contrato sujeitos a assinatura. Pagamento nao realizado pelo site.';
     };
     const updateLink=()=>{
-      const chosen=selection(),mode=chosen==='pix'?'Pix integral':chosen==='pix_scheduled'?'Pix mensal agendado em 12 parcelas':'Carne com 12 boletos bancarios';
+      const chosen=selection(),mode=chosen==='pix'?'Pix integral':chosen==='pix_scheduled'?'Pix mensal agendado em 12 parcelas':'12 boletos mensais emitidos pela equipe';
       if(custom){link.href='https://wa.me/'+phone+'?text='+encodeURIComponent('Olá, NEXA BLUE! Gostaria de solicitar uma avaliação e proposta sob consulta para o plano SUBMARINO. Meu projeto precisa de uma solução personalizada. Página: '+location.href.split('#')[0]);return;}
       const text='Ola, NEXA BLUE! Estive na pagina do plano '+d.planLabel+' e escolhi '+mode+'. Gostaria de receber os dados oficiais de pagamento, a proposta final e as instrucoes para assinatura eletronica. Sei que comprovante de agendamento nao comprova pagamento, e que os boletos dependem de emissao pela plataforma financeira. Enviarei a minuta e o comprovante da primeira parcela efetivamente paga como anexos no WhatsApp. Plano: '+location.href.split('#')[0];
       link.href='https://wa.me/'+phone+'?text='+encodeURIComponent(text);
