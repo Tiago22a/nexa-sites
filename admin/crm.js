@@ -12,7 +12,7 @@ const cfg={
  contracts:{title:'CONTRATOS.',columns:['Contrato','Cliente','Renovação','Status'],description:'Planos e renovações.',fields:[['clientId','Cliente','client',true],['title','Contrato','text',true],['plan','Plano','select',['BARCO','IATE','SUBMARINO','AVULSO']],['amount','Valor mensal R$','number',false],['startDate','Início','date',false],['renewalDate','Renovação','date',false],['status','Situação','select',['rascunho','em assinatura','vigente','encerrado']],['url','Documento HTTPS','url',false],['notes','Observações','textarea',false]]},
  expenses:{title:'DESPESAS.',columns:['Descrição','Categoria','Valor','Vencimento','Status'],description:'Despesas e compromissos.',fields:[['title','Descrição','text',true],['category','Categoria','select',['Software','Hospedagem','Marketing','Equipe','Impostos','Outros']],['amount','Valor R$','number',true],['dueDate','Vencimento','date',true],['paidOn','Pago em','date',false],['status','Situação','select',['pendente','pago','cancelado']],['notes','Observações','textarea',false]]}
 };
-const state={tab:'clients',items:{clients:[],projects:[],invoices:[],portfolio:[],tasks:[],contracts:[],expenses:[]},edit:null};
+const state={tab:'dashboard',items:{clients:[],projects:[],invoices:[],portfolio:[],tasks:[],contracts:[],expenses:[]},edit:null};
 const make=(tag,text,className)=>{
  const el=document.createElement(tag);
  if(text!==undefined&&text!==null)el.textContent=String(text);
@@ -157,7 +157,51 @@ function renderTable(){
  }
  $('empty-records').hidden=state.items[state.tab].length>0;
 }
-function render(){renderStats();renderAlerts();renderTable();}
+
+let selectedClientId=null;
+function showTab(tab){
+ state.tab=tab;closeEditor();
+ $('overview-panel').hidden=tab!=='dashboard';document.querySelector('.workspace').hidden=tab==='dashboard';
+ for(const b of $('crm-tabs').querySelectorAll('[data-tab]'))b.classList.toggle('active',b.dataset.tab===tab);
+ if(tab==='dashboard')renderOverview();else renderTable();
+}
+function renderOverview(){
+ const query=$('service-client-search').value.trim().toLocaleLowerCase('pt-BR');
+ const results=$('service-results');results.replaceChildren();
+ const clients=state.items.clients.filter(x=>[x.company,x.name,x.email,x.phone].join(' ').toLocaleLowerCase('pt-BR').includes(query)).slice(0,8);
+ if(!clients.length){results.append(make('p',query?'Nenhum cliente localizado.':'Nenhum cliente cadastrado.','overview-empty'));}
+ for(const x of clients){
+  const button=make('button',(x.company||x.name)+' · '+x.name,'service-client');button.type='button';
+  button.addEventListener('click',()=>{selectedClientId=x.id;renderOverview();});results.append(button);
+ }
+ const file=$('service-file'),client=state.items.clients.find(x=>x.id===selectedClientId);
+ file.hidden=!client;file.replaceChildren();
+ if(client){
+  const head=make('div',null,'service-file-head');const left=make('div');
+  left.append(make('span','FICHA DO CLIENTE / ATENDIMENTO','eyebrow'),make('h3',client.company||client.name),make('p',[client.name,client.phone,client.email].filter(Boolean).join(' · ')));
+  const edit=make('button','EDITAR CLIENTE','row-button');edit.type='button';edit.addEventListener('click',()=>{showTab('clients');openEditor(client);});
+  head.append(left,edit);file.append(head);
+  const wrap=make('div',null,'service-sections');
+  for(const [type,label,detail] of [['projects','PROJETOS',x=>(x.title||'Projeto')+' · '+(x.status||'sem status')],['portfolio','COLEÇÕES',x=>(x.title||'Coleção')+' · '+(x.status||'em produção')],['invoices','MENSALIDADES',x=>'R$ '+money(x.amount)+' · '+(x.dueDate||'sem vencimento')+' · '+(x.paidOn?'pago':x.status||'pendente')],['contracts','CONTRATOS',x=>x.title||'Contrato'],['tasks','TAREFAS',x=>x.title||'Tarefa']]){
+   const section=make('div',null,'service-section');section.append(make('h4',label));
+   const records=state.items[type].filter(x=>x.clientId===client.id).slice(0,5);
+   if(!records.length)section.append(make('p','Nenhum registro.','overview-empty'));
+   for(const record of records)section.append(make('p',detail(record),'service-detail'));
+   const add=make('button','+ ADICIONAR','overview-link');add.type='button';add.addEventListener('click',()=>{showTab(type);openEditor(null);const select=$('editor-fields').querySelector('[name="clientId"]');if(select)select.value=client.id;});section.append(add);wrap.append(section);
+  }file.append(wrap);
+ }
+ const entries=[
+  ['overview-onboarding',state.items.clients.slice(0,3),x=>(x.company||x.name)+' · '+(x.onboardingStatus||'novo')],
+  ['overview-projects',state.items.projects.filter(x=>x.status!=='concluído').slice(0,3),x=>x.title+' · '+owner(x.clientId)],
+  ['overview-finance',state.items.invoices.filter(unpaid).sort((a,b)=>String(a.dueDate).localeCompare(String(b.dueDate))).slice(0,3),x=>owner(x.clientId)+' · '+x.dueDate]
+ ];
+ for(const [id,items,label] of entries){
+  const target=$(id);target.replaceChildren();if(!items.length)target.append(make('p','Nada pendente por aqui.','overview-empty'));
+  for(const item of items)target.append(make('p',label(item),'overview-entry'));
+ }
+}
+
+function render(){renderStats();renderAlerts();showTab(state.tab);}
 async function load(){
  for(const type of all)state.items[type]=(await api('list',{type})).items||[];
  render();
@@ -208,13 +252,9 @@ $('logout').addEventListener('click',async()=>{
  try{await api('logout',{method:'POST'});}catch{}
  $('crm-view').hidden=true;$('login-view').hidden=false;all.forEach(t=>state.items[t]=[]);
 });
-$('crm-tabs').addEventListener('click',event=>{
- const target=event.target.closest('[data-tab]');
- if(!target)return;
- state.tab=target.dataset.tab;closeEditor();
- for(const b of $('crm-tabs').querySelectorAll('[data-tab]'))b.classList.toggle('active',b===target);
- renderTable();
-});
+$('crm-tabs').addEventListener('click',e=>{const button=e.target.closest('[data-tab]');if(button)showTab(button.dataset.tab);});
+$('overview-panel').addEventListener('click',e=>{const button=e.target.closest('[data-go]');if(!button)return;showTab(button.dataset.go);if(button.textContent.includes('NOVO CLIENTE'))openEditor(null);});
+$('service-client-search').addEventListener('input',renderOverview);
 $('add-record').addEventListener('click',()=>openEditor(null));
 $('close-editor').addEventListener('click',closeEditor);
 $('cancel-editor').addEventListener('click',closeEditor);
