@@ -1,6 +1,7 @@
 'use strict';
 (()=>{
 const endpoint='/.netlify/functions/nexa-crm';
+const planningStyles=document.createElement('link');planningStyles.rel='stylesheet';planningStyles.href='/admin/strategy.css';document.head.append(planningStyles);
 const $=id=>document.getElementById(id);
 const all=['clients','projects','invoices','portfolio','tasks','contracts','expenses','goals','habits'];
 const cfg={
