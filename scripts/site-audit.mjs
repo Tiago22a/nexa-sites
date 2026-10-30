@@ -35,6 +35,7 @@ for(const page of pages){
  for(const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/g)){
   if(!/rel=["'][^"']*noopener/.test(m[0]))warnings.push(page+': link em nova aba sem noopener');
  }
+ if(html.includes('data-plan-switch')&&!html.includes('/assets/nexa-plan-tabs.js')) errors.push(page+': abas dos planos sem codigo de interacao');
  if(html.includes('data-nexa-checkout')){
   if(!html.includes('/assets/nexa-checkout.js')||!html.includes('data-whatsapp')||!html.includes('nx-client-form'))
    errors.push(page+': formulario de plano sem recursos de contratacao');
