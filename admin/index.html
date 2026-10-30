@@ -43,7 +43,7 @@
   <button type="button" id="logout" class="outline-button">SAIR ↗</button>
  </div>
  <div id="stats" class="stats" aria-label="Indicadores"></div>
- <section class="alerts-panel" aria-labelledby="alerts-title">
+ <section class="alerts-panel" hidden aria-labelledby="alerts-title">
   <span class="eyebrow">01 / ALERTAS DE COBRANÇA</span><h2 id="alerts-title">VENCIMENTOS <em>NO RADAR.</em></h2>
   <div id="alerts" class="alerts" aria-live="polite"></div>
   <p class="smallprint"><strong>AVISO CONTRATUAL — INADIMPLÊNCIA:</strong> após o vencimento da mensalidade, aplica-se tolerância de 3 (três) dias corridos. Decorrido esse prazo sem confirmação de pagamento, os serviços digitais contratados poderão ser suspensos, inclusive o acesso público ao site, conforme previsão expressa no contrato e mediante comunicação ao cliente. <strong>Não existe suspensão automática habilitada neste painel.</strong> O bloqueio exige confirmação da inadimplência e revisão administrativa; dados e backups não devem ser apagados. Pix agendado não equivale a pagamento confirmado.</p>
@@ -60,7 +60,7 @@
  </nav>
  <section id="overview-panel" class="overview-panel" aria-labelledby="overview-title">
   <div class="overview-heading"><div><span class="eyebrow">RADAR OPERACIONAL / NEXA BLUE</span><h2 id="overview-title">TUDO SOB <em>CONTROLE.</em></h2><p>Uma visão da operação, dos novos embarques aos próximos vencimentos.</p></div><span class="radar-live">● PAINEL PRIVADO</span></div>
-  <div class="overview-grid">
+  <div class="service-search"><label for="service-client-search">ATENDIMENTO RÁPIDO · ENCONTRE O CLIENTE</label><input id="service-client-search" type="search" placeholder="Digite o nome ou a empresa…" autocomplete="off"><div id="service-results" class="service-results"></div></div><section id="service-file" class="service-file" hidden aria-live="polite"></section><div class="overview-grid">
    <article class="overview-feature"><span class="eyebrow">01 / ROTA DE ENTRADA</span><h3>CLIENTES NO <em>RADAR.</em></h3><div id="overview-onboarding" class="overview-feed"></div><button type="button" class="overview-link" data-go="clients">VER CLIENTES E ONBOARDING ↗</button></article>
    <article class="overview-feature"><span class="eyebrow">02 / PRODUÇÃO</span><h3>PROJETOS EM <em>CURSO.</em></h3><div id="overview-projects" class="overview-feed"></div><button type="button" class="overview-link" data-go="projects">ABRIR PROJETOS ↗</button></article>
    <article class="overview-feature"><span class="eyebrow">03 / FINANCEIRO</span><h3>VENCIMENTOS NO <em>RADAR.</em></h3><div id="overview-finance" class="overview-feed"></div><button type="button" class="overview-link" data-go="invoices">VER MENSALIDADES ↗</button></article>
