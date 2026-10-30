@@ -9,7 +9,7 @@ const NEXA_CASES=[
 {slug:'maw',name:'M.A.W.',logo:'/assets/cases/maw-branco.svg'},
 {slug:'synthwave',name:'Synthwave.fm',logo:'/assets/cases/synthwave-fm-branco.svg'},
 {slug:'winf',name:'WINF',logo:'/assets/cases/winf-branco.svg',url:'https://winf.com.br/'},
-{slug:'mc-gesso',name:'MC Gesso',logo:'/assets/cases/mc-gesso-branco.svg'}
+{slug:'mc-gesso',name:'MC Gesso',logo:'/assets/cases/mc-gesso-branco.svg?v=official-20261030'}
 ];
 (()=>{
 const track=document.getElementById('clients-track');
