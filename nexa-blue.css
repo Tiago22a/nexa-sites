@@ -946,3 +946,19 @@
 @media(prefers-reduced-motion:reduce) {
   .clients-spotlight .clients-track{animation:none!important}
 }
+
+
+/* Dimensionamento pela largura real da faixa: sete marcas desktop, cinco mobile. */
+@supports (width: 1cqw) {
+  .clients-spotlight .clients-marquee {container-type:inline-size;}
+  .clients-spotlight .clients-logo-link {
+    flex-basis:calc((100cqw - 6 * var(--nexa-case-gap)) / 7);
+    width:calc((100cqw - 6 * var(--nexa-case-gap)) / 7);
+  }
+  @media (max-width:720px) {
+    .clients-spotlight .clients-logo-link {
+      flex-basis:calc((100cqw - 4 * var(--nexa-case-gap)) / 5);
+      width:calc((100cqw - 4 * var(--nexa-case-gap)) / 5);
+    }
+  }
+}
