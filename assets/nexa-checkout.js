@@ -133,7 +133,7 @@
     updateLink();
     copy.addEventListener('click',async()=>{
       const message=summary();
-      try{if(!navigator.clipboard)throw Error('clipboard unsupported');await navigator.clipboard.writeText(message);status.textContent='Resumo copiado. Solicite a chave Pix ou os boletos oficiais antes de pagar.';}
+      try{if(!navigator.clipboard)throw Error('clipboard unsupported');await navigator.clipboard.writeText(message);status.textContent=custom?'Resumo de pré-proposta copiado. Envie pelo WhatsApp para avaliação.':'Resumo copiado. Solicite a chave Pix ou os boletos oficiais antes de pagar.';}
       catch{status.textContent='Seu navegador nao permitiu copiar. Use o WhatsApp para obter os dados oficiais.';}
     });
     form.addEventListener('submit',event=>{
@@ -145,7 +145,7 @@
       const url=URL.createObjectURL(blob),a=document.createElement('a');
       a.href=url;a.download='NEXA-'+(d.planLabel==='SUBMARINO'?'PRE-PROPOSTA-':'MINUTA-')+d.planLabel+'-'+nameDate()+'.pdf';
       document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);
-      status.textContent='PDF gerado e baixado. Confira a minuta e abra o WhatsApp para combinar a assinatura e o pagamento. O envio de anexos e manual.';
+      status.textContent=custom?'Ficha de pré-proposta gerada. Abra o WhatsApp para apresentar sua necessidade à equipe.':'PDF gerado e baixado. Confira a minuta e abra o WhatsApp para combinar a assinatura e o pagamento. O envio de anexos e manual.';
     });
   }
 })();
