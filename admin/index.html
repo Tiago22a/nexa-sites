@@ -16,15 +16,15 @@
 <a class="skip" href="#content">Ir para o conteúdo</a>
 <header class="crm-head">
   <a href="/" class="crm-brand" aria-label="NEXA BLUE — site"><img src="/assets/nexa-logo-oficial.svg" alt="NEXA"><small>BLUE · AGÊNCIA DIGITAL</small></a>
-  <span class="crm-head-label">CENTRO DE COMANDO / ACESSO RESTRITO</span>
+  <span class="crm-head-label">GESTÃO INTERNA / ACESSO RESTRITO</span>
   <a href="/" class="crm-visit">VER SITE ↗</a>
 </header>
 <main id="content">
 <section id="login-view" class="login-view" aria-labelledby="login-title">
  <div class="login-story">
   <span class="eyebrow">NEXA BLUE / OPERAÇÃO INTERNA</span>
-  <h1 id="login-title">SUA MARCA.<br><em>SEU COMANDO.</em></h1>
-  <p class="script">sem navegar às cegas.</p>
+  <h1 id="login-title">GESTÃO SIMPLES.<br><em>EM UM SÓ LUGAR.</em></h1>
+  <p class="script">gestão com clareza.</p>
   <p>Clientes, entregas, portfólios e pagamentos sob uma mesma direção.</p>
  </div>
  <form id="login-form" class="login-box">
@@ -39,18 +39,19 @@
 </section>
 <section id="crm-view" class="crm-view" hidden>
  <div class="dashboard-head">
-  <div><span class="eyebrow">CENTRO DE COMANDO / NEXA BLUE</span><h1>UM OCEANO DE <em>CONTROLE.</em></h1><p>Organize a operação comercial sem perder nenhuma entrega de vista.</p></div>
+  <div><span class="eyebrow">CENTRO DE COMANDO / NEXA BLUE</span><h1>GESTÃO DA <em>AGÊNCIA.</em></h1><p>Clientes, contratos, serviços e entregas em um só lugar.</p></div>
   <button type="button" id="logout" class="outline-button">SAIR ↗</button>
  </div>
  <div id="stats" class="stats" aria-label="Indicadores"></div>
  <section class="alerts-panel" hidden aria-labelledby="alerts-title">
-  <span class="eyebrow">01 / ALERTAS DE COBRANÇA</span><h2 id="alerts-title">VENCIMENTOS <em>NO RADAR.</em></h2>
+  <span class="eyebrow">01 / ALERTAS DE COBRANÇA</span><h2 id="alerts-title">VENCIMENTOS <em>E ALERTAS.</em></h2>
   <div id="alerts" class="alerts" aria-live="polite"></div>
   <p class="smallprint"><strong>AVISO CONTRATUAL — INADIMPLÊNCIA:</strong> após o vencimento da mensalidade, aplica-se tolerância de 3 (três) dias corridos. Decorrido esse prazo sem confirmação de pagamento, os serviços digitais contratados poderão ser suspensos, inclusive o acesso público ao site, conforme previsão expressa no contrato e mediante comunicação ao cliente. <strong>Não existe suspensão automática habilitada neste painel.</strong> O bloqueio exige confirmação da inadimplência e revisão administrativa; dados e backups não devem ser apagados. Pix agendado não equivale a pagamento confirmado.</p>
  </section>
  <nav class="tabs" id="crm-tabs" aria-label="Módulos do CRM">
   <button type="button" data-tab="dashboard" class="active">VISÃO GERAL</button>
   <button type="button" data-tab="clients">CLIENTES</button>
+  <button type="button" data-tab="catalog">SERVIÇOS E PLANOS</button>
   <button type="button" data-tab="projects">PROJETOS</button>
   <button type="button" data-tab="invoices">MENSALIDADES</button>
   <button type="button" data-tab="portfolio">PORTFÓLIOS</button>
@@ -59,14 +60,15 @@
   <button type="button" data-tab="expenses">DESPESAS</button>
  </nav>
  <section id="overview-panel" class="overview-panel" aria-labelledby="overview-title">
-  <div class="overview-heading"><div><span class="eyebrow">RADAR OPERACIONAL / NEXA BLUE</span><h2 id="overview-title">TUDO SOB <em>CONTROLE.</em></h2><p>Uma visão da operação, dos novos embarques aos próximos vencimentos.</p></div><span class="radar-live">● PAINEL PRIVADO</span></div>
+  <div class="overview-heading"><div><span class="eyebrow">VISÃO EXECUTIVA / NEXA BLUE</span><h2 id="overview-title">VISÃO GERAL.</h2><p>Atendimento, projetos e financeiro sem complicação.</p></div><span class="radar-live">● PAINEL PRIVADO</span></div>
   <div class="service-search"><label for="service-client-search">ATENDIMENTO RÁPIDO · ENCONTRE O CLIENTE</label><input id="service-client-search" type="search" placeholder="Digite o nome ou a empresa…" autocomplete="off"><div id="service-results" class="service-results"></div></div><section id="service-file" class="service-file" hidden aria-live="polite"></section><div class="overview-grid">
-   <article class="overview-feature"><span class="eyebrow">01 / ROTA DE ENTRADA</span><h3>CLIENTES NO <em>RADAR.</em></h3><div id="overview-onboarding" class="overview-feed"></div><button type="button" class="overview-link" data-go="clients">VER CLIENTES E ONBOARDING ↗</button></article>
-   <article class="overview-feature"><span class="eyebrow">02 / PRODUÇÃO</span><h3>PROJETOS EM <em>CURSO.</em></h3><div id="overview-projects" class="overview-feed"></div><button type="button" class="overview-link" data-go="projects">ABRIR PROJETOS ↗</button></article>
-   <article class="overview-feature"><span class="eyebrow">03 / FINANCEIRO</span><h3>VENCIMENTOS NO <em>RADAR.</em></h3><div id="overview-finance" class="overview-feed"></div><button type="button" class="overview-link" data-go="invoices">VER MENSALIDADES ↗</button></article>
-   <article class="overview-feature overview-shortcuts"><span class="eyebrow">04 / ACESSOS RÁPIDOS</span><h3>PRÓXIMA <em>MANOBRA.</em></h3><div class="overview-shortcut-grid"><button type="button" data-go="clients">+ NOVO CLIENTE</button><button type="button" data-go="portfolio">COLEÇÕES ↗</button><button type="button" data-go="tasks">TAREFAS ↗</button><button type="button" data-go="contracts">CONTRATOS ↗</button></div></article>
+   <article class="overview-feature"><span class="eyebrow">01 / CLIENTES</span><h3>NOVOS <em>CLIENTES.</em></h3><div id="overview-onboarding" class="overview-feed"></div><button type="button" class="overview-link" data-go="clients">VER CLIENTES E ONBOARDING ↗</button></article>
+   <article class="overview-feature"><span class="eyebrow">02 / OPERAÇÃO</span><h3>PROJETOS <em>ATIVOS.</em></h3><div id="overview-projects" class="overview-feed"></div><button type="button" class="overview-link" data-go="projects">ABRIR PROJETOS ↗</button></article>
+   <article class="overview-feature"><span class="eyebrow">03 / FINANCEIRO</span><h3>PRÓXIMOS <em>VENCIMENTOS.</em></h3><div id="overview-finance" class="overview-feed"></div><button type="button" class="overview-link" data-go="invoices">VER MENSALIDADES ↗</button></article>
+   <article class="overview-feature overview-shortcuts"><span class="eyebrow">04 / ACESSOS RÁPIDOS</span><h3>ACESSOS <em>RÁPIDOS.</em></h3><div class="overview-shortcut-grid"><button type="button" data-go="clients">+ NOVO CLIENTE</button><button type="button" data-go="portfolio">COLEÇÕES ↗</button><button type="button" data-go="tasks">TAREFAS ↗</button><button type="button" data-go="contracts">CONTRATOS ↗</button></div></article>
   </div>
  </section>
+ <section id="catalog-panel" class="catalog-panel" hidden aria-label="Catálogo de planos e serviços"><div class="catalog-heading"><span class="eyebrow">CATÁLOGO COMERCIAL</span><h2>Serviços e planos</h2><p>Referência para atendimento e contratação. Valores e condições devem ser confirmados na proposta oficial.</p></div><div class="catalog-layout"><div><h3>Planos do site</h3><div id="catalog-plans" class="catalog-items"></div></div><div><h3>Serviços</h3><div id="catalog-services" class="catalog-items"></div></div></div></section>
  <section class="workspace" aria-labelledby="work-title" hidden>
   <div class="workspace-head"><div><span class="eyebrow">02 / BASE OPERACIONAL</span><h2 id="work-title">CLIENTES.</h2></div><button type="button" class="main-button" id="add-record">+ NOVO REGISTRO</button></div>
   <p id="work-description" class="workspace-description"></p>
