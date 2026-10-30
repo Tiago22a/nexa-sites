@@ -24,10 +24,13 @@ const TYPES = {
   clients: ["name","company","email","phone","plan","status","notes"],
   projects: ["clientId","title","deadline","status","briefingUrl","notes"],
   invoices: ["clientId","amount","dueDate","paidOn","method","status","notes"],
-  portfolio: ["clientId","title","kind","url","notes"]
+  portfolio: ["clientId","title","kind","url","notes"],
+  tasks: ["clientId","title","assignee","deadline","priority","status","notes"],
+  contracts: ["clientId","title","plan","amount","startDate","renewalDate","status","url","notes"],
+  expenses: ["title","category","amount","dueDate","paidOn","status","notes"]
 };
 const MAX_FIELDS = { name:130, company:150, email:150, phone:35, plan:50, status:40,
-  notes:1200, clientId:80, title:150, deadline:15, briefingUrl:450, amount:25,
+  notes:1200, clientId:80, title:150, deadline:15, startDate:15, renewalDate:15, assignee:100, priority:30, category:80, briefingUrl:450, amount:25,
   dueDate:15, paidOn:15, method:45, kind:45, url:450 };
 
 function response(value,status=200,headers={}){
@@ -85,7 +88,10 @@ function clean(type,input){
   if(type==="projects"&&(!result.title||!result.clientId))return null;
   if(type==="invoices"&&(!result.clientId||!result.dueDate||!result.amount))return null;
   if(type==="portfolio"&&(!result.clientId||!result.title))return null;
-  for(const key of ["dueDate","deadline","paidOn"]){
+  if(type==="tasks"&&(!result.clientId||!result.title))return null;
+  if(type==="contracts"&&(!result.clientId||!result.title))return null;
+  if(type==="expenses"&&(!result.title||!result.amount||!result.dueDate))return null;
+  for(const key of ["dueDate","deadline","paidOn","startDate","renewalDate"]){
     if(result[key] && !/^\d{4}-\d{2}-\d{2}$/.test(result[key]))return null;
   }
   for(const key of ["url","briefingUrl"]){
@@ -158,7 +164,7 @@ export default async (request)=>{
         if(!prev?.data)return response({error:"Registro não encontrado."},404);
         old=prev.data;etag=prev.etag;
       }
-      if(type!=="clients"){
+      if(!["clients","expenses"].includes(type)){
         const owner=await s.get("clients/"+data.clientId,{type:"json",consistency:"strong"});
         if(!owner)return response({error:"Selecione um cliente cadastrado."},400);
       }
