@@ -2,8 +2,10 @@
 (()=>{
 const endpoint='/.netlify/functions/nexa-crm';
 const $=id=>document.getElementById(id);
-const all=['clients','projects','invoices','portfolio','tasks','contracts','expenses'];
+const all=['clients','projects','invoices','portfolio','tasks','contracts','expenses','goals','habits'];
 const cfg={
+ goals:{title:'METAS.',columns:['Meta','Período','Alvo','Realizado'],description:'Metas mensuráveis, revisadas pela equipe.',fields:[['title','Nome da meta','text',true],['category','Área','select',['Comercial','Produção','Financeiro','Relacionamento','Operações']],['period','Período','select',['Diária','Mensal','Anual']],['target','Objetivo numérico','number',true],['current','Resultado atual','number',false],['deadline','Data limite','date',false],['notes','Observações','textarea',false]]},
+ habits:{title:'HÁBITOS E ROTINAS.',columns:['Rotina','Frequência','Responsável','Status'],description:'Ações de execução contínua.',fields:[['title','Nome da rotina','text',true],['frequency','Frequência','select',['Diária','Semanal','Mensal','Anual']],['assignee','Responsável','select',['Você','Tiago','Equipe']],['status','Situação','select',['ativa','pausada','concluída']],['notes','Instruções','textarea',false]]},
  clients:{title:'CLIENTES.',columns:['Nome','Empresa','Plano','Status'],description:'Empresas, contatos e relacionamento.',fields:[['name','Responsável','text',true],['company','Empresa','text',false],['email','E-mail','email',false],['phone','Telefone','tel',false],['plan','Plano','select',['ANZOL','BARCO','IATE','SUBMARINO','REDE','MODO SUBMARINO','AVULSO']],['status','Situação','select',['lead','proposta','ativo','inativo']],['onboardingStatus','Etapa de onboarding','select',['novo','contato realizado','briefing recebido','iniciado','concluído']],['notes','Observações','textarea',false]]},
  projects:{title:'PROJETOS.',columns:['Projeto','Cliente','Prazo','Status'],description:'Entregas e produção.',fields:[['clientId','Cliente','client',true],['title','Projeto','text',true],['deadline','Prazo','date',false],['status','Etapa','select',['planejado','em produção','aguardando cliente','concluído','pausado']],['briefingUrl','Briefing HTTPS','url',false],['notes','Observações','textarea',false]]},
  invoices:{title:'MENSALIDADES.',columns:['Cliente','Valor','Vencimento','Status'],description:'Controle de pagamentos.',fields:[['clientId','Cliente','client',true],['amount','Valor R$','number',true],['dueDate','Vencimento','date',true],['paidOn','Pagamento confirmado em','date',false],['method','Forma','select',['Pix','Pix agendado','Boleto','Outro']],['status','Situação','select',['pendente','em verificação','pago','cancelado']],['notes','Observações','textarea',false]]},
@@ -12,7 +14,7 @@ const cfg={
  contracts:{title:'CONTRATOS.',columns:['Contrato','Cliente','Renovação','Status'],description:'Planos e renovações.',fields:[['clientId','Cliente','client',true],['title','Contrato','text',true],['plan','Plano','select',['ANZOL','BARCO','IATE','SUBMARINO','REDE','MODO SUBMARINO','AVULSO']],['amount','Valor mensal R$','number',false],['startDate','Início','date',false],['renewalDate','Renovação','date',false],['status','Situação','select',['rascunho','em assinatura','vigente','encerrado']],['url','Documento HTTPS','url',false],['notes','Observações','textarea',false]]},
  expenses:{title:'DESPESAS.',columns:['Descrição','Categoria','Valor','Vencimento','Status'],description:'Despesas e compromissos.',fields:[['title','Descrição','text',true],['category','Categoria','select',['Software','Hospedagem','Marketing','Equipe','Impostos','Outros']],['amount','Valor R$','number',true],['dueDate','Vencimento','date',true],['paidOn','Pago em','date',false],['status','Situação','select',['pendente','pago','cancelado']],['notes','Observações','textarea',false]]}
 };
-const state={tab:'dashboard',items:{clients:[],projects:[],invoices:[],portfolio:[],tasks:[],contracts:[],expenses:[]},edit:null};
+const state={tab:'dashboard',items:{clients:[],projects:[],invoices:[],portfolio:[],tasks:[],contracts:[],expenses:[],goals:[],habits:[]},edit:null};
 const make=(tag,text,className)=>{
  const el=document.createElement(tag);
  if(text!==undefined&&text!==null)el.textContent=String(text);
@@ -67,6 +69,8 @@ function renderAlerts(){
  }
 }
 const cells={
+ goals:r=>[r.title,r.period||'—',r.target||'—',r.current||'0'],
+ habits:r=>[r.title,r.frequency||'—',r.assignee||'—',r.status||'ativa'],
  tasks:r=>[r.title,owner(r.clientId),r.assignee||'—',r.deadline||'—',r.status||'—'],
  contracts:r=>[r.title,owner(r.clientId),r.renewalDate||'—',r.status||'—'],
  expenses:r=>[r.title,r.category||'—','R$ '+money(r.amount),r.dueDate||'—',r.paidOn?'pago':r.status||'pendente'],
@@ -168,12 +172,24 @@ function renderCatalog(){
  for(const name of siteServices){services.append(make('div',name,'catalog-item'));}
 }
 
+function renderStrategy(){
+ for(const [type,id] of [['goals','strategy-goals'],['habits','strategy-habits']]){
+  const root=$(id);root.replaceChildren();
+  const entries=state.items[type];
+  if(!entries.length){root.append(make('p',type==='goals'?'Cadastre sua primeira meta com um objetivo realista.':'Cadastre a primeira rotina da equipe.','overview-empty'));continue;}
+  for(const item of entries){
+   const row=make('article',null,'strategy-record');const info=make('div');
+   info.append(make('strong',item.title),make('small',type==='goals'?[(item.period||'Sem período'),(item.current||'0')+' / '+(item.target||'0'),item.category].filter(Boolean).join(' · '):[item.frequency,item.assignee,item.status].filter(Boolean).join(' · ')));
+   const action=make('button','EDITAR','row-button');action.type='button';action.addEventListener('click',()=>{showTab(type);openEditor(item);});row.append(info,action);root.append(row);
+  }
+ }
+}
 let selectedClientId=null;
 function showTab(tab){
  state.tab=tab;closeEditor();
- $('overview-panel').hidden=tab!=='dashboard';$('catalog-panel').hidden=tab!=='catalog';document.querySelector('.workspace').hidden=tab==='dashboard'||tab==='catalog';
+ $('overview-panel').hidden=tab!=='dashboard';$('catalog-panel').hidden=tab!=='catalog';$('strategy-panel').hidden=tab!=='strategy';document.querySelector('.workspace').hidden=['dashboard','catalog','strategy'].includes(tab);
  for(const b of $('crm-tabs').querySelectorAll('[data-tab]'))b.classList.toggle('active',b.dataset.tab===tab);
- if(tab==='dashboard')renderOverview();else if(tab==='catalog')renderCatalog();else renderTable();
+ if(tab==='dashboard')renderOverview();else if(tab==='catalog')renderCatalog();else if(tab==='strategy')renderStrategy();else renderTable();
 }
 function renderOverview(){
  const query=$('service-client-search').value.trim().toLocaleLowerCase('pt-BR');
@@ -265,6 +281,7 @@ $('logout').addEventListener('click',async()=>{
 $('crm-tabs').addEventListener('click',e=>{const button=e.target.closest('[data-tab]');if(button)showTab(button.dataset.tab);});
 $('overview-panel').addEventListener('click',e=>{const button=e.target.closest('[data-go]');if(!button)return;showTab(button.dataset.go);if(button.textContent.includes('NOVO CLIENTE'))openEditor(null);});
 $('service-client-search').addEventListener('input',renderOverview);
+$('strategy-panel').addEventListener('click',e=>{const b=e.target.closest('[data-strategy-tab]');if(!b)return;showTab(b.dataset.strategyTab);openEditor(null);});
 $('add-record').addEventListener('click',()=>openEditor(null));
 $('close-editor').addEventListener('click',closeEditor);
 $('cancel-editor').addEventListener('click',closeEditor);
