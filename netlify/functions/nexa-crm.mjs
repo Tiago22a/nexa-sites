@@ -24,14 +24,14 @@ const TYPES = {
   clients: ["name","company","email","phone","plan","status","notes"],
   projects: ["clientId","title","deadline","status","briefingUrl","notes"],
   invoices: ["clientId","amount","dueDate","paidOn","method","status","notes"],
-  portfolio: ["clientId","title","kind","url","notes"],
+  portfolio: ["clientId","title","kind","status","url","coverUrl","notes"],
   tasks: ["clientId","title","assignee","deadline","priority","status","notes"],
   contracts: ["clientId","title","plan","amount","startDate","renewalDate","status","url","notes"],
   expenses: ["title","category","amount","dueDate","paidOn","status","notes"]
 };
 const MAX_FIELDS = { name:130, company:150, email:150, phone:35, plan:50, status:40,
   notes:1200, clientId:80, title:150, deadline:15, startDate:15, renewalDate:15, assignee:100, priority:30, category:80, briefingUrl:450, amount:25,
-  dueDate:15, paidOn:15, method:45, kind:45, url:450 };
+  dueDate:15, paidOn:15, method:45, kind:45, url:450, coverUrl:450 };
 
 function response(value,status=200,headers={}){
   return new Response(JSON.stringify(value),{status,headers:{
@@ -94,7 +94,7 @@ function clean(type,input){
   for(const key of ["dueDate","deadline","paidOn","startDate","renewalDate"]){
     if(result[key] && !/^\d{4}-\d{2}-\d{2}$/.test(result[key]))return null;
   }
-  for(const key of ["url","briefingUrl"]){
+  for(const key of ["url","briefingUrl","coverUrl"]){
     if(result[key]){
       try{const u=new URL(result[key]);if(u.protocol!=="https:")return null;}
       catch{return null;}
