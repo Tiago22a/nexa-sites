@@ -39,12 +39,16 @@
 </section>
 <section id="crm-view" class="crm-view" hidden>
  <div class="dashboard-head">
-  <div><span class="eyebrow">CENTRO DE COMANDO / NEXA BLUE</span><h1>UM OCEANO DE <em>CONTROLE.</em></h1><p>Organize a operação comercial sem perder nenhuma entrega de vista.</p></div>
+  <div><span class="eyebrow">CENTRO DE COMANDO / NEXA BLUE</span><h1>UM OCEANO DE <em>CONTROLE.</em></h1><p>Clientes, contratos, prazos e financeiro: tudo em um único lugar para a gestão diária.</p></div>
   <button type="button" id="logout" class="outline-button">SAIR ↗</button>
  </div>
  <div id="stats" class="stats" aria-label="Indicadores"></div>
+ <section class="agenda-panel" aria-labelledby="agenda-title">
+  <div class="agenda-heading"><div><span class="eyebrow">01 / VISÃO OPERACIONAL</span><h2 id="agenda-title">PRIORIDADES <em>DA SEMANA.</em></h2><p>Tarefas, projetos e renovações que exigem atenção de vocês dois.</p></div><span class="agenda-hint">CLIQUE EM UM ITEM PARA ABRIR O MÓDULO</span></div>
+  <div id="daily-agenda" class="daily-agenda" aria-live="polite"></div>
+ </section>
  <section class="alerts-panel" aria-labelledby="alerts-title">
-  <span class="eyebrow">01 / ALERTAS DE COBRANÇA</span><h2 id="alerts-title">VENCIMENTOS <em>NO RADAR.</em></h2>
+  <span class="eyebrow">02 / ALERTAS DE COBRANÇA</span><h2 id="alerts-title">VENCIMENTOS <em>NO RADAR.</em></h2>
   <div id="alerts" class="alerts" aria-live="polite"></div>
   <p class="smallprint"><strong>Condição contratual proposta:</strong> 3 dias corridos de tolerância após o vencimento. O alerta não suspende serviços nem derruba sites automaticamente; a medida depende do contrato aplicável, aviso e revisão administrativa. Pix agendado não comprova pagamento.</p>
  </section>
@@ -58,8 +62,9 @@
   <button type="button" data-tab="expenses">DESPESAS</button>
  </nav>
  <section class="workspace" aria-labelledby="work-title">
-  <div class="workspace-head"><div><span class="eyebrow">02 / BASE OPERACIONAL</span><h2 id="work-title">CLIENTES.</h2></div><button type="button" class="main-button" id="add-record">+ NOVO REGISTRO</button></div>
+  <div class="workspace-head"><div><span class="eyebrow">03 / BASE OPERACIONAL</span><h2 id="work-title">CLIENTES.</h2></div><button type="button" class="main-button" id="add-record">+ NOVO REGISTRO</button></div>
   <p id="work-description" class="workspace-description"></p>
+  <div class="workspace-tools"><label for="record-search">PESQUISAR NESTE MÓDULO</label><input id="record-search" type="search" autocomplete="off" placeholder="Busque cliente, projeto, situação ou responsável" aria-label="Buscar registros"><span id="record-count" aria-live="polite">0 registro(s)</span></div>
   <div class="table-scroll"><table class="records"><thead id="record-head"></thead><tbody id="record-body"></tbody></table></div>
   <p id="empty-records" class="empty" hidden>Nenhum registro cadastrado ainda.</p>
   <section id="editor" class="editor" hidden aria-labelledby="editor-title">
@@ -71,7 +76,7 @@
   </section>
  </section>
  <section class="integrations">
-  <span class="eyebrow">03 / CONEXÕES</span><h2>HERMES <em>AI.</em></h2>
+  <span class="eyebrow">04 / CONEXÕES</span><h2>HERMES <em>AI.</em></h2>
   <p>Conector previsto para consulta privada de indicadores. O Hermes não pode cobrar, enviar mensagens nem suspender serviços pela integração inicial.</p>
   <div class="integration-tags"><span>HERMES · CONSULTA PRIVADA</span><span>BOLETO / PIX · INTEGRAÇÃO PENDENTE</span><span>ASSINATURA DIGITAL · PENDENTE</span></div>
  </section>
