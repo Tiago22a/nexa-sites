@@ -60,7 +60,7 @@
  <section class="workspace" aria-labelledby="work-title">
   <div class="workspace-head"><div><span class="eyebrow">02 / BASE OPERACIONAL</span><h2 id="work-title">CLIENTES.</h2></div><button type="button" class="main-button" id="add-record">+ NOVO REGISTRO</button></div>
   <p id="work-description" class="workspace-description"></p>
-  <div class="table-scroll"><table class="records"><thead id="record-head"></thead><tbody id="record-body"></tbody></table></div>
+  <div id="collections-panel" class="collections-panel" hidden><div class="collection-toolbar"><label>BUSCAR COLEÇÕES<input id="collection-search" type="search" placeholder="Buscar por cliente ou coleção..." autocomplete="off"></label><label>FILTRAR POR TIPO<select id="collection-kind"><option value="todos">Todas as categorias</option></select></label><span id="collection-count" aria-live="polite"></span></div><div id="collection-grid" class="collection-grid"></div><p class="smallprint">Esta biblioteca organiza links de coleções. Imagens e arquivos privados devem permanecer em armazenamento com permissões adequadas; links externos podem exigir autenticação própria.</p></div><div class="table-scroll" id="record-table"><table class="records"><thead id="record-head"></thead><tbody id="record-body"></tbody></table></div>
   <p id="empty-records" class="empty" hidden>Nenhum registro cadastrado ainda.</p>
   <section id="editor" class="editor" hidden aria-labelledby="editor-title">
    <div class="editor-head"><h3 id="editor-title">NOVO REGISTRO</h3><button type="button" class="outline-button" id="close-editor">FECHAR ×</button></div>
