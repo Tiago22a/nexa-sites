@@ -883,3 +883,66 @@
   .clients-spotlight .clients-belt-headline h3{font-size:clamp(39px,10.8vw,62px);line-height:1.06;}
   .clients-spotlight .clients-belt-handwritten{font-size:clamp(25px,7.4vw,39px);line-height:1.02;}
 }
+
+
+/* CASES NEXA — densidade de logos 7 desktop / 5 mobile */
+.clients-spotlight .clients-glass-band::before,
+.clients-spotlight .clients-glass-band::after {
+  width:clamp(12px,2vw,30px);
+}
+.clients-spotlight .clients-marquee {
+  width:100%;
+  max-width:100%;
+}
+.clients-spotlight .clients-track {
+  animation-duration:34s;
+}
+.clients-spotlight .clients-logo-set {
+  --nexa-case-gap:clamp(7px,.95vw,18px);
+  flex:0 0 auto;
+  gap:var(--nexa-case-gap);
+  padding:15px 0;
+}
+.clients-spotlight .clients-logo-link {
+  flex:0 0 calc((100vw - 6 * var(--nexa-case-gap)) / 7);
+  width:calc((100vw - 6 * var(--nexa-case-gap)) / 7);
+  min-width:0;
+  height:clamp(116px,10.5vw,165px);
+  padding:clamp(5px,.65vw,11px);
+  opacity:1;
+}
+.clients-spotlight .clients-logo-link img,
+.clients-spotlight .clients-logo-link[data-slug="maw"] img,
+.clients-spotlight .clients-logo-link[data-slug="ceramic"] img,
+.clients-spotlight .clients-logo-link[data-slug="mc-gesso"] img,
+.clients-spotlight .clients-logo-link[data-slug="winf"] img {
+  width:100%;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+@media(max-width:720px) {
+  .clients-spotlight .clients-glass-band::before,
+  .clients-spotlight .clients-glass-band::after {
+    width:10px;
+  }
+  .clients-spotlight .clients-track {
+    animation-duration:29s;
+  }
+  .clients-spotlight .clients-logo-set {
+    --nexa-case-gap:4px;
+    gap:var(--nexa-case-gap);
+    padding:10px 0;
+  }
+  .clients-spotlight .clients-logo-link {
+    flex:0 0 calc((100vw - 4 * var(--nexa-case-gap)) / 5);
+    width:calc((100vw - 4 * var(--nexa-case-gap)) / 5);
+    min-width:0;
+    height:clamp(92px,23vw,134px);
+    padding:3px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .clients-spotlight .clients-track{animation:none!important}
+}
