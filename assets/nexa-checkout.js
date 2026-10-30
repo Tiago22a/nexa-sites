@@ -115,14 +115,17 @@
     const form=dock.querySelector('.nx-client-form'),status=dock.querySelector('.nx-dock-status'),link=dock.querySelector('[data-whatsapp]');
     const copy=dock.querySelector('[data-copy-summary]');
     const d=dock.dataset;
-    const selection=()=>dock.querySelector('input[type="radio"]:checked')?.value||'pix';
+    const custom=d.plan==='submarino';
+    const selection=()=>custom?'proposal':(dock.querySelector('input[type="radio"]:checked')?.value||'pix');
     const summary=()=>{
+      if(custom)return 'SUBMARINO | Projeto sob consulta. Escopo, investimento e condições serão definidos em proposta personalizada.';
       const chosen=selection();
       const condition=chosen==='pix'?'Pix integral '+d.cash:chosen==='pix_scheduled'?'12 Pix mensais programados, '+d.monthly+' (total '+d.total+')':'Carne de 12 boletos, '+d.monthly+' (total '+d.total+') - emissao mediante provedor financeiro';
       return 'Plano '+d.planLabel+' | '+condition+' | Chave Pix: solicitar a NEXA BLUE e conferir beneficiario. Proposta e contrato sujeitos a assinatura. Pagamento nao realizado pelo site.';
     };
     const updateLink=()=>{
       const chosen=selection(),mode=chosen==='pix'?'Pix integral':chosen==='pix_scheduled'?'Pix mensal agendado em 12 parcelas':'Carne com 12 boletos bancarios';
+      if(custom){link.href='https://wa.me/'+phone+'?text='+encodeURIComponent('Olá, NEXA BLUE! Gostaria de solicitar uma avaliação e proposta sob consulta para o plano SUBMARINO. Meu projeto precisa de uma solução personalizada. Página: '+location.href.split('#')[0]);return;}
       const text='Ola, NEXA BLUE! Estive na pagina do plano '+d.planLabel+' e escolhi '+mode+'. Gostaria de receber os dados oficiais de pagamento, a proposta final e as instrucoes para assinatura eletronica. Sei que comprovante de agendamento nao comprova pagamento, e que os boletos dependem de emissao pela plataforma financeira. Enviarei a minuta e o comprovante da primeira parcela efetivamente paga como anexos no WhatsApp. Plano: '+location.href.split('#')[0];
       link.href='https://wa.me/'+phone+'?text='+encodeURIComponent(text);
     };
