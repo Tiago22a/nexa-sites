@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="robots" content="noindex,nofollow,noarchive">
+ <meta name="referrer" content="no-referrer">
+ <meta name="theme-color" content="#031322">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'">
+ <title>NEXA BLUE · Comando Privado</title>
+ <link rel="icon" href="/assets/nexa-mark.png" type="image/png">
+ <link rel="stylesheet" href="/comando/command.css">
+ <script src="/comando/command.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<header class="top">
+ <a class="logo" href="/" aria-label="Visitar o site NEXA BLUE"><img src="/assets/nexa-logo-oficial.svg" alt="NEXA BLUE"></a>
+ <div class="top-center">NEXA BLUE <span>/</span> BUSINESS COMMAND</div>
+ <div class="top-right"><span id="who" hidden></span><button type="button" id="logout" class="link-button" hidden>SAIR</button><a class="link-button" href="/">SITE PÚBLICO ↗</a></div>
+</header>
+<main id="main">
+<section id="login-screen" class="login-screen">
+ <div class="login-intro">
+  <span class="overline">NEXA BLUE · AMBIENTE INTERNO</span>
+  <h1>O NEGÓCIO<br>EM <em>SUAS MÃOS.</em></h1>
+  <p>Uma visão de toda a agência: comercial, clientes, projetos, entregas e finanças. Em um único lugar para vocês dois.</p>
+  <div class="login-foot">ACESSO RESTRITO / CREDENCIAIS INDIVIDUAIS / SEM CONTA PADRÃO</div>
+ </div>
+ <form id="login-form" class="login-panel">
+  <span class="overline">IDENTIFICAÇÃO SEGURA</span>
+  <h2>ENTRAR NO COMANDO</h2>
+  <label for="username">SEU USUÁRIO</label>
+  <input type="text" id="username" name="username" autocomplete="username" maxlength="60" required placeholder="Usuário">
+  <label for="password">SUA SENHA</label>
+  <input type="password" id="password" name="password" autocomplete="current-password" maxlength="220" required placeholder="Senha individual">
+  <button class="primary" type="submit">ACESSAR O CRM <span aria-hidden="true">↗</span></button>
+  <p role="alert" id="login-feedback" class="feedback"></p>
+  <small>O portal funciona somente quando as credenciais privadas são ativadas na hospedagem.</small>
+ </form>
+</section>
+<section id="command-screen" class="command-screen" hidden>
+ <div class="hero">
+  <div><span class="overline">CENTRO DE GESTÃO / NEXA BLUE</span><h1>SEU NEGÓCIO.<br><em>UM SÓ COMANDO.</em></h1><p id="welcome">Todas as áreas da agência, organizadas para o trabalho diário.</p></div>
+  <div class="hero-actions"><span id="today"></span><button id="refresh" type="button" class="outline">ATUALIZAR ↻</button><button id="new-task" type="button" class="primary">+ NOVA TAREFA</button></div>
+ </div>
+ <section aria-labelledby="overview-title" class="overview">
+  <div class="section-title"><span class="overline">01 / VISÃO GERAL</span><h2 id="overview-title">O PULSO <em>DA OPERAÇÃO.</em></h2></div>
+  <div id="metrics" class="metrics" aria-live="polite"></div>
+  <div class="priority-wrap">
+   <div><span class="overline">AGENDA OPERACIONAL</span><h3>O QUE PRECISA DE ATENÇÃO</h3><p>Próximos sete dias, atrasos e renovações no radar.</p></div>
+   <div id="priorities" class="priorities"></div>
+  </div>
+ </section>
+ <section class="modules" aria-labelledby="modules-title">
+  <div class="section-title"><span class="overline">02 / GESTÃO INTEGRADA</span><h2 id="modules-title">TODAS AS <em>FRENTES.</em></h2></div>
+  <nav id="module-nav" class="module-nav" aria-label="Áreas do CRM">
+   <button type="button" data-module="leads" class="active">OPORTUNIDADES</button>
+   <button type="button" data-module="clients">CLIENTES</button>
+   <button type="button" data-module="proposals">PROPOSTAS</button>
+   <button type="button" data-module="projects">PROJETOS</button>
+   <button type="button" data-module="tasks">TAREFAS</button>
+   <button type="button" data-module="deliveries">ENTREGAS</button>
+   <button type="button" data-module="contracts">CONTRATOS</button>
+   <button type="button" data-module="receivables">A RECEBER</button>
+   <button type="button" data-module="expenses">DESPESAS</button>
+  </nav>
+  <div class="module-head">
+   <div><h3 id="module-title">OPORTUNIDADES</h3><p id="module-description"></p></div>
+   <button type="button" class="primary" id="add-record">+ NOVO REGISTRO</button>
+  </div>
+  <div class="module-tools">
+   <label for="search">PESQUISAR</label><input type="search" id="search" placeholder="Nome, empresa, etapa ou responsável" autocomplete="off">
+   <label for="status-filter">FILTRAR</label><select id="status-filter"><option value="">Todas as situações</option></select>
+   <span id="record-count" aria-live="polite"></span>
+   <button type="button" class="outline" id="csv">EXPORTAR CSV</button>
+  </div>
+  <div class="records-scroll"><table id="records"><thead id="records-head"></thead><tbody id="records-body"></tbody></table></div>
+  <p id="empty-state" class="empty" hidden>Nenhum registro nesta área.</p>
+ </section>
+ <section id="editor" class="editor" hidden aria-labelledby="editor-title">
+  <div class="editor-head"><div><span class="overline">CADASTRO / EDIÇÃO</span><h2 id="editor-title">NOVO REGISTRO</h2></div><button type="button" class="outline" id="close-editor">FECHAR ×</button></div>
+  <form id="editor-form">
+   <div id="form-fields" class="form-fields"></div>
+   <div class="form-actions"><button type="submit" class="primary">SALVAR REGISTRO ↗</button><button type="button" class="outline" id="cancel-editor">CANCELAR</button></div>
+   <p id="editor-feedback" role="alert" class="feedback"></p>
+  </form>
+ </section>
+ <section class="audit-section" aria-labelledby="audit-title">
+  <div class="section-title"><span class="overline">03 / RASTREABILIDADE</span><h2 id="audit-title">ÚLTIMAS <em>ALTERAÇÕES.</em></h2></div>
+  <p>Visualize qual administrador criou, atualizou ou excluiu um registro.</p>
+  <div id="audit" class="audit-list"></div>
+  <p class="footnote">Pagamentos e contratos são registrados manualmente. Nenhuma cobrança, baixa bancária ou assinatura eletrônica acontece automaticamente.</p>
+ </section>
+</section>
+</main>
+<footer class="footer"><span>© <span id="year"></span> NEXA BLUE / ÁREA RESTRITA</span><span>OPERAÇÃO · CRIATIVIDADE · CONTROLE</span></footer>
+</body>
+</html>
