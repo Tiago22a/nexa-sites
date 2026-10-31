@@ -19,7 +19,7 @@ async function visit(dir){
  }
 }
 await visit(root);
-for(const required of ['index.html','shop/index.html','planos/barco/index.html','planos/iate/index.html','planos/submarino/index.html','_redirects']){
+for(const required of ['index.html','shop/index.html','planos/barco/index.html','planos/iate/index.html','planos/submarino/index.html','como-funciona/index.html','_redirects']){
  const exists=await stat(join(out,required)).then(x=>x.isFile()).catch(()=>false);
  if(!exists)throw Error('Arquivo essencial ausente do deploy: '+required);
 }
