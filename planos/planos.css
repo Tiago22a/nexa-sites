@@ -271,3 +271,9 @@
 
 /* BARCO — tratativa individual chave na mão, sem alterar o escopo padrão */
 .nx-special-agreement{margin:22px 0 27px;padding:22px;border:1px solid rgba(99,206,237,.49);border-radius:12px;background:linear-gradient(140deg,rgba(7,80,122,.35),rgba(3,19,38,.53));color:#e6f7ff}.nx-special-agreement strong{display:block;font:700 12px/1.5 'Manrope',sans-serif;letter-spacing:.08em;color:#8bdef9}.nx-special-agreement p{margin:10px 0 15px;font:400 13px/1.8 'DM Sans',sans-serif;color:#e6f5ff}.nx-special-agreement a{display:inline-flex;min-height:44px;align-items:center;padding:10px 14px;border:1px solid rgba(165,227,247,.63);border-radius:6px;color:#fff;font:700 11px/1.5 'DM Sans',sans-serif;letter-spacing:.035em}.nx-special-agreement a:hover,.nx-special-agreement a:focus-visible{background:rgba(33,165,215,.27)}
+
+
+/* Footer dos planos: arte MAW integral, sem recompor o logo com texto. */
+.nx-footer-brand.nx-maw{max-height:none;min-width:0}
+.nx-footer-brand.nx-maw img{display:block;width:clamp(108px,11vw,140px);height:auto;max-width:100%;max-height:none;object-fit:contain}
+@media(max-width:650px){.nx-footer-brand.nx-maw img{width:110px}}
