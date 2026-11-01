@@ -277,3 +277,8 @@
 .nx-footer-brand.nx-maw{max-height:none;min-width:0}
 .nx-footer-brand.nx-maw img{display:block;width:clamp(108px,11vw,140px);height:auto;max-width:100%;max-height:none;object-fit:contain}
 @media(max-width:650px){.nx-footer-brand.nx-maw img{width:110px}}
+
+
+/* Navegação direta para a escolha de pagamento em cada card do site. */
+.plan-payment-direct{display:flex;align-items:center;justify-content:center;margin-top:10px;padding:13px 12px;min-height:44px;border:1px solid rgba(123,215,242,.78);border-radius:7px;background:rgba(8,69,107,.65);color:#effbff!important;text-align:center;text-decoration:none;font:600 11px/1.5 'DM Sans',sans-serif;letter-spacing:.07em;transition:background .2s ease}
+.plan-payment-direct:hover,.plan-payment-direct:focus-visible{background:rgba(20,137,185,.68);outline-offset:3px}

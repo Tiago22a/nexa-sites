@@ -46,7 +46,7 @@
       '',
       'PLANO E CONDICOES ESCOLHIDAS',
       'Modalidade: '+info.plan,
-      'Preferencia: '+({pix:'Pix integral',pix_scheduled:'Pix agendado mensal (12 parcelas)',boleto:'12 boletos mensais, sujeitos a emissao pelo provedor financeiro'}[info.mode]||'A definir'),
+      'Preferencia: '+({pix:'Pix integral',pix_scheduled:'Pix agendado mensal (12 parcelas)',boleto:'12 boletos mensais, sujeitos a emissao pelo Asaas',credit_card:'Cartao de credito, valor e parcelas conforme contrato e fatura oficial'}[info.mode]||'A definir'),
       'Valor anual a vista: '+info.cash,
       'Parcelamento: '+info.monthly,
       'Total parcelado: '+info.total,
@@ -61,13 +61,14 @@
       '3. A contratacao depende de aceite expresso, assinatura pelas partes, confirmacao de pagamento e disponibilizacao dos materiais necessarios.',
       '4. Em caso de Pix integral, a chave e o nome do beneficiario devem ser obtidos e confirmados diretamente com a equipe NEXA BLUE.',
       '4.1. Para Pix agendado, comprovantes de agendamento nao representam pagamentos executados; confirme cada credito na data prevista.',
+      '4.1.1. No cartao, o total, o numero de parcelas e eventuais custos devem ser exibidos no link oficial e aprovados antes de pagar.',
       '4.2. Os 12 boletos precisam ser emitidos por provedor financeiro habilitado e seus dados verificados antes de pagar.',
       '5. Em caso de parcelas mensais, a primeira e prevista na assinatura, e as demais vencem nos prazos escritos no contrato.',
       '6. O inicio de execucao ocorre apos as validacoes. A meta de 48 horas uteis aplica-se apenas aos materiais iniciais elegiveis; as demais entregas seguem cronograma aprovado.',
       '7. Escopo, revisoes, suporte, reajustes, direitos de uso, cancelamento, deveres e tratamento de dados devem constar do documento definitivo.',
       '',
       'PROXIMOS PASSOS',
-      'Enviar a minuta ao WhatsApp oficial, solicitar dados de pagamento, conferir a proposta, assinar eletronicamente e anexar comprovante manualmente.',
+      'Depois da assinatura, solicitar o link individual da cobranca no Asaas. Conferir beneficiario, pagar e aguardar conciliacao bancaria.',
       '',
       'STATUS: MINUTA PARA CONFERENCIA. AGUARDANDO VALIDACAO E ASSINATURA.',
       'Canal oficial: +55 13 99781-5375'
@@ -120,20 +121,20 @@
     const summary=()=>{
       if(custom)return 'SUBMARINO | Projeto sob consulta. Escopo, investimento e condições serão definidos em proposta personalizada.';
       const chosen=selection();
-      const condition=chosen==='pix'?'Pix integral '+d.cash:chosen==='pix_scheduled'?'12 Pix mensais programados, '+d.monthly+' (total '+d.total+')':'12 boletos mensais, '+d.monthly+' (total '+d.total+') - emissao mediante provedor financeiro';
-      return 'Plano '+d.planLabel+' | '+condition+' | Chave Pix: solicitar a NEXA BLUE e conferir beneficiario. Proposta e contrato sujeitos a assinatura. Pagamento nao realizado pelo site.';
+      const condition=chosen==='pix'?'Pix anual a vista '+d.cash:chosen==='boleto'?'12 boletos mensais, '+d.monthly+' (total '+d.total+')':chosen==='credit_card'?'Cartao de credito - condicoes, numero de parcelas e valor final definidos na fatura oficial':'12 Pix mensais, '+d.monthly+' (total '+d.total+')';
+      return 'Plano '+d.planLabel+' | '+condition+' | Link individual Asaas: solicitar a NEXA BLUE apos contrato assinado. Pagamento nao realizado pelo site.';
     };
     const updateLink=()=>{
-      const chosen=selection(),mode=chosen==='pix'?'Pix integral':chosen==='pix_scheduled'?'Pix mensal agendado em 12 parcelas':'12 boletos mensais emitidos pela equipe';
+      const chosen=selection(),mode=chosen==='pix'?'Pix anual a vista':chosen==='boleto'?'12 boletos mensais':chosen==='credit_card'?'cartao de credito (parcelas e valor final mediante fatura oficial)':'12 Pix mensais';
       if(custom){link.href='https://wa.me/'+phone+'?text='+encodeURIComponent('Olá, NEXA BLUE! Gostaria de solicitar uma avaliação e proposta sob consulta para o plano SUBMARINO. Meu projeto precisa de uma solução personalizada. Página: '+location.href.split('#')[0]);return;}
-      const text='Ola, NEXA BLUE! Estive na pagina do plano '+d.planLabel+' e escolhi '+mode+'. Gostaria de receber os dados oficiais de pagamento, a proposta final e as instrucoes para assinatura eletronica. Sei que comprovante de agendamento nao comprova pagamento, e que os boletos dependem de emissao pela plataforma financeira. Enviarei a minuta e o comprovante da primeira parcela efetivamente paga como anexos no WhatsApp. Plano: '+location.href.split('#')[0];
+      const text='Ola, NEXA BLUE! Estive na pagina do plano '+d.planLabel+' e escolhi '+mode+'. Ja recebi ou solicitarei meu contrato. Gostaria de receber o link individual de cobranca no Asaas correspondente ao plano e a forma de pagamento escolhida, com o valor total a conferir antes de pagar. Sei que esta pagina nao gera pagamentos, que agendamentos nao comprovam quitacao e que a operacao comeca apos confirmacao bancaria. Plano: '+location.href.split('#')[0];
       link.href='https://wa.me/'+phone+'?text='+encodeURIComponent(text);
     };
     dock.querySelectorAll('input[type="radio"]').forEach(r=>r.addEventListener('change',updateLink));
     updateLink();
     copy.addEventListener('click',async()=>{
       const message=summary();
-      try{if(!navigator.clipboard)throw Error('clipboard unsupported');await navigator.clipboard.writeText(message);status.textContent=custom?'Resumo de pré-proposta copiado. Envie pelo WhatsApp para avaliação.':'Resumo copiado. Solicite a chave Pix ou os boletos oficiais antes de pagar.';}
+      try{if(!navigator.clipboard)throw Error('clipboard unsupported');await navigator.clipboard.writeText(message);status.textContent=custom?'Resumo de pré-proposta copiado. Envie pelo WhatsApp para avaliação.':'Resumo copiado. Solicite o link individual da cobrança oficial do Asaas à equipe após o contrato.';}
       catch{status.textContent='Seu navegador nao permitiu copiar. Use o WhatsApp para obter os dados oficiais.';}
     });
     form.addEventListener('submit',event=>{
@@ -145,7 +146,7 @@
       const url=URL.createObjectURL(blob),a=document.createElement('a');
       a.href=url;a.download='NEXA-'+(d.planLabel==='SUBMARINO'?'PRE-PROPOSTA-':'MINUTA-')+d.planLabel+'-'+nameDate()+'.pdf';
       document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);
-      status.textContent=custom?'Ficha de pré-proposta gerada. Abra o WhatsApp para apresentar sua necessidade à equipe.':'PDF gerado e baixado. Confira a minuta e abra o WhatsApp para combinar a assinatura e o pagamento. O envio de anexos e manual.';
+      status.textContent=custom?'Ficha de pré-proposta gerada. Abra o WhatsApp para apresentar sua necessidade à equipe.':'PDF gerado e baixado. Após a assinatura do contrato, solicite o link de pagamento individual do Asaas pelo WhatsApp. Esta página não emite cobrança.';
     });
   }
 })();
