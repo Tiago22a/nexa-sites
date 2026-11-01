@@ -284,6 +284,31 @@ $('editor-form').addEventListener('submit',saveRecord);
 $('search').addEventListener('input',renderRecords);
 $('status-filter').addEventListener('change',renderRecords);
 $('csv').addEventListener('click',exportCsv);
+
+const paymentAdmin=$('payment-admin-form');
+if(paymentAdmin){
+ paymentAdmin.addEventListener('submit',async event=>{
+  event.preventDefault();if(!paymentAdmin.reportValidity())return;
+  const button=paymentAdmin.querySelector('[type="submit"]');button.disabled=true;
+  notify('payment-admin-feedback','Preparando cliente e link seguro...');
+  $('payment-admin-result').hidden=true;
+  try{
+   const body=Object.fromEntries(new FormData(paymentAdmin).entries());
+   body.signed=body.signed==='on';
+   for(const field of ['cash','monthly','count'])if(body[field]==='')delete body[field];
+   const result=await api('payment-link',{method:'POST',body});
+   $('payment-admin-link').value=result.url;
+   $('payment-admin-result').hidden=false;
+   notify('payment-admin-feedback','Link preparado em '+result.environment+'. Envie somente ao cliente certo.');
+   paymentAdmin.querySelector('[name="cpfCnpj"]').value='';
+  }catch(e){notify('payment-admin-feedback',e.message)}
+  finally{button.disabled=false}
+ });
+ $('payment-admin-copy').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText($('payment-admin-link').value);notify('payment-admin-feedback','Link copiado.')}
+  catch{notify('payment-admin-feedback','Copie o conteúdo do campo manualmente.')}
+ });
+}
 selectModule('leads');
 api('session').then(async data=>{showCommand(data.user);await loadAll();}).catch(error=>{
  showLogin();

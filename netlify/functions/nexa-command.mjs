@@ -1,5 +1,6 @@
 import {scryptSync,createHmac,timingSafeEqual,randomUUID} from "node:crypto";
 import {getStore} from "@netlify/blobs";
+import {preparePayment} from "./nexa-asaas.mjs";
 
 // Isolated NEXA Command authentication. All secrets are environment-only.
 const SECRET=process.env.NEXA_COMMAND_SESSION_SECRET||"";
@@ -163,6 +164,14 @@ export default async function handler(request){
   }
   const auth=session(request);
   if(!auth)return json({error:"Sessão expirada ou acesso não autorizado."},401);
+  if(op==="payment-link"&&request.method==="POST"){
+   try{
+    const data=await bodyOf(request);
+    const result=await preparePayment(data,new URL(request.url).origin);
+    await logAction(auth.user,"payment-link","contracts",result.id);
+    return json(result);
+   }catch(e){return json({error:e.message||"Falha ao preparar o link."},422)}
+  }
   if(op==="session"&&request.method==="GET")return json({ok:true,user:auth.user});
   if(op==="logout"&&request.method==="POST")return json({ok:true},200,{"set-cookie":cookie("",0)});
   if(op==="list"&&request.method==="GET"){

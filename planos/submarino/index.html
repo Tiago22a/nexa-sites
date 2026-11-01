@@ -104,31 +104,24 @@
     <p>Você conhece seu destino. Nós traçamos a rota para que sua marca navegue com direção.</p>
     <a href="/#planos" class="nx-dock-back">← COMPARAR OS TRÊS PLANOS</a>
   </div>
-  <div class="nx-dock-right" id="formas-de-pagamento">
-    <span class="nx-dock-eyebrow">05 / SOLICITAR PROPOSTA</span>
-    <h3>CONVERSE COM <em>NOSSA EQUIPE.</em></h3>
-    <p class="nx-dock-subtitle">Após aprovar a proposta e assinar o contrato, você poderá receber um link individual de pagamento. As condições de Pix, boleto ou cartão dependem do orçamento aprovado.</p>
-    <div class="nx-billing-note"><strong>Investimento sob consulta.</strong> O SUBMARINO não possui preço, parcelamento ou formato de cobrança pré-definido. Primeiro conhecemos o projeto e enviamos uma proposta personalizada com escopo, valores e prazos. Pix, boleto e cartão podem ser avaliados na negociação, mas não há cobrança ou parcelamento automático para o SUBMARINO.</div>
-    <div class="nx-contract-flow" aria-label="Etapas para solicitar uma proposta"><div><span>01</span><p>Conte à NEXA o desafio que deseja resolver.</p></div><div><span>02</span><p>Receba uma avaliação inicial e uma proposta sob medida.</p></div><div><span>03</span><p>Após aprovação e assinatura, solicite o link de cobrança individual da forma combinada.</p></div></div>
-    <form class="nx-client-form">
-      <div class="nx-form-head"><span class="nx-dock-eyebrow">DADOS DA SUA SOLICITAÇÃO</span><p>Preenchimento local. Os dados não são transmitidos ao site.</p></div>
-      <div class="nx-form-grid">
-        <label>Nome completo ou razão social *<input type="text" name="cliente" required maxlength="120" autocomplete="name" placeholder="Nome do responsável ou empresa"></label>
-        <label>E-mail de contato *<input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="contato@empresa.com.br"></label>
-        <label>CPF ou CNPJ (opcional)<input type="text" name="documento" maxlength="24" placeholder="Preencha apenas se desejar"></label>
-        <label>Telefone de contato (opcional)<input type="tel" name="telefone" autocomplete="tel" maxlength="30" placeholder="DDD + número"></label>
-      </div>
-      <label class="nx-consent"><input type="checkbox" name="ciente" required><span>Estou ciente de que este PDF é uma <strong>ficha de pré-proposta</strong>, sem assinatura e sem qualquer cobrança.</span></label>
-      <div class="nx-dock-actions">
-        <button type="submit" class="nx-action-primary">GERAR FICHA DE PRÉ-PROPOSTA PDF <span aria-hidden="true">↓</span></button>
-        <button type="button" class="nx-action-copy" data-copy-summary>COPIAR RESUMO DA PROPOSTA <span aria-hidden="true">⧉</span></button>
-        <a class="nx-action-whatsapp" data-whatsapp target="_blank" rel="noopener noreferrer" href="https://wa.me/5513997815375">SOLICITAR PROPOSTA NO WHATSAPP <span aria-hidden="true">↗</span></a>
-      </div>
-      <p class="nx-dock-status" role="status" aria-live="polite"></p>
-    </form>
-    <div class="nx-onboarding"><span>INÍCIO E PRAZOS</span><p>Após contrato eletrônico assinado, confirmação do primeiro pagamento e recebimento do briefing, materiais e acessos, iniciamos a operação. <strong>Primeiros materiais elegíveis: meta de até 48 horas úteis após a liberação.</strong> Website completo, publicações recorrentes e projetos sob medida seguem o cronograma específico da proposta.</p></div>
-    <p class="nx-dock-disclaimer">O SUBMARINO é sob consulta. Esta página não apresenta preço nem gera cobrança. A ficha é preliminar; prazos, escopo, investimento e condições só passam a valer depois da aprovação da proposta e da assinatura do contrato.</p>
-  </div>
+  <div class="nx-dock-right nx-simple-pay" id="formas-de-pagamento">
+ <span class="nx-dock-eyebrow">05 / PAGAMENTO SIMPLIFICADO</span>
+ <h3>ATIVE SEU <em>SUBMARINO.</em></h3>
+ <p class="nx-dock-subtitle">Contrato assinado? Escolha como deseja pagar. São só três opções — sem preencher novamente seus dados.</p>
+ <div class="nx-payment-choices" aria-label="Formas de pagamento">
+  <button type="button" class="nx-payment-choice" data-payment-mode="pix"><span class="nx-payment-icon">◇</span><span><strong>PIX</strong><small>À vista · <span data-price-cash>Conforme contrato</span></small></span><b>↗</b></button>
+  <button type="button" class="nx-payment-choice" data-payment-mode="credit_card"><span class="nx-payment-icon">▣</span><span><strong>CARTÃO DE CRÉDITO</strong><small>Valor anual · <span data-price-card>Conforme contrato</span>. Condições finais na fatura.</small></span><b>↗</b></button>
+  <button type="button" class="nx-payment-choice" data-payment-mode="boleto"><span class="nx-payment-icon">▤</span><span><strong>BOLETO</strong><small><span data-price-boleto>Conforme proposta</span> · Vencimentos pelo Asaas</small></span><b>↗</b></button>
+ </div>
+ <p class="nx-pay-status" role="status" aria-live="polite" data-payment-status>Carregando...</p>
+ <a data-open-invoice hidden class="nx-open-invoice" target="_blank" rel="noopener noreferrer">ABRIR FATURA SEGURA DO ASAAS ↗</a>
+ <div class="nx-payment-finish">
+  <span class="nx-dock-eyebrow">PRÓXIMO PASSO</span><h4>COMPARTILHE O COMPROVANTE. <em>INICIE SUA JORNADA.</em></h4>
+  <p>Envie seu comprovante pelo WhatsApp. Após a confirmação bancária, contrato e materiais validados, a NEXA libera o início do projeto.</p>
+  <a data-receipt target="_blank" rel="noopener noreferrer" href="https://wa.me/5513997815375">ENVIAR COMPROVANTE PELO WHATSAPP ↗</a>
+ </div>
+ <p class="nx-payment-legal">SUBMARINO exige proposta personalizada aprovada. A cobrança só é emitida com link individual validado e integração ativa. Não digite dados de cartão na NEXA; pague no ambiente oficial do Asaas.</p>
+</div>
 </section>
 </main>
 <footer class="detail-footer nx-detail-footer" aria-label="Rodapé institucional NEXA">
@@ -178,5 +171,5 @@
   </div>
 </dialog>
 <script src="/assets/nexa-plan-tabs.js" defer></script>
-<script src="/assets/nexa-checkout.js" defer></script>
+<script src="/assets/nexa-payment-ui.js" defer></script>
 </body></html>

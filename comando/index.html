@@ -52,7 +52,28 @@
    <div id="priorities" class="priorities"></div>
   </div>
  </section>
- <section class="modules" aria-labelledby="modules-title">
+ <section class="payment-admin" aria-labelledby="payment-admin-title">
+ <div class="section-title"><span class="overline">PAGAMENTOS / ASAAS</span><h2 id="payment-admin-title">LINKS <em>DE CONTRATOS.</em></h2></div>
+ <p>Uso exclusivo da equipe: após conferir o contrato assinado, prepare o link individual. O cliente terá somente três botões na página do plano.</p>
+ <form id="payment-admin-form" autocomplete="off">
+  <div class="form-fields">
+   <label>Plano<select name="plan" required><option value="barco">BARCO</option><option value="iate">IATE</option><option value="submarino">SUBMARINO — sob proposta</option></select></label>
+   <label>Referência do contrato assinado<input name="contractReference" required minlength="6" maxlength="120"></label>
+   <label>Nome/Razão social do pagador<input name="customerName" required minlength="3" maxlength="120"></label>
+   <label>CPF/CNPJ do pagador<input name="cpfCnpj" required minlength="11" maxlength="18" inputmode="numeric"></label>
+   <label>E-mail do contrato<input name="email" type="email" required maxlength="140"></label>
+   <label>SUBMARINO: total à vista (R$)<input name="cash" type="number" min="1" step=".01" placeholder="Somente para SUBMARINO"></label>
+   <label>SUBMARINO: quantidade de boletos<input name="count" type="number" min="1" max="12" step="1"></label>
+   <label>SUBMARINO: valor de cada boleto (R$)<input name="monthly" type="number" min="1" step=".01"></label>
+  </div>
+  <label class="payment-admin-consent"><input name="signed" type="checkbox" required> Declaro que o contrato está assinado e que os dados, valores e cobranças foram autorizados.</label>
+  <div class="form-actions"><button class="primary" type="submit">GERAR LINK INDIVIDUAL ASAAS ↗</button></div>
+  <p id="payment-admin-feedback" role="alert" class="feedback"></p>
+  <div id="payment-admin-result" hidden><label for="payment-admin-link">LINK PRIVADO DO CLIENTE</label><input id="payment-admin-link" type="text" readonly><button id="payment-admin-copy" type="button" class="outline">COPIAR LINK</button></div>
+ </form>
+ <p class="footnote">A geração depende da ativação das variáveis privadas no Netlify e da conta Asaas habilitada; pagamentos só são confirmados por conciliação.</p>
+</section>
+<section class="modules" aria-labelledby="modules-title">
   <div class="section-title"><span class="overline">02 / GESTÃO INTEGRADA</span><h2 id="modules-title">TODAS AS <em>FRENTES.</em></h2></div>
   <nav id="module-nav" class="module-nav" aria-label="Áreas do CRM">
    <button type="button" data-module="leads" class="active">OPORTUNIDADES</button>

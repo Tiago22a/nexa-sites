@@ -15,3 +15,16 @@
 @media(max-width:850px){.login-screen{grid-template-columns:1fr;gap:38px}.login-foot{margin-top:20px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.top{min-height:75px;padding:14px 16px}.logo{width:115px}.top-right{gap:7px}.top-right #who{display:none}.link-button{font-size:9px}.login-screen{padding:48px 20px}.login-intro h1{font-size:clamp(43px,11vw,75px)}.command-screen{padding:43px 16px 80px}.hero h1{font-size:clamp(40px,10.7vw,66px)}.metrics{gap:8px}.metric{min-height:113px;padding:14px}.metric strong{font-size:clamp(23px,7vw,37px)}.metric span{font-size:9px}.priority-wrap{padding:18px}.priority{grid-template-columns:1fr}.priority small{grid-column:1}.module-head{flex-direction:column;align-items:flex-start}.module-tools{align-items:stretch;flex-direction:column}.module-tools input,.module-tools select{width:100%}.module-tools #record-count{margin-left:0}.form-fields{grid-template-columns:1fr}.audit-row{flex-direction:column;gap:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+
+.payment-admin{padding:45px 0 55px;border-bottom:1px solid var(--line)}
+.payment-admin>p{color:#c5deec;max-width:750px;font:400 13px/1.8 Arial,sans-serif}
+.payment-admin form{margin-top:22px;padding:24px;border:1px solid #7db8d55a;background:#061f31}
+.payment-admin .form-fields label{display:flex;flex-direction:column;gap:9px;font:700 10px/1.5 var(--mono);color:#cee8f5}
+.payment-admin .form-fields input,.payment-admin .form-fields select,#payment-admin-link{height:48px;padding:12px;width:100%;border:1px solid #79aac7;background:#021624;color:#fff}
+.payment-admin-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.7;color:#d5e9f6}
+.payment-admin-consent input{width:18px;height:18px;flex:0 0 18px}
+#payment-admin-result{background:#092c43;padding:16px;margin-top:16px;display:grid;gap:9px}
+#payment-admin-result[hidden]{display:none}
+#payment-admin-result label{font:700 10px var(--mono);color:#addef5}
+#payment-admin-link{font-size:12px}
