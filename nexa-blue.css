@@ -849,8 +849,8 @@
   max-width:100%;
   margin:0;
   padding:5px 7px 14px;
-  font:400 clamp(18px,1.9vw,31px)/1.6 'Rock Salt',cursive;
-  letter-spacing:-.095em;
+  font:400 clamp(29px,2.65vw,46px)/1.38 'Rock Salt',cursive;
+  letter-spacing:-.105em;
   text-align:center;
   text-transform:uppercase;
   color:#fff;
@@ -873,14 +873,14 @@
   .clients-spotlight .clients-belt-editorial{width:calc(100% - 48px);margin-bottom:45px;}
   .clients-spotlight .clients-belt-headline{grid-template-columns:1fr;gap:25px;}
   .clients-spotlight .clients-belt-headline h3{font-size:clamp(42px,9.2vw,78px);}
-  .clients-spotlight .clients-belt-handwritten{font-size:clamp(20px,3.4vw,28px);justify-self:start;text-align:left;margin-left:6px;}
+  .clients-spotlight .clients-belt-handwritten{font-size:clamp(27px,4.25vw,39px);line-height:1.42;justify-self:start;text-align:left;margin-left:6px;}
 }
 @media(max-width:600px){
   .clients-spotlight .clients-glass-band{padding:36px 0 45px;}
   .clients-spotlight .clients-belt-editorial{width:calc(100% - 40px);margin-bottom:34px;}
   .clients-spotlight .clients-belt-kicker{font-size:9px;margin-bottom:17px;}
   .clients-spotlight .clients-belt-headline h3{font-size:clamp(39px,10.8vw,62px);line-height:1.06;}
-  .clients-spotlight .clients-belt-handwritten{font-size:clamp(15px,4vw,22px);line-height:1.65;}
+  .clients-spotlight .clients-belt-handwritten{font-size:clamp(19px,5.35vw,29px);line-height:1.45;}
 }
 
 
