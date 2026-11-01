@@ -353,3 +353,31 @@
 .barco-gallery .detail-gallery-tile:hover img{transform:scale(1.025)}
 /* Para todas as demais galerias, manter sempre uma única fonte de fotografia. */
 .detail-gallery-tile img{max-width:none}
+
+
+/* NEXA BLUE | Retorno visível aos três planos nas páginas de modalidade. */
+.plan-page .detail-return-plans{
+  display:table;
+  width:max-content;
+  max-width:100%;
+  margin-top:24px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.62);
+  color:#fff;
+  font:600 11px/1.6 'IBM Plex Mono',monospace;
+  letter-spacing:.095em;
+  text-transform:uppercase;
+  transition:color .2s ease,border-color .2s ease;
+}
+.plan-page .detail-return-plans:hover,
+.plan-page .detail-return-plans:focus-visible{
+  color:var(--blue300);
+  border-color:var(--blue300);
+}
+@media(max-width:600px){
+  .plan-page .detail-return-plans{
+    font-size:11px;
+    margin-top:16px;
+    padding:12px 0 9px;
+  }
+}
