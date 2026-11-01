@@ -46,7 +46,7 @@
       '',
       'PLANO E CONDICOES ESCOLHIDAS',
       'Modalidade: '+info.plan,
-      'Preferencia: '+({pix:'Pix integral',pix_scheduled:'Pix agendado mensal (12 parcelas)',boleto:'12 boletos mensais, sujeitos a emissao pelo Asaas',credit_card:'Cartao de credito, valor e parcelas conforme contrato e fatura oficial'}[info.mode]||'A definir'),
+      'Preferencia: '+({pix:'Pix integral',pix_scheduled:'Primeiro Pix e 11 Pix mensais agendados (12 parcelas)',boleto:'Pix inicial e 11 boletos mensais, emitidos pelo Asaas (12 parcelas no total)',credit_card:'Cartao de credito, valor e parcelas conforme contrato e fatura oficial'}[info.mode]||'A definir'),
       'Valor anual a vista: '+info.cash,
       'Parcelamento: '+info.monthly,
       'Total parcelado: '+info.total,
@@ -62,7 +62,7 @@
       '4. Em caso de Pix integral, a chave e o nome do beneficiario devem ser obtidos e confirmados diretamente com a equipe NEXA BLUE.',
       '4.1. Para Pix agendado, comprovantes de agendamento nao representam pagamentos executados; confirme cada credito na data prevista.',
       '4.1.1. No cartao, o total, o numero de parcelas e eventuais custos devem ser exibidos no link oficial e aprovados antes de pagar.',
-      '4.2. Os 12 boletos precisam ser emitidos por provedor financeiro habilitado e seus dados verificados antes de pagar.',
+      '4.2. Os 11 boletos mensais posteriores ao primeiro Pix precisam ser emitidos por provedor financeiro habilitado e verificados antes de pagar.',
       '5. Em caso de parcelas mensais, a primeira e prevista na assinatura, e as demais vencem nos prazos escritos no contrato.',
       '6. O inicio de execucao ocorre apos as validacoes. A meta de 48 horas uteis aplica-se apenas aos materiais iniciais elegiveis; as demais entregas seguem cronograma aprovado.',
       '7. Escopo, revisoes, suporte, reajustes, direitos de uso, cancelamento, deveres e tratamento de dados devem constar do documento definitivo.',
@@ -121,11 +121,11 @@
     const summary=()=>{
       if(custom)return 'SUBMARINO | Projeto sob consulta. Escopo, investimento e condições serão definidos em proposta personalizada.';
       const chosen=selection();
-      const condition=chosen==='pix'?'Pix anual a vista '+d.cash:chosen==='boleto'?'12 boletos mensais, '+d.monthly+' (total '+d.total+')':chosen==='credit_card'?'Cartao de credito - condicoes, numero de parcelas e valor final definidos na fatura oficial':'12 Pix mensais, '+d.monthly+' (total '+d.total+')';
+      const condition=chosen==='pix'?'Pix anual a vista '+d.cash:chosen==='boleto'?'Pix inicial e 11 boletos mensais, '+d.monthly+' (total '+d.total+')':chosen==='credit_card'?'Cartao de credito - condicoes, numero de parcelas e valor final definidos na fatura oficial':'Pix inicial e 11 Pix mensais, '+d.monthly+' (total '+d.total+')';
       return 'Plano '+d.planLabel+' | '+condition+' | Link individual Asaas: solicitar a NEXA BLUE apos contrato assinado. Pagamento nao realizado pelo site.';
     };
     const updateLink=()=>{
-      const chosen=selection(),mode=chosen==='pix'?'Pix anual a vista':chosen==='boleto'?'12 boletos mensais':chosen==='credit_card'?'cartao de credito (parcelas e valor final mediante fatura oficial)':'12 Pix mensais';
+      const chosen=selection(),mode=chosen==='pix'?'Pix anual a vista':chosen==='boleto'?'Pix inicial e 11 boletos mensais':chosen==='credit_card'?'cartao de credito (parcelas e valor final mediante fatura oficial)':'Pix inicial e 11 Pix mensais';
       if(custom){link.href='https://wa.me/'+phone+'?text='+encodeURIComponent('Olá, NEXA BLUE! Gostaria de solicitar uma avaliação e proposta sob consulta para o plano SUBMARINO. Meu projeto precisa de uma solução personalizada. Página: '+location.href.split('#')[0]);return;}
       const text='Ola, NEXA BLUE! Estive na pagina do plano '+d.planLabel+' e escolhi '+mode+'. Ja recebi ou solicitarei meu contrato. Gostaria de receber o link individual de cobranca no Asaas correspondente ao plano e a forma de pagamento escolhida, com o valor total a conferir antes de pagar. Sei que esta pagina nao gera pagamentos, que agendamentos nao comprovam quitacao e que a operacao comeca apos confirmacao bancaria. Plano: '+location.href.split('#')[0];
       link.href='https://wa.me/'+phone+'?text='+encodeURIComponent(text);
