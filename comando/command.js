@@ -83,6 +83,7 @@ function values(type,row){
 async function api(op,settings={}){
  const u=new URL(endpoint,location.origin);u.searchParams.set('op',op);
  if(settings.type)u.searchParams.set('type',settings.type);
+ if(settings.id)u.searchParams.set('id',settings.id);
  const response=await fetch(u,{method:settings.method||'GET',credentials:'same-origin',cache:'no-store',headers:{'content-type':'application/json','x-nexa-command':'1'},body:settings.method==='POST'?JSON.stringify(settings.body||{}):undefined});
  const data=await response.json().catch(()=>({}));
  if(!response.ok)throw Error(data.error||'Erro na comunicação com o servidor.');
@@ -269,7 +270,7 @@ $('login-form').addEventListener('submit',async event=>{
  event.preventDefault();const button=event.submitter;button.disabled=true;notify('login-feedback','');
  try{
   const data=await api('login',{method:'POST',body:{username:$('username').value,password:$('password').value}});
-  $('password').value='';showCommand(data.user);await loadAll();
+  $('password').value='';showCommand(data.user);await loadAll();await loadIntakes();
  }catch(error){notify('login-feedback',error.message);}
  finally{button.disabled=false;}
 });
@@ -309,8 +310,41 @@ if(paymentAdmin){
   catch{notify('payment-admin-feedback','Copie o conteúdo do campo manualmente.')}
  });
 }
+
+async function loadIntakes(){
+ const root=$('intakes-results');notify('intakes-feedback','Buscando minutas...');
+ try{
+  const result=await api('intake-list');root.replaceChildren();
+  for(const record of result.items){
+   const item=node('div',null,'intake-item'),details=node('div');
+   details.append(node('strong',record.name+' · '+record.plan.toUpperCase()));
+   details.append(node('small',new Date(record.createdAt).toLocaleString('pt-BR')+' · Minuta para conferência'));
+   const button=node('button','BAIXAR MINUTA PDF','outline');button.type='button';
+   button.addEventListener('click',async()=>{
+    button.disabled=true;notify('intakes-feedback','Preparando PDF...');
+    try{
+     const data=await api('intake-get',{id:record.id});
+     const pdf=data.item?.contractPdfBase64;
+     if(!pdf)throw Error('PDF indisponível.');
+     const raw=atob(pdf),bytes=new Uint8Array(raw.length);
+     for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+     const url=URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));
+     const anchor=document.createElement('a');anchor.href=url;anchor.download='NEXA-MINUTA-'+record.plan.toUpperCase()+'-'+record.id.slice(0,8)+'.pdf';
+     document.body.append(anchor);anchor.click();anchor.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+     notify('intakes-feedback','Documento baixado. Confira antes de assinar.');
+    }catch(e){notify('intakes-feedback',e.message)}
+    finally{button.disabled=false}
+   });
+   item.append(details,button);root.append(item);
+  }
+  if(!result.items.length)root.append(node('p','Nenhuma minuta recebida.','empty'));
+  notify('intakes-feedback',result.items.length+' minuta(s) registrada(s).');
+ }catch(e){root.replaceChildren();notify('intakes-feedback',e.message)}
+}
+$('intakes-refresh').addEventListener('click',loadIntakes);
+
 selectModule('leads');
-api('session').then(async data=>{showCommand(data.user);await loadAll();}).catch(error=>{
+api('session').then(async data=>{showCommand(data.user);await loadAll();await loadIntakes();}).catch(error=>{
  showLogin();
  if(!/sessão|expirada|autorizado/i.test(error.message))notify('login-feedback',error.message);
 });

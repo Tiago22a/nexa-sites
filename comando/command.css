@@ -28,3 +28,12 @@
 #payment-admin-result[hidden]{display:none}
 #payment-admin-result label{font:700 10px var(--mono);color:#addef5}
 #payment-admin-link{font-size:12px}
+
+.nexa-intakes{padding:45px 0 55px;border-bottom:1px solid var(--line)}
+.nexa-intakes>p{font:400 13px/1.75 Arial,sans-serif;color:#c0dce9;max-width:810px}
+.intakes-results{display:grid;gap:9px;margin-top:18px}
+.intake-item{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 18px;background:#09273b;border:1px solid #6ba7c255}
+.intake-item>div{display:grid;gap:7px}
+.intake-item strong{font-size:14px;color:white}
+.intake-item small{color:#a7c9de;font-size:11px}
+@media(max-width:620px){.intake-item{align-items:stretch;flex-direction:column}.intake-item button{width:100%}}

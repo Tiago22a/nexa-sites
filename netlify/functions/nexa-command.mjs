@@ -1,6 +1,7 @@
 import {scryptSync,createHmac,timingSafeEqual,randomUUID} from "node:crypto";
 import {getStore} from "@netlify/blobs";
 import {preparePayment} from "./nexa-asaas.mjs";
+import {adminIntakes,adminIntake} from "./nexa-intake.mjs";
 
 // Isolated NEXA Command authentication. All secrets are environment-only.
 const SECRET=process.env.NEXA_COMMAND_SESSION_SECRET||"";
@@ -171,6 +172,17 @@ export default async function handler(request){
     await logAction(auth.user,"payment-link","contracts",result.id);
     return json(result);
    }catch(e){return json({error:e.message||"Falha ao preparar o link."},422)}
+  }
+  if(op==="intake-list"&&request.method==="GET"){
+    try{return json({items:await adminIntakes()});}
+    catch{return json({error:"Armazenamento de minutas aguardando configuração."},503)}
+  }
+  if(op==="intake-get"&&request.method==="GET"){
+    const id=url.searchParams.get("id")||"";
+    const item=await adminIntake(id);
+    if(!item)return json({error:"Minuta não encontrada."},404);
+    await logAction(auth.user,"download-intake","contracts",id);
+    return json({item});
   }
   if(op==="session"&&request.method==="GET")return json({ok:true,user:auth.user});
   if(op==="logout"&&request.method==="POST")return json({ok:true},200,{"set-cookie":cookie("",0)});

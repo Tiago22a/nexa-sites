@@ -112,7 +112,57 @@
   <div class="nx-dock-right nx-simple-pay" id="formas-de-pagamento">
  <span class="nx-dock-eyebrow">05 / PAGAMENTO SIMPLIFICADO</span>
  <h3>ATIVE SEU <em>IATE.</em></h3>
- <p class="nx-dock-subtitle">Contrato assinado? Escolha como deseja pagar. São só três opções — sem preencher novamente seus dados.</p>
+ <p class="nx-dock-subtitle">Preencha seus dados, confira a minuta e escolha como prefere pagar. Se já tem contrato assinado, use o link individual da NEXA para ir direto ao pagamento.</p>
+ 
+ <div class="nx-intake-wizard" data-nexa-contract-checkout data-plan="iate" aria-label="Cadastro e minuta de contratação">
+  <div class="nx-intake-progress" aria-label="Etapas de contratação">
+    <span data-intake-indicator="dados">01 / DADOS</span><span data-intake-indicator="contrato">02 / MINUTA</span><span data-intake-indicator="pagamento">03 / PAGAMENTO</span>
+  </div>
+  <div data-intake-dados>
+   <span class="nx-dock-eyebrow">01 / DADOS PARA CONTRATAÇÃO</span>
+   <h4>SEUS DADOS. <em>SEM COMPLICAÇÃO.</em></h4>
+   <p class="nx-intake-caption">Preencha uma única vez. Seus dados serão usados para preparar a minuta; nenhuma cobrança é criada neste passo.</p>
+   <form data-intake-form autocomplete="on">
+    <div class="nx-intake-fields">
+     <label class="wide">Nome completo <input name="name" autocomplete="name" required maxlength="120" placeholder="Como consta no documento"></label>
+     <label>CPF <input name="cpf" inputmode="numeric" autocomplete="off" required maxlength="14" placeholder="000.000.000-00"></label>
+     <label>RG ou documento de identidade <input name="rg" required maxlength="30" autocomplete="off" placeholder="Número do documento"></label>
+     <label>WhatsApp <input name="phone" type="tel" autocomplete="tel" required maxlength="20" placeholder="(00) 00000-0000"></label>
+     <label>E-mail <input name="email" type="email" autocomplete="email" required maxlength="140" placeholder="contato@empresa.com.br"></label>
+     <label>CEP <input name="cep" autocomplete="postal-code" inputmode="numeric" required minlength="8" maxlength="9" placeholder="00000-000"></label>
+     <label class="wide">Rua / Avenida <input name="street" autocomplete="address-line1" required maxlength="120" placeholder="Endereço da contratação"></label>
+     <label>Número <input name="number" required maxlength="15" placeholder="123"></label>
+     <label>Complemento <input name="complement" autocomplete="address-line2" maxlength="100" placeholder="Opcional"></label>
+     <label>Bairro <input name="neighborhood" required maxlength="90"></label>
+     <label>Cidade <input name="city" required maxlength="80" autocomplete="address-level2"></label>
+     <label>UF <select name="uf" autocomplete="address-level1" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
+    </div>
+    <button class="nx-intake-primary" type="submit">GERAR MINHA MINUTA <span>↗</span></button>
+    <p class="nx-intake-feedback" role="status" data-intake-status>Os dados ainda não foram enviados. Contratos especiais já assinados seguem o link individual da NEXA.</p>
+   </form>
+  </div>
+  <div data-intake-contrato hidden>
+   <span class="nx-dock-eyebrow">02 / REVISÃO DO DOCUMENTO</span>
+   <h4>MINUTA <em>PREPARADA.</em></h4>
+   <p class="nx-intake-caption">O PDF contém os dados informados e o escopo do plano. Confira antes de enviar. É uma <strong>minuta não assinada</strong>; a versão definitiva depende da conferência dos dados da NEXA, aceite e assinatura eletrônica.</p>
+   <div class="nx-intake-contract-actions">
+    <button type="button" class="nx-intake-primary" data-intake-download>BAIXAR MINHA MINUTA PDF <span>↓</span></button>
+    <label class="nx-intake-consent"><input type="checkbox" data-intake-consent> Autorizo o envio dos meus dados e desta minuta à NEXA BLUE para análise contratual, conforme a Política de Privacidade.</label>
+    <div data-turnstile></div>
+    <button type="button" class="nx-intake-secondary" data-intake-send disabled>ENVIAR CÓPIA AUTOMÁTICA À NEXA ↗</button>
+    <p class="nx-intake-feedback" role="status" data-intake-remote-status>Aguardando configuração do envio automático.</p>
+    <p class="nx-intake-feedback" data-intake-saved hidden>Cópia recebida no painel administrativo NEXA.</p>
+    <a class="nx-intake-whatsapp" data-intake-manual target="_blank" rel="noopener noreferrer">COMPARTILHAR MINUTA NO WHATSAPP ↗</a>
+    <button type="button" class="nx-intake-plain" data-intake-next>VER FORMAS DE PAGAMENTO <span>→</span></button>
+   </div>
+  </div>
+  <div data-intake-pagamento hidden>
+   <span class="nx-dock-eyebrow">03 / FORMA DE PAGAMENTO</span>
+   <p class="nx-intake-caption">Escolha a modalidade de pagamento após conferir o contrato. Quando a conta Asaas estiver ativa, a NEXA emitirá o link individual associado à contratação.</p>
+  </div>
+ </div>
+
+ <div class="nx-payment-stage" data-intake-payment-options hidden>
  <div class="nx-payment-choices" aria-label="Formas de pagamento">
   <button type="button" class="nx-payment-choice" data-payment-mode="pix"><span class="nx-payment-icon">◇</span><span><strong>PIX</strong><small>À vista · <span data-price-cash>R$ 2.490,00</span></small></span><b>↗</b></button>
   <button type="button" class="nx-payment-choice" data-payment-mode="credit_card"><span class="nx-payment-icon">▣</span><span><strong>CARTÃO DE CRÉDITO</strong><small>Valor anual · <span data-price-card>R$ 2.490,00</span>. Condições finais na fatura.</small></span><b>↗</b></button>
@@ -126,6 +176,7 @@
   <a data-receipt target="_blank" rel="noopener noreferrer" href="https://wa.me/5513997815375">ENVIAR COMPROVANTE PELO WHATSAPP ↗</a>
  </div>
  <p class="nx-payment-legal">Valores padrão; condições especiais seguem o contrato assinado. A cobrança só é emitida com link individual validado e integração ativa. Não digite dados de cartão na NEXA; pague no ambiente oficial do Asaas.</p>
+</div>
 </div>
 </section>
 </main>
@@ -177,4 +228,5 @@
 </dialog>
 <script src="/assets/nexa-plan-tabs.js" defer></script>
 <script src="/assets/nexa-payment-ui.js" defer></script>
+<script src="/assets/nexa-contract-checkout.js" defer></script>
 </body></html>
