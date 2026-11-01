@@ -1015,3 +1015,56 @@
 .footer-maw{justify-content:center;min-width:0}
 .footer-maw img{display:block;width:clamp(105px,10vw,140px);height:auto;max-width:100%;object-fit:contain}
 @media(max-width:650px){.footer-maw img{width:112px}}
+
+
+/* NEXA BLUE / Polimento de identidade — novembro 2026
+   Somente lettering, marcas do rodapé, contato e alinhamentos. */
+.about-heading h2 .about-imagine-handwritten{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  margin:0 0 12px 0;
+  color:#fff;
+  -webkit-text-fill-color:#fff;
+  font:400 clamp(30px,4.1vw,65px)/1.5 'Rock Salt',cursive;
+  letter-spacing:-.11em;
+  text-transform:uppercase;
+  transform:rotate(-3deg);
+  transform-origin:left center;
+  text-shadow:0 5px 14px rgba(0,0,0,.3);
+}
+.about-heading h2 .about-imagine-rest{display:block}
+/* Logo original, somente dimensionamento óptico. */
+.footer .footer-maw img{width:clamp(98px,9.2vw,126px)}
+.footer .footer-winf{width:clamp(122px,11.9vw,164px)}
+.footer-topline .footer-social .social-icon{width:clamp(38px,3vw,44px);height:44px;flex:0 0 clamp(38px,3vw,44px)}
+.footer-topline .footer-social .social-icon svg{width:clamp(24px,1.95vw,28px);height:clamp(24px,1.95vw,28px)}
+.footer-identity-copy{max-width:100%;margin:clamp(18px,2.8vw,30px) 0 0;gap:15px}
+.footer-credits{width:100%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 22px;padding-top:14px;border-top:1px solid rgba(88,190,255,.29)}
+.footer-credits .footer-legal{max-width:810px}
+.footer-privacy{margin-left:8px;color:#aaddfa;text-decoration:underline;text-underline-offset:3px}
+.footer-developed{margin:0;color:#9fb8ca;font:500 10px/1.65 var(--mono);letter-spacing:.07em;white-space:nowrap}
+.footer-developed strong{color:#8cd9ff;font-weight:700}
+/* Botão WhatsApp flutuante: roda náutica/rosa dos ventos com núcleo verde. */
+.nexa-maritime-whatsapp{position:fixed;right:clamp(17px,2.8vw,44px);bottom:clamp(17px,2.8vw,38px);z-index:110;width:70px;height:70px;display:grid;place-items:center;border-radius:50%;border:2px solid rgba(133,222,250,.8);background:conic-gradient(from 45deg,#06314b 0deg,#0b5d7b 44deg,#06314b 89deg,#0b5d7b 135deg,#06314b 180deg,#0b5d7b 225deg,#06314b 270deg,#0b5d7b 315deg,#06314b 360deg);box-shadow:0 9px 30px rgba(0,7,22,.55),inset 0 0 0 4px #001929;transition:transform .2s ease,box-shadow .2s ease}
+.nexa-maritime-whatsapp::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px dashed rgba(147,225,248,.76);pointer-events:none}
+.nexa-maritime-whatsapp::after{content:"";position:absolute;inset:-12px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 84deg,rgba(136,229,255,.8) 85deg 95deg,transparent 96deg 174deg,rgba(136,229,255,.8) 175deg 185deg,transparent 186deg 264deg,rgba(136,229,255,.8) 265deg 275deg,transparent 276deg 354deg,rgba(136,229,255,.8) 355deg 360deg);mask:radial-gradient(transparent 0 40px,#000 41px 43px,transparent 44px);pointer-events:none}
+.nexa-maritime-whatsapp-core{display:grid;place-items:center;width:51px;height:51px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 2px 9px rgba(0,0,0,.28);position:relative;z-index:1}
+.nexa-maritime-whatsapp-core svg{width:31px;height:31px;display:block;fill:currentColor}
+.nexa-maritime-whatsapp-label{position:absolute;right:calc(100% + 16px);white-space:nowrap;color:#fff;background:rgba(2,30,49,.96);border:1px solid rgba(155,223,247,.6);border-radius:6px;padding:9px 12px;font:700 10px/1.4 var(--mono);letter-spacing:.06em;opacity:0;transform:translateX(8px);transition:opacity .2s ease,transform .2s ease;pointer-events:none;box-shadow:0 8px 30px #00102466}
+.nexa-maritime-whatsapp:hover,.nexa-maritime-whatsapp:focus-visible{transform:translateY(-3px) scale(1.04);box-shadow:0 10px 36px rgba(0,7,22,.8)}
+.nexa-maritime-whatsapp:hover .nexa-maritime-whatsapp-label,.nexa-maritime-whatsapp:focus-visible .nexa-maritime-whatsapp-label{opacity:1;transform:translateX(0)}
+@media(max-width:650px){
+ .about-heading h2 .about-imagine-handwritten{font-size:clamp(27px,7.7vw,43px);line-height:1.6}
+ .footer .footer-maw img{width:100px}
+ .footer .footer-winf{width:114px}
+ .footer-topline .footer-social .social-icon{width:42px;height:42px;flex:0 0 42px}
+ .footer-topline .footer-social .social-icon svg{width:26px;height:26px}
+ .footer-credits{align-items:center;justify-content:center;flex-direction:column;text-align:center}
+ .footer-developed{white-space:normal}
+ .nexa-maritime-whatsapp{right:20px;bottom:22px;width:63px;height:63px}
+ .nexa-maritime-whatsapp-core{width:47px;height:47px}
+ .nexa-maritime-whatsapp-core svg{width:29px;height:29px}
+ .nexa-maritime-whatsapp-label{display:none}
+}
+@media(prefers-reduced-motion:reduce){.nexa-maritime-whatsapp,.nexa-maritime-whatsapp-label{transition:none}}

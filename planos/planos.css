@@ -331,3 +331,22 @@
 .nx-payment-stage{padding-top:8px}
 .nx-payment-stage[hidden],[data-intake-dados][hidden],[data-intake-contrato][hidden],[data-intake-pagamento][hidden]{display:none!important}
 @media(max-width:560px){.nx-intake-fields{grid-template-columns:1fr}.nx-intake-fields label.wide{grid-column:auto}.nx-intake-progress span{font-size:9px}}
+
+
+/* Marca-mãe como referência de proporção nos rodapés dos três planos. */
+.nx-footer-brand.nx-maw img{width:clamp(100px,10.1vw,127px);max-width:127px}
+.nx-footer-brand.nx-winf img{width:clamp(118px,14.7vw,195px);max-width:195px}
+.nx-footer-social .social-icon{width:39px;height:42px}
+.nx-footer-social .social-icon svg{width:25px;height:25px}
+@media(max-width:650px){
+ .nx-footer-brand.nx-maw img{width:100px;max-width:100px}
+ .nx-footer-brand.nx-winf img{width:119px;max-width:119px}
+}
+/* BARCO / galeria em profundidade: imagem inteira visível e preenchimento oceânico
+   para eliminar cortes de barco, baleias e submarino. */
+.barco-gallery .detail-gallery-tile{background-position:center;background-size:cover;background-repeat:no-repeat}
+.barco-gallery .detail-gallery-tile.tile-1{background-image:linear-gradient(rgba(0,18,40,.4),rgba(0,18,40,.4)),url("/assets/nexa-blue-surface.webp")}
+.barco-gallery .detail-gallery-tile.tile-2{background-image:linear-gradient(rgba(0,18,40,.4),rgba(0,18,40,.4)),url("/assets/nexa-blue-whales.webp")}
+.barco-gallery .detail-gallery-tile.tile-3{background-image:linear-gradient(rgba(0,18,40,.4),rgba(0,18,40,.4)),url("/assets/nexa-blue-explore.webp")}
+.barco-gallery .detail-gallery-tile img{object-fit:contain;object-position:center center;display:block;filter:saturate(.95);transform:none}
+.barco-gallery .detail-gallery-tile:hover img{transform:scale(1.025)}
