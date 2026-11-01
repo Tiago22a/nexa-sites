@@ -342,11 +342,14 @@
  .nx-footer-brand.nx-maw img{width:100px;max-width:100px}
  .nx-footer-brand.nx-winf img{width:119px;max-width:119px}
 }
-/* BARCO / galeria em profundidade: imagem inteira visível e preenchimento oceânico
-   para eliminar cortes de barco, baleias e submarino. */
-.barco-gallery .detail-gallery-tile{background-position:center;background-size:cover;background-repeat:no-repeat}
-.barco-gallery .detail-gallery-tile.tile-1{background-image:linear-gradient(rgba(0,18,40,.4),rgba(0,18,40,.4)),url("/assets/nexa-blue-surface.webp")}
-.barco-gallery .detail-gallery-tile.tile-2{background-image:linear-gradient(rgba(0,18,40,.4),rgba(0,18,40,.4)),url("/assets/nexa-blue-whales.webp")}
-.barco-gallery .detail-gallery-tile.tile-3{background-image:linear-gradient(rgba(0,18,40,.4),rgba(0,18,40,.4)),url("/assets/nexa-blue-explore.webp")}
-.barco-gallery .detail-gallery-tile img{object-fit:contain;object-position:center center;display:block;filter:saturate(.95);transform:none}
+/* BARCO / Cada quadro possui UMA imagem, sem fundos fotográficos duplicados.
+   As fotos novas (barco-partida.webp, barco-presenca.webp, barco-rota.webp)
+   devem substituir os 3 src quando forem adicionadas em /assets/jornada/. */
+.barco-gallery .detail-gallery-tile{background:#05243d!important;background-image:none!important}
+.barco-gallery .detail-gallery-tile img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:saturate(.96);transform:none}
+.barco-gallery .detail-gallery-tile.tile-1 img{object-position:73% 53%}
+.barco-gallery .detail-gallery-tile.tile-2 img{object-position:60% 47%}
+.barco-gallery .detail-gallery-tile.tile-3 img{object-position:80% 51%}
 .barco-gallery .detail-gallery-tile:hover img{transform:scale(1.025)}
+/* Para todas as demais galerias, manter sempre uma única fonte de fotografia. */
+.detail-gallery-tile img{max-width:none}
