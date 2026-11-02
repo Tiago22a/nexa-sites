@@ -1121,3 +1121,19 @@
 .vessel-plan-grid .plan-pdf-download:focus-visible{
   outline:2px solid #bdefff;outline-offset:3px;
 }
+
+
+/* NEXA | identidade consistente das frases rabiscadas.
+   Somente lettering editorial; tipografia institucional não muda. */
+.scribble.scribble-brush,
+.hero-lettering,
+.hero-editorial .hero-editorial-scribble.scribble.scribble-brush,
+.about-scribble,
+.about-heading h2 .about-imagine-handwritten,
+.clients-spotlight .clients-belt-handwritten,
+.footer-signature,
+.footer-identity-copy .footer-signature{
+  font-family:'Caveat Brush','Rock Salt',cursive!important;
+  color:#fff;
+  -webkit-text-fill-color:#fff;
+}
