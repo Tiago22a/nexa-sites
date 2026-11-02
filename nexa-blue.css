@@ -1068,3 +1068,7 @@
  .nexa-maritime-whatsapp-label{display:none}
 }
 @media(prefers-reduced-motion:reduce){.nexa-maritime-whatsapp,.nexa-maritime-whatsapp-label{transition:none}}
+
+/* Click target: the plan CTA covers the ENTIRE plan card, not only the footer. */
+.vessel-plan .plan-bottom{position:static}
+.vessel-plan .plan-page-link::after{cursor:pointer}
