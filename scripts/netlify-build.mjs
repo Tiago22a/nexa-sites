@@ -2,7 +2,7 @@ import { readdir, stat, mkdir, copyFile, rm } from 'node:fs/promises';
 import { extname, join, relative, dirname, basename } from 'node:path';
 const root=process.cwd(), out=join(root,'dist');
 const excludedDirs=new Set(['.git','.github','node_modules','netlify','scripts','dist']);
-const extensions=new Set(['.html','.css','.js','.svg','.png','.jpg','.jpeg','.webp','.gif','.ico','.woff','.woff2','.mp4','.webm','.txt','.xml']);
+const extensions=new Set(['.html','.css','.js','.svg','.png','.jpg','.jpeg','.webp','.gif','.ico','.woff','.woff2','.mp4','.webm','.txt','.xml','.pdf']);
 const special=new Set(['_redirects','_headers']);
 await rm(out,{recursive:true,force:true});
 let count=0;
