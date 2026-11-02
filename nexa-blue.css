@@ -151,9 +151,9 @@
 .footer-social .social-icon svg{width:23px;height:23px;transition:transform .2s ease,opacity .2s ease}
 .footer-social a.social-icon:hover svg{transform:translateY(-3px) scale(1.1)}
 .footer-social .social-soon{opacity:.64;cursor:default}
-.plan-interactive{position:relative;cursor:default}
-.plan-page-link{position:static;z-index:1}
-.plan-page-link::after{content:'';position:absolute;inset:0;z-index:1}
+.plan-interactive{position:relative;cursor:pointer}
+.plan-page-link{position:relative;z-index:1}
+
 .plan-interactive:focus-within{outline:2px solid #58beff;outline-offset:3px}
 .plan-interactive:hover .plan-page-link{background:#169cff;transform:translateY(-2px)}
 @media(max-width:850px){
@@ -220,7 +220,7 @@
 .vessel-plan .plan-highlight{margin-bottom:26px}
 .vessel-plan .plan-bottom{position:relative}
 .vessel-plan .plan-view{position:static}
-.vessel-plan .plan-view::after{content:'';position:absolute;inset:0;z-index:1}
+
 @media(max-width:930px){
  .about-layout{grid-template-columns:1fr;gap:20px}
  .about-copy{max-width:790px}
@@ -1070,5 +1070,32 @@
 @media(prefers-reduced-motion:reduce){.nexa-maritime-whatsapp,.nexa-maritime-whatsapp-label{transition:none}}
 
 /* Click target: the plan CTA covers the ENTIRE plan card, not only the footer. */
-.vessel-plan .plan-bottom{position:static}
-.vessel-plan .plan-page-link::after{cursor:pointer}
+
+/* Cards das modalidades: link nativo ocupa todo o quadrado.
+   Inclui clique em texto/ilustração/preço, teclado e toque no celular. */
+.vessel-plan-grid > a.plan-link-card{
+  display:flex;
+  flex-direction:column;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+}
+.vessel-plan-grid > a.plan-link-card:focus-visible{
+  outline:2px solid #58beff;
+  outline-offset:3px;
+}
+.vessel-plan-grid > a.plan-link-card .plan-page-link{
+  background:#087dc7;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:17px 15px;
+  font:600 10px/1.35 var(--mono);
+  letter-spacing:.025em;
+}
+.vessel-plan-grid > a.plan-link-card:hover .plan-page-link,
+.vessel-plan-grid > a.plan-link-card:focus-visible .plan-page-link{
+  background:#169cff;
+}
