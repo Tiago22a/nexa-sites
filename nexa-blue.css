@@ -1073,18 +1073,18 @@
 
 /* Cards das modalidades: link nativo ocupa todo o quadrado.
    Inclui clique em texto/ilustração/preço, teclado e toque no celular. */
-.vessel-plan-grid > a.plan-link-card{
+.vessel-plan-grid .vessel-plan-shell > a.plan-link-card{
   display:flex;
   flex-direction:column;
   color:inherit;
   text-decoration:none;
   cursor:pointer;
 }
-.vessel-plan-grid > a.plan-link-card:focus-visible{
+.vessel-plan-grid .vessel-plan-shell > a.plan-link-card:focus-visible{
   outline:2px solid #58beff;
   outline-offset:3px;
 }
-.vessel-plan-grid > a.plan-link-card .plan-page-link{
+.vessel-plan-grid .vessel-plan-shell > a.plan-link-card .plan-page-link{
   background:#087dc7;
   color:#fff;
   display:flex;
@@ -1095,7 +1095,29 @@
   font:600 10px/1.35 var(--mono);
   letter-spacing:.025em;
 }
-.vessel-plan-grid > a.plan-link-card:hover .plan-page-link,
-.vessel-plan-grid > a.plan-link-card:focus-visible .plan-page-link{
+.vessel-plan-grid .vessel-plan-shell > a.plan-link-card:hover .plan-page-link,
+.vessel-plan-grid .vessel-plan-shell > a.plan-link-card:focus-visible .plan-page-link{
   background:#169cff;
+}
+
+
+/* Downloads independentes dos cards: sem links aninhados e com foco visível. */
+.vessel-plan-grid .vessel-plan-shell{position:relative;display:flex;min-width:0}
+.vessel-plan-grid .vessel-plan-shell > a.plan-link-card{flex:1;min-width:0;padding-bottom:calc(clamp(28px,3vw,44px) + 75px)}
+.vessel-plan-grid .plan-pdf-download{
+  position:absolute;z-index:2;bottom:clamp(28px,3vw,44px);
+  left:clamp(28px,3vw,44px);right:clamp(28px,3vw,44px);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:46px;padding:12px 14px;
+  border:1px solid #73c5ee8a;background:rgba(2,17,32,.88);color:#e7f6ff;
+  font:600 10px/1.35 var(--mono);letter-spacing:.055em;text-decoration:none;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.vessel-plan-grid .plan-pdf-download span:last-child{font-size:17px;line-height:1}
+.vessel-plan-grid .plan-pdf-download:hover,
+.vessel-plan-grid .plan-pdf-download:focus-visible{
+  background:#0b4166;border-color:#8ce0ff;transform:translateY(-2px);
+}
+.vessel-plan-grid .plan-pdf-download:focus-visible{
+  outline:2px solid #bdefff;outline-offset:3px;
 }
