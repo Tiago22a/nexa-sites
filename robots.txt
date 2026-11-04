@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /comando/
 
-Sitemap: https://nexasitesdev.com.br/sitemap.xml
+Sitemap: https://nexablue.com.br/sitemap.xml

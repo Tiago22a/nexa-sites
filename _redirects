@@ -1,6 +1,11 @@
-http://nexasitesdev.com.br/* https://nexasitesdev.com.br/:splat 301!
-http://www.nexasitesdev.com.br/* https://nexasitesdev.com.br/:splat 301!
-https://www.nexasitesdev.com.br/* https://nexasitesdev.com.br/:splat 301!
+http://nexablue.com.br/* https://nexablue.com.br/:splat 301!
+http://www.nexablue.com.br/* https://nexablue.com.br/:splat 301!
+https://www.nexablue.com.br/* https://nexablue.com.br/:splat 301!
+http://nexasitesdev.com.br/* https://nexablue.com.br/:splat 301!
+http://www.nexasitesdev.com.br/* https://nexablue.com.br/:splat 301!
+https://nexasitesdev.com.br/* https://nexablue.com.br/:splat 301!
+https://www.nexasitesdev.com.br/* https://nexablue.com.br/:splat 301!
+https://nexasite.netlify.app/* https://nexablue.com.br/:splat 301!
 /planos/anzol/ /planos/barco/ 301
 /planos/rede/ /planos/iate/ 301
 /planos/modo-submarino/ /planos/submarino/ 301

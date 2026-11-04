@@ -1,6 +1,6 @@
-# Mapa SEO — Nexa Sites Dev
+# Mapa SEO — NEXA BLUE
 
-Domínio canônico: `https://nexasitesdev.com.br/`
+Domínio canônico: `https://nexablue.com.br/`
 
 Este mapa foi montado a partir de pesquisas atuais de SERP e padrões repetidos nos resultados brasileiros. **Não representa volume de busca pago/estimado**; o objetivo é organizar intenção e arquitetura sem criar páginas vazias ou duplicadas.
 
@@ -49,3 +49,13 @@ Este mapa foi montado a partir de pesquisas atuais de SERP e padrões repetidos 
 - Lazy loading em imagens abaixo da dobra; hero com `fetchpriority="high"`.
 - Links internos entre serviços, segmentos e home.
 - `_redirects` preparado para consolidar HTTP/WWW no host canônico em Netlify.
+
+## Atualização técnica — 04/11/2026
+
+- Instagram oficial: https://www.instagram.com/nexablue.agencia/
+- Domínio unificado em canonical, Open Graph, Twitter Cards, JSON-LD e links do Shop.
+- Schemas Organization e WebSite com IDs consistentes; WebPage e breadcrumbs nas páginas públicas.
+- Sitemap inclui páginas públicas indexáveis de serviços, planos, Shop, privacidade e como funciona.
+- Redirecionamentos 301 de HTTP, WWW e domínios anteriores, preservando os caminhos.
+- A ativação do domínio, certificado HTTPS e apontamentos DNS devem ser realizados no provedor de hospedagem. Redirecionamentos de domínios antigos dependem de eles continuarem associados à mesma hospedagem.
+- A verificação de propriedade e o envio do sitemap no Search Console dependem de acesso à conta e ao DNS; nenhum código de verificação foi inventado.

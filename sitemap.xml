@@ -1,108 +1,131 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nexasitesdev.com.br/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://nexablue.com.br/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/criacao-de-sites/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://nexablue.com.br/como-funciona/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-profissional-para-empresas/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://nexablue.com.br/criacao-de-sites/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/sites-para-negocios-locais/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://nexablue.com.br/landing-page-para-energia-solar/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/landing-pages/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://nexablue.com.br/landing-pages/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/seo-local/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://nexablue.com.br/planos/barco/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-clinica-com-agendamento-no-whatsapp/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/planos/iate/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-clinica-de-estetica-com-agendamento/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/planos/submarino/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-dentista-com-agendamento/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/privacidade/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-oficina-mecanica-com-orcamento-no-whatsapp/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/seo-local/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-restaurante-com-cardapio-e-whatsapp/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/shop/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-imobiliaria-com-captacao-de-leads/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/shop/impressos/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-contabilidade-para-aparecer-no-google/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/shop/impulso-expansao/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-vidracaria-com-orcamento/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/shop/impulso-local/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-dedetizadora-com-orcamento/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/shop/impulso-mare-alta/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/landing-page-para-energia-solar/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/shop/placas-banners/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
-    <loc>https://nexasitesdev.com.br/site-para-salao-de-beleza-com-agendamento/</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://nexablue.com.br/shop/social-24/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
-  <url><loc>https://nexasitesdev.com.br/planos/barco/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://nexasitesdev.com.br/planos/iate/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://nexasitesdev.com.br/planos/submarino/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url>
+    <loc>https://nexablue.com.br/shop/videos-10/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/shop/videos-3/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/shop/videos-5/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-clinica-com-agendamento-no-whatsapp/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-clinica-de-estetica-com-agendamento/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-contabilidade-para-aparecer-no-google/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-dedetizadora-com-orcamento/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-dentista-com-agendamento/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-imobiliaria-com-captacao-de-leads/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-oficina-mecanica-com-orcamento-no-whatsapp/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-restaurante-com-cardapio-e-whatsapp/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-salao-de-beleza-com-agendamento/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-para-vidracaria-com-orcamento/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/site-profissional-para-empresas/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://nexablue.com.br/sites-para-negocios-locais/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
 </urlset>
